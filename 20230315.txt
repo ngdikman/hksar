@@ -1178,3 +1178,46 @@ ELEVEN 2,http://61.221.81.93:8078/hls/26/80/esport2.m3u8
 原住民电视,http://streamipcf.akamaized.net/live/_definst_/live_720/key_b1500.m3u8
 亚洲新闻台,https://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index_5.m3u8
 FOX新闻台,http://fox-foxnewsnow-samsungus.amagi.tv/playlist.m3u8
+
+P2P
+港台电视31,P2p://generationnexxxt.com:19806/58cb293bb6ed45528ed2a739c1536c4a
+港台电视32,P2p://generationnexxxt.com:19806/143e471e3de946f08d281f85dbf477c8
+HOY TV,P2p://generationnexxxt.com:19806/13eebc989d2f462390f5feca1b9ac99d
+﻿翡翠台(备),P2p://generationnexxxt.com:19806/8fb1cc240a46409fb6db45af3fe436a3
+J2,P2p://generationnexxxt.com:19806/905bc6404d9a44e6ac5ad8fd7decdc9a
+无线新闻台(备),P2p://generationnexxxt.com:19806/53d2416198234f76a9e3207886db4517
+无线新闻台,P2p://generationnexxxt.com:19806/3fab81cdbe234f20a5036669ce3c42d1
+无线财经台,P2p://generationnexxxt.com:19806/1a23c36c314c417b902bacb8a71af96c
+ViuTVsix,P2p://generationnexxxt.com:19806/6512fc197d1e423cb9afc6ec628de432
+ViuTV,P2p://generationnexxxt.com:19806/bb8a848b3d9345fca9a222a64cbbb798
+凤凰中文台,P2p://generationnexxxt.com:19806/113ff3c5757a4b9bbbea03d4120cddd5
+凤凰资讯台,P2p://generationnexxxt.com:19806/acfa4dede5014680b678d2ea7cd30dd2
+凤凰香港台,P2p://generationnexxxt.com:19806/4db086bf46f840fd90bdcd9d03cbe8ad
+TVB星河(粤),P2p://generationnexxxt.com:19806/58c0491e371e49e79272ffe8c3420b95
+阳光卫视,P2p://generationnexxxt.com:19806/68d400b7bf094108b3e2ca40ef42cf32
+澳门-MACAU,P2p://generationnexxxt.com:19806/76c92167e22d43548f56f47bbc837a2f
+澳门莲花,P2p://generationnexxxt.com:19806/7ef01264f6354f198f586f31c3c1b2fe
+now新闻台,P2p://generationnexxxt.com:19806/93c087f216d647a0a97f7effad3d1ea1
+有线电影台,P2p://generationnexxxt.com:19806/e7fa3ea62ea049aea12c9c0ac199e75a
+凤凰电影台,P2p://generationnexxxt.com:19806/aaaf310c9c8f4b489e935ce136c26e93
+有线新闻台,P2p://generationnexxxt.com:19806/65928ae266e840acbb3fdc626b5dd04c
+有线财经台,P2p://generationnexxxt.com:19806/d0475fc328224a1aaca627e81d10e222
+有线 18,P2p://generationnexxxt.com:19806/1f2613f05b0249cbb345eff86ee8fa1f
+有线 603,P2p://generationnexxxt.com:19806/318fc8b0b9cc429cb4c5087906b86228
+有线体育台,P2p://generationnexxxt.com:19806/1c579a7538d24f4d92482c71688a3dd0
+有线 Sports Plus 1,P2p://generationnexxxt.com:19806/9a5bace2ed3f49518e68b876868681c3
+有线综合娱乐台,P2p://generationnexxxt.com:19806/7c1248369c384868b7c18e0f2f0db62b
+TVB娱乐新闻台,P2p://generationnexxxt.com:19806/3f40b850077f423a95e69eb904328532
+翡翠台,P2p://generationnexxxt.com:19806/cc878aae36824a018ad86c21cb53482d
+TVB经典台,P2p://generationnexxxt.com:19806/7cd2243d91314e36852d713a058d7fa8
+Thrill,P2p://generationnexxxt.com:19806/3caec6e54207426db34555538a671f99
+明珠台,P2p://generationnexxxt.com:19806/94bcbf944d944e239dc982db831a5f59
+18台,P2p://generationnexxxt.com:19806/434531e6b8b541e5aff9e45547cd6a6f
+有线 Sports Plus 3,P2p://generationnexxxt.com:19806/6049814ecef34f09b504a724d2141ee3
+功夫台(华语),P2p://generationnexxxt.com:19806/5aa8a2e529bb467b9e5372beba679bd9
+美亚电影台(粤语),P2p://generationnexxxt.com:19806/653a01b5f4164627a0896435190e3b09
+Hands Up,P2p://generationnexxxt.com:19806/948e5f6068674f3a846cefe1b1ce4180
+粤语片台,P2p://generationnexxxt.com:19806/3714c1d8d0874d2eb4767380dac6fed5
+亚洲剧台,P2p://generationnexxxt.com:19806/39b2516c7f3e465da6e7a93837c1ea81
+功夫台,P2p://generationnexxxt.com:19806/f8ee828aa7484a53ad43e37416758e9e
+HOY资讯台,P2p://generationnexxxt.com:19806/4b9e780005d04d86ab87f7c2949aa8d1
