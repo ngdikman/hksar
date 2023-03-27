@@ -2171,6 +2171,24 @@ https://justsometime.gztv.com/sec/xinwen.m3u8
 https://justsometime.gztv.com/sec/jingsai.m3u8
 #EXTINF:-1 group-title="少儿",代理_广州影视
 https://justsometime.gztv.com/sec/yingshi.m3u8
+#EXTINF:-1 tvg-id="81" tvg-name="翡翠台" tvg-logo="http://or00.stream-link.org/tv_logo/tvb-jade.png" group-title="TVB",翡翠台
+http://2022.stream-link.org/live/131217689
+#EXTINF:-1 tvg-id="82" tvg-name="J2" tvg-logo="http://or00.stream-link.org/tv_logo/tvb-j2.png" group-title="TVB",J2
+http://2022.stream-link.org/live/1869661640
+#EXTINF:-1 tvg-id="93" tvg-name="無綫新聞台" tvg-logo="http://or00.stream-link.org/tv_logo/tvb-news.png" group-title="TVB",無綫新聞台
+http://2022.stream-link.org/live/1488149502
+#EXTINF:-1 tvg-id="85" tvg-name="無綫財經·體育·資訊台" tvg-logo="http://or00.stream-link.org/tv_logo/tvb-finance.png" group-title="TVB",無綫財經·體育·資訊台
+http://2022.stream-link.org/live/201000012
+#EXTINF:-1 tvg-id="31" tvg-name="港台电视31" tvg-logo="http://or00.stream-link.org/tv_logo/rthk31.png" group-title="RTHK",港台电视31
+http://2022.stream-link.org/live/7690206
+#EXTINF:-1 tvg-id="32" tvg-name="港台电视32" tvg-logo="http://or00.stream-link.org/tv_logo/rthk32.png" group-title="RTHK",港台电视32
+http://2022.stream-link.org/live/1726901081
+#EXTINF:-1 tvg-id="110" tvg-name="有線新聞台" tvg-logo="http://or00.stream-link.org/tv_logo/cable-news.png" group-title="有線電視",有線新聞台
+http://2022.stream-link.org/live/970235901
+#EXTINF:-1 tvg-id="109" tvg-name="有線財經資訊台" tvg-logo="http://or00.stream-link.org/tv_logo/cable-finance.png" group-title="有線電視",有線財經資訊台
+http://2022.stream-link.org/live/1757618804
+#EXTINF:-1 tvg-id="77" tvg-name="香港開電視" tvg-logo="http://or00.stream-link.org/tv_logo/hoy-tv.png" group-title="奇妙電視",香港開電視
+http://2022.stream-link.org/live/322793772
 #EXTINF:-1 group-title="测试频道",凤凰中文
 http://107.151.203.111:2209/135/hk.php?id=fhzw
 #EXTINF:-1 group-title="测试频道",凤凰中文
