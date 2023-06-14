@@ -1636,7 +1636,8 @@ NBC News Now,http://video.oct.dc.gov/out/u/15_12.m3u8#https://nbcnews2.akamaized
 RT News,http://nbcnews2.akamaized.net/hls/live/723426-b/NBCNewsPlaymaker24x7Linear99a3a827-ua/master.m3u8
 Sofy TV,https://rt-glb.rttv.com/live/rtnews/playlist.m3u8#https://smithsonianaus-samsungau.amagi.tv/playlist.m3u8
 丹麦-Sportv2,https://sofy-ger-samsung.amagi.tv/playlist.m3u8
-韩国
+
+韩国,#genre#
 MTN,http://23.237.10.66:16180
 Job Plus TV,http://moneytoday1.ktcdn.co.kr:1935/mtnlive/720/playlist.m3u8
 KBS 1,http://amdlive-ch01.ctnd.com.edgesuite.net:80/arirang_1ch/smil:arirang_1ch.smil/chunklist_b2256000_sleng.m3u8
@@ -1671,7 +1672,8 @@ NBS 农业广播,http://vod.mpmbc.co.kr:1935/live/encoder-tv/playlist.m3u8
 SBS 清州放送,https://media.joycorp.co.kr:4443/live/live_720p/playlist.m3u8
 TBS Seoul,http://1.222.207.80:1935/live/cjbtv/chunklist_w1357270949.m3u8
 국방国防TV,https://cdntv.tbs.seoul.kr/tbs/tbs_tv_web.smil/playlist.m3u8
-日本
+
+日本,#genre#
 テレビ朝日,http://mediaworks.dema.mil.kr:1935/live_edge/cudo.sdp/playlist.m3u8#https://stream01.willfonk.com/live_playlist.m3u8?cid=CS223&r=FHD&ccode=JP&m=d0:20:20:04:35:cc&t=0d6938cb3dcf4b79848bc1753a59daf1
 NHK World Japan,http://redlabmcdn.s.llnwi.net/nv02/ryowa4hd/index.m3u8
 日本テレビ,https://nhkwlive-ojp.akamaized.net/hls/live/2003459/nhkwlive-ojp-en/index_4M.m3u8#https://stream01.willfonk.com/live_playlist.m3u8?cid=CS240&r=FHD&ccode=JP&m=d0:20:20:04:35:cc&t=0d6938cb3dcf4b79848bc1753a59daf1
@@ -1720,7 +1722,8 @@ WOWOWライブ,https://stream01.willfonk.com/live_playlist.m3u8?cid=BS191&r=FHD&
 スターチャンネル1,https://stream01.willfonk.com/live_playlist.m3u8?cid=CS250&r=FHD&ccode=JP&m=d0:20:20:04:35:cc&t=0d6938cb3dcf4b79848bc1753a59daf1
 スターチャンネル2,https://stream01.willfonk.com/live_playlist.m3u8?cid=BS200&r=FHD&ccode=JP&m=d0:20:20:04:35:cc&t=0d6938cb3dcf4b79848bc1753a59daf1
 スターチャンネル3,https://stream01.willfonk.com/live_playlist.m3u8?cid=BS201&r=FHD&ccode=JP&m=d0:20:20:04:35:cc&t=0d6938cb3dcf4b79848bc1753a59daf1
-MTV
+
+MTV,#genre#
 「韩」DJ Soda Remix 2021,https://stream01.willfonk.com/live_playlist.m3u8?cid=BS202&r=FHD&ccode=JP&m=d0:20:20:04:35:cc&t=0d6938cb3dcf4b79848bc1753a59daf1
 「韩」佳仁-ParadiseLost,https://vd3.bdstatic.com/mda-mev3hw0htz28h5wn/1080p/cae_h264/1622343504467773766/mda-mev3hw0htz28h5wn.mp4
 「韩」僵尸舞,https://15799848.s21v.faiusr.com/58/ABUIABA6GAAgy9j64wUogPOGEQ.mp4
@@ -2187,7 +2190,8 @@ MTV
 「中」醉千年李袁杰,http://vd3.bdstatic.com/mda-jf6k8v71hrs8s441/mda-jf6k8v71hrs8s441.mp4?playlist=%5B%22hd%22%2C%22sc%22%5D
 「中」左手指月,http://vd3.bdstatic.com/mda-ihai9qt3yny3sx53/hd/mda-ihai9qt3yny3sx53.mp4?pd=19&vt=1
 「中」sheep张艺兴,https://vdse.bdstatic.com//b35227847ccb42d48ea6414d47087ce9.mp4?authorization=bce-auth-v1%2F40f207e648424f47b2e3dfbb1014b1a5%2F2020-01-31T15%3A26%3A59Z%2F-1%2Fhost
-杂货
+
+杂货,#genre#
 1 TV (Opt-2),https://vdse.bdstatic.com/971347deaddd6fdb5ada6e87e4722ece.mp4?authorization=bce-auth-v1%2Ffb297a5cc0fb434c971b8fa103e8dd7b%2F2017-05-11T09%3A02%3A31Z%2F-1%2F
 23 ABC (KERO),http://amtv1.livestreamingcdn.com/am2abr/index.m3u8?checkedby:iptvcat.com
 30A Investment Pitch,https://content.uplynk.com/channel/ff809e6d9ec34109abfb333f0d4444b5.m3u8?checkedby:iptvcat.com
@@ -2357,7 +2361,8 @@ Yildiz TV,https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg00111-hearstmediaprod-xpl
 Yuma77,http://s01.vpis.io/sinopyildiz/sinopyildiz.m3u8?checkedby:iptvcat.com
 ZO!34 (720p),https://securestream6.champds.com/hlssstc/YumaCoAZLIVE/master.m3u8?checkedby:iptvcat.com
 Zoo Moo,https://video.uitzending.tv:19360/zo34/zo34.m3u8?checkedby:iptvcat.com
-景区
+
+景区,#genre#
 八达岭长城南七楼,https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg01553-blueantmediaasi-zoomoonz-samsungnz/playlist.m3u8?checkedby:iptvcat.com
 坝达景点观景台,http://gcalic.v.myalicdn.com/gc/bgws7_1/index.m3u8
 趵突泉,http://gccncc.v.wscdns.com/gc/hnttbdjd_1/index.m3u8
@@ -2494,7 +2499,8 @@ Zoo Moo,https://video.uitzending.tv:19360/zo34/zo34.m3u8?checkedby:iptvcat.com
 郑东新区千玺广场,http://gcalic.v.myalicdn.com/gc/fcw01_1/index.m3u8
 舟山东极岛,http://gctxyc.liveplay.myqcloud.com/gc/zdxq01_1_md.m3u8
 醉美沙滩翡翠湾,http://gctxyc.liveplay.myqcloud.com/gc/djd01_1_md.m3u8
-动物世界
+
+动物世界,#genre#
 爱吃鱼的棕熊,http://gcksc.v.kcdnvip.com/gc/fcw03_1/index.m3u8
 爱的奉献1,https://hls.cntv.kcdnvip.com/asp/hls/1200/0303000a/3/default/79c7bb4495f74ca698f3111a6f7ba567/1200.m3u8
 爱的奉献2,https://hls.cntv.kcdnvip.com/asp/hls/1200/0303000a/3/default/5b062ba2cd854ba993166d277af8a40d/1200.m3u8
@@ -2822,4 +2828,3 @@ Zoo Moo,https://video.uitzending.tv:19360/zo34/zo34.m3u8?checkedby:iptvcat.com
 走进狗的世界,https://hls.cntv.kcdnvip.com/asp/hls/1200/0303000a/3/default/38fc4f8e379445aeab6098b9ece0aa2a/1200.m3u8
 足球超级猎食者(上),https://hls.cntv.kcdnvip.com/asp/hls/1200/0303000a/3/default/25c049869a174f5fa5806e57a2c376bd/1200.m3u8
 足球超级猎食者(下),https://hls.cntv.kcdnvip.com/asp/hls/1200/0303000a/3/default/4d0dc6b22b8e48efa4a984ec990a4faf/1200.m3u8
-
