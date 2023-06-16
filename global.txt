@@ -16,7 +16,8 @@ J2,http://r.jdshipin.com/Nr5jq
 无线新闻,http://sc2022.stream-link.org/tv2306.php?id=h06
 无线新闻,http://pull-l3-cny.douyincdn.com/live/78625566800365445000YHTV.flv
 无线财经,https://pull-l3-cny.douyincdn.com/live/YesLiveTV-09afaab7-405f-47bc-aac9-8ae202205462.m3u8?by=yeslivetv_com
-无线财经,http://sc2022.stream-link.org/list.php?id=h005
+无线财经,http://sc2022.stream-link.org/tv2306.php?id=h05
+无线财经,http://sc2022.stream-link.org/tv2306.php?id=h07
 有线直播,http://61.10.2.145/live_freedirect/hd110_h.live/chunklist.m3u8
 有线财经,http://sc2022.stream-link.org/list.php?id=h009
 RTHK31,http://sc2022.stream-link.org/tv2306.php?id=h08
