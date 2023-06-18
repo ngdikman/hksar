@@ -21,7 +21,8 @@ NOW新闻台,https://pull-l3-cny.douyincdn.com/live/692e8eddff5600907dadc48a64ca
 有线财经,http://sc2022.stream-link.org/list.php?id=h009
 RTHK31,http://sc2022.stream-link.org/tv2306.php?id=h08
 RTHK32,http://sc2022.stream-link.org/tv2306.php?id=h09
-ViuTV,https://pull-l3-cny.douyincdn.com/live/YesLiveTV-68466204-dbfa-47d8-9415-634aeb58a98f.m3u8?by=yeslivetv_com
+ViuTV,https://pull-l3-cny.douyincdn.com/live/f568a39b5d105ccc894f56aac7cffc92.m3u8
+ViuTV,https://pull-l3-cny.douyincdn.com/live/YesLiveTV-54acc2eb-17b3-4e22-a4d0-0c77d73cd381.m3u8?by=yeslivetv_com
 ViuTV6,http://50.7.238.114:8278/viusix_twn/playlist.m3u8?tid=MD7D9950629799506297&ct=19234&tsum=83ba3013be3e325b775bcd348b38eab1
 香港开电视,http://sc2022.stream-link.org/tv2306.php?id=h13
 香港国际财经台,http://sc2022.stream-link.org/tv2306.php?id=h12
