@@ -348,7 +348,6 @@ CCTV卫生健康,http://58.205.220.58:8088/tlivectfree-cdn.ysp.cctv.cn/ysp/20125
 贵州卫视,http://58.205.220.58:8088/tlivectfree-cdn.ysp.cctv.cn/ysp/2000293303.m3u8
 
 地方,#genre#
-湖南,http://phonews.qing.mgtv.com/nn_live/nn_x64/cWlkPSZzPTY1YzQ5NTYyMDI4ZWE0ZTM4Yzc1YmUwZGMwMjkyZGRhJmVzPTE2ODcxMTg0NDMmdXVpZD1kMTcxMTYwMDkxYWYwZTE3N2M4ZTQ2ZDk4ZGVkYjZjMy1lZDQwMDgyJnY9MiZhcz0wJmNkbmV4X2lkPXdzX3Bob25lMw,,/HNDYMPP360.m3u8
 「安徽」池州公共,http://cm.wshls.homecdn.com/live/4abdf.flv?zanhd
 「安徽」固镇新闻,http://www.guzhenm.com:7001/hls/hd-live.m3u8?zanhd
 「安徽」淮南公共,http://stream.0554news.com/hnds2/sd/live.m3u8?zanhd
