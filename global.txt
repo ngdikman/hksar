@@ -2,8 +2,6 @@ HK,#genre#
 翡翠台,http://sc2022.stream-link.org/tv2306.php?id=h01
 翡翠台,http://sc2022.stream-link.org/tv2306.php?id=h02
 翡翠台,https://pull-l3-cny.douyincdn.com/live/YesLiveTV-9427dd7d-ea1a-47c2-83b3-d6f6cf1151d1.m3u8?by=yeslivetv_com
-翡翠台,http://r.jdshipin.com/62WM7
-翡翠台,http://r.jdshipin.com/thuYX
 TVB星河,http://sc2022.stream-link.org/tv2306.php?id=c02
 TVB星河,http://113.117.74.45:8081/hls/135/index.m3u8
 明珠台,http://zw9999.cnstream.top:80/play/ubI0Nrlni6TwusjXuSxNxEzv3SLBhKEUmYG73triGDY/ts
