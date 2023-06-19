@@ -2,19 +2,15 @@ HK,#genre#
 翡翠台,http://sc2022.stream-link.org/tv2306.php?id=h01
 翡翠台,http://sc2022.stream-link.org/tv2306.php?id=h02
 翡翠台,https://pull-l3-cny.douyincdn.com/live/9c1137da796f8b8d2ceef7b876bf91fc.m3u8
-翡翠台,https://pull-l3-cny.douyincdn.com/live/YesLiveTV-47ed1e35-1f07-4c7a-814e-5b2181581795.m3u8?by=yeslivetv_com
 TVB星河,http://sc2022.stream-link.org/tv2306.php?id=c02
 TVB星河,http://113.117.74.45:8081/hls/135/index.m3u8
 明珠台,http://zw9999.cnstream.top:80/play/ubI0Nrlni6TwusjXuSxNxEzv3SLBhKEUmYG73triGDY/ts
 J2,http://sc2022.stream-link.org/tv2306.php?id=h03
-J2,https://pull-l3-cny.douyincdn.com/live/YesLiveTV-2217b642-a563-4037-bd99-cb19b7f6079f.m3u8?by=yeslivetv_com
 J2,http://r.jdshipin.com/Nr5jq
 NOW新闻台,https://pull-l3-cny.douyincdn.com/live/692e8eddff5600907dadc48a64ca13c1.m3u8
 无线新闻,http://sc2022.stream-link.org/tv2306.php?id=h04
 无线新闻,http://sc2022.stream-link.org/tv2306.php?id=h06
-无线新闻,https://pull-l3-cny.douyincdn.com/live/YesLiveTV-69aeaa71-0389-4974-92d3-5b6710ac0f90.m3u8?by=yeslivetv_com
 无线新闻,http://pull-l3-cny.douyincdn.com/live/78625566800365445000YHTV.flv
-无线财经,https://pull-l3-cny.douyincdn.com/live/YesLiveTV-09afaab7-405f-47bc-aac9-8ae202205462.m3u8?by=yeslivetv_com
 无线财经,http://sc2022.stream-link.org/tv2306.php?id=h05
 无线财经,http://sc2022.stream-link.org/tv2306.php?id=h07
 有线直播,http://61.10.2.145/live_freedirect/hd110_h.live/chunklist.m3u8
@@ -22,7 +18,6 @@ NOW新闻台,https://pull-l3-cny.douyincdn.com/live/692e8eddff5600907dadc48a64ca
 RTHK31,http://sc2022.stream-link.org/tv2306.php?id=h08
 RTHK32,http://sc2022.stream-link.org/tv2306.php?id=h09
 ViuTV,https://pull-l3-cny.douyincdn.com/live/f568a39b5d105ccc894f56aac7cffc92.m3u8
-ViuTV,https://pull-l3-cny.douyincdn.com/live/YesLiveTV-54acc2eb-17b3-4e22-a4d0-0c77d73cd381.m3u8?by=yeslivetv_com
 ViuTV6,http://50.7.238.114:8278/viusix_twn/playlist.m3u8?tid=MD7D9950629799506297&ct=19234&tsum=83ba3013be3e325b775bcd348b38eab1
 香港开电视,http://sc2022.stream-link.org/tv2306.php?id=h13
 香港国际财经台,http://sc2022.stream-link.org/tv2306.php?id=h12
