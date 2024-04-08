@@ -10,7 +10,7 @@ def process_m3u(input_file, output_file):
                 if line.startswith('#EXTINF'):
                     # 获取含有#EXTINF的行中最后一个英文逗号后的文字
                     info = line.split(',')[-1]
-                    f.write(info.strip() + ', ')
+                    f.write(info.strip() + ',')
                 else:
                     f.write(line + '\n')
 
