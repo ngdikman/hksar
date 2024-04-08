@@ -1,6 +1,8 @@
 name: m3u2txt
 
 on:
+  schedule:
+    - cron: '0 22 * * *' 
   push:
     branches:
       - main  # 可以根据你的实际分支情况修改
