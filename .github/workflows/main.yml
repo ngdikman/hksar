@@ -18,7 +18,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: 3.5.2  # 选择要使用的 Python 版本
+        python-version: 3.8  # 选择要使用的 Python 版本
 
     - name: Run Python script
       run: python m3u2txt.py  # 替换为你的 Python 脚本的路径
