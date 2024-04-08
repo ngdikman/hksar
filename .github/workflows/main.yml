@@ -1,0 +1,30 @@
+name: m3u2txt
+
+on:
+  push:
+    branches:
+      - main  # 可以根据你的实际分支情况修改
+
+jobs:
+  run-python-script:
+    runs-on: ubuntu-latest  # 使用最新的 Ubuntu 环境
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2  # 拉取代码
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.5.2  # 选择要使用的 Python 版本
+
+    - name: Run Python script
+      run: python m3u2txt.py  # 替换为你的 Python 脚本的路径
+
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add .
+        git commit -m "Update results"
+        git push
