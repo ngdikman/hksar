@@ -4,3 +4,6 @@
 ```
 https://gh.idayer.com/https://raw.githubusercontent.com/ngdikman/hksar/main/GDIPTV.m3u
 ```
+```
+https://gh.idayer.com/https://raw.githubusercontent.com/ngdikman/hksar/main/GDIPTV-SP.m3u
+```
