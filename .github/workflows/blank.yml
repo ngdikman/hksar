@@ -26,7 +26,3 @@ jobs:
 
     - name: Push changes to repository
       uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}  # 使用 GitHub Token 授权推送到仓库
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}  # 使用 GitHub Token 授权推送到仓库
