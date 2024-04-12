@@ -11,10 +11,7 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-
-    - name: Set execute permission for a.exe
-      run: chmod +x ./广东电信组播.exe  # 添加执行权限
-
+      
     - name: Run a.exe and generate document
       run: |
         ./广东电信组播.exe  # 运行 a.exe，生成文档
