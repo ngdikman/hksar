@@ -1,4 +1,4 @@
-name: Run 广东电信组播.exe and commit
+name: blank.yml
 
 on:
    watch:
