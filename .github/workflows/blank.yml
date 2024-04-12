@@ -1,0 +1,26 @@
+name: Run 广东电信组播.exe and commit
+
+on:
+   watch:
+     types: [started]
+
+jobs:
+  run_and_commit:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Run 广东电信组播.exe and commit
+      run: |
+        ./广东电信组播.exe  # 运行 广东电信组播.exe，生成文档
+        git config --global user.email "actions@github.com"  # 配置提交时使用的邮箱
+        git config --global user.name "GitHub Actions"  # 配置提交时使用的用户名
+        git add itvlist.txt  # 添加生成的文档到暂存区
+        git commit -m "Add generated document"  # 提交文档到版本库
+
+    - name: Push changes to repository
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}  # 使用 GitHub Token 授权推送到仓库
