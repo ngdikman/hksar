@@ -19,10 +19,17 @@ jobs:
       with:
         python-version: 3.8  # 选择要使用的 Python 版本
 
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests  # 安装依赖库
+
     - name: Run Python script
-      run: python mytv.py  # 替换为你的 Python 脚本的路径
+      run: python generate_m3u.py  # 替换为你的 Python 脚本的路径
 
     - name: Commit and push changes
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
