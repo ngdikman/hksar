@@ -25,7 +25,7 @@ jobs:
         pip install requests  # 安装依赖库
 
     - name: Run Python script
-      run: python generate_m3u.py  # 替换为你的 Python 脚本的路径
+      run: python mytv.py  # 替换为你的 Python 脚本的路径
 
     - name: Commit and push changes
       env:
