@@ -20,12 +20,12 @@ jobs:
         python-version: 3.8  # 选择要使用的 Python 版本
 
     - name: Run Python script
-      run: python m3u2txt.py  # 替换为你的 Python 脚本的路径
+      run: python mytv.py  # 替换为你的 Python 脚本的路径
 
     - name: Commit and push changes
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add GDIPTV.txt
-        git diff --quiet && git diff --staged --quiet || git commit -m "Update GDIPTV.txt"
+        git add mytvfree.m3u
+        git diff --quiet && git diff --staged --quiet || git commit -m "Update mytvfree.m3u"
         git push
