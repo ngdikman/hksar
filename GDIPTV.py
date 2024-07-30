@@ -54,7 +54,7 @@ if response.status_code == 200:
             print("读取文件成功")
 
         # 定义正则表达式模式
-        pattern = r'http://\d+\.\d+\.\d+\.\d+:\d+'
+        pattern = r'http://[\w]+.[\w]+.[\w]+.[\w]+:[\w]+'
         # 定义替换字符串
         replacement = random.choice(channel_addresses)
         # 使用 re.sub 替换匹配的内容
