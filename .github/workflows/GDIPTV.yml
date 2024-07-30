@@ -34,8 +34,8 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add .
+          git add GDIPTV.m3u
           git commit -m 'Update GDIPTV.m3u'
           git push
-         env:
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
