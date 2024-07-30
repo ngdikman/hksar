@@ -60,7 +60,7 @@ if response.status_code == 200:
         new_content = re.sub(pattern, f'http://{replacement}', content)
 
         # 写入修改后的内容到文件
-        with open('Canton.m3u', 'w', encoding='utf-8') as file:
+        with open('GDIPTV.m3u', 'w', encoding='utf-8') as file:
             file.write(new_content)
 else:
     print(f"请求失败，状态码: {response.status_code}")
