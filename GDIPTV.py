@@ -49,7 +49,7 @@ if response.status_code == 200:
         print("没有可用的频道地址")
     else:
         # 替换m3u文件内容
-        with open('GDIPTV.m3u', 'r', encoding='utf-8') as file:
+        with open('$GITHUB_WORKSPACE/GDIPTV.m3u', 'r', encoding='utf-8') as file:
             content = file.read()
 
         # 定义正则表达式模式
