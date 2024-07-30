@@ -7,7 +7,3 @@ https://gh.idayer.com/https://raw.githubusercontent.com/ngdikman/hksar/main/GDIP
 ```
 https://gh.idayer.com/https://raw.githubusercontent.com/ngdikman/hksar/main/GDIPTV-SP.m3u
 ```
-# 测试
-```
-https://gh.idayer.com/https://raw.githubusercontent.com/ngdikman/hksar/main/mytvfree.m3u
-```
