@@ -28,4 +28,4 @@ jobs:
           pip install requests beautifulsoup4
 
       - name: Run the script
-        run: python $GITHUB_WORKSPACE/to/GDIPTV.py  # 替换为你的脚本路径
+        run: python $GITHUB_WORKSPACE/GDIPTV.py
