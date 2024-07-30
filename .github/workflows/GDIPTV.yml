@@ -20,7 +20,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.x'  # 使用Python 3.x版本
+          python-version: '3.8'  # 使用具体的Python 3.8版本
 
       - name: Install dependencies
         run: |
@@ -37,5 +37,5 @@ jobs:
           git add GDIPTV.m3u
           git commit -m 'Update GDIPTV.m3u'
           git push
-         env:
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
