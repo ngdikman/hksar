@@ -1,8 +1,8 @@
-name: GDIPTV
+name: udpxy_update
 
 on:
   schedule:
-    - cron: '0 1 * * *'  # 每天凌晨1点运行一次
+    - cron: '0 9 * * *'  # 每天凌晨1点运行一次
   push:
     branches:
       - main  # 在推送到main分支时也运行
@@ -34,4 +34,4 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add GDIPTV.m3u
+          git add
