@@ -35,7 +35,11 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add GDIPTV.m3u
-          git commit -m 'Update GDIPTV.m3u'
-          git push
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -m 'Update GDIPTV.m3u'
+            git push
+          else
+            echo "No changes to commit"
+          fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
