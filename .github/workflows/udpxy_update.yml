@@ -35,3 +35,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
+          git commit -m "Update GDIPTV.m3u and GDIPTV-SP.m3u files" || echo "No changes to commit"
+          git push
