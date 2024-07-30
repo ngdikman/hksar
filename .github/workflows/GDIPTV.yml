@@ -37,3 +37,5 @@ jobs:
           git add GDIPTV.m3u
           git commit -m 'Update GDIPTV.m3u'
           git push
+         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
