@@ -9,13 +9,13 @@ def test_m3u(url):
         response = requests.get(url=f'http://{url}/status', timeout=1)
         if response.status_code == 200:
             print(f"{url} 访问成功")
-            return True
+            return url
         else:
-            print(f"{url} 访问失败")
-            return False
+            #print(f"{url} 访问失败")
+            return None
     except requests.RequestException:
-        print(f"{url} 访问失败")
-        return False
+        #print(f"{url} 访问失败")
+        return None
 
 # 从http://tonkiang.us/爬链接
 url = 'http://tonkiang.us/hoteliptv.php'
@@ -51,6 +51,7 @@ if response.status_code == 200:
         # 替换m3u文件内容
         with open('GDIPTV.m3u', 'r', encoding='utf-8') as file:
             content = file.read()
+            print("读取文件成功")
 
         # 定义正则表达式模式
         pattern = r'http://\d+\.\d+\.\d+\.\d+:\d+'
@@ -62,5 +63,6 @@ if response.status_code == 200:
         # 写入修改后的内容到文件
         with open('GDIPTV.m3u', 'w', encoding='utf-8') as file:
             file.write(new_content)
+            print("写入文件成功")
 else:
     print(f"请求失败，状态码: {response.status_code}")
