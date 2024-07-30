@@ -29,3 +29,11 @@ jobs:
 
       - name: Run the script
         run: python $GITHUB_WORKSPACE/GDIPTV.py
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add GDIPTV.m3u
+          git commit -m 'Update GDIPTV.m3u'
+          git push
