@@ -48,21 +48,28 @@ if response.status_code == 200:
     if not channel_addresses:
         print("没有可用的频道地址")
     else:
-        # 替换m3u文件内容
-        with open('GDIPTV.m3u', 'r', encoding='utf-8') as file:
-            content = file.read()
-            print("读取文件成功")
-
         # 定义正则表达式模式
         pattern = r'http://[\w]+.[\w]+.[\w]+.[\w]+:[\w]+'
-        # 定义替换字符串
-        replacement = random.choice(channel_addresses)
-        # 使用 re.sub 替换匹配的内容
-        new_content = re.sub(pattern, f'http://{replacement}', content)
+        # 替换内容的函数
+        def replace_m3u_file(filename):
+            with open(filename, 'r', encoding='utf-8') as file:
+                content = file.read()
+                print(f"读取 {filename} 文件成功")
 
-        # 写入修改后的内容到文件
-        with open('GDIPTV.m3u', 'w', encoding='utf-8') as file:
-            file.write(new_content)
-            print("写入文件成功")
+            # 定义替换字符串
+            replacement = random.choice(channel_addresses)
+            # 使用 re.sub 替换匹配的内容
+            new_content = re.sub(pattern, f'http://{replacement}', content)
+
+            # 写入修改后的内容到文件
+            with open(filename, 'w', encoding='utf-8') as file:
+                file.write(new_content)
+                print(f"写入 {filename} 文件成功")
+
+        # 处理 GDIPTV.m3u 文件
+        replace_m3u_file('GDIPTV.m3u')
+        # 处理 GDIPTV-SP.m3u 文件
+        replace_m3u_file('GDIPTV-SP.m3u')
+
 else:
     print(f"请求失败，状态码: {response.status_code}")
