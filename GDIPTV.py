@@ -2,6 +2,43 @@ import requests
 from bs4 import BeautifulSoup
 import random
 import re
+import subprocess
+# 获取IPTV播放速度信息（酒店源m3u等和组播源皆可用）
+def get_ffmpeg_speed(url):
+    try:
+        # 为输入的URL添加前缀和后缀
+        modified_url = f"http://{url}/udp/239.77.1.19:5146"
+
+        # 测试或超时时长/秒
+        delay = 10
+        # 构建FFmpeg命令
+        ffmpeg_command = f"ffmpeg -i {modified_url} -t {delay} -f null -"
+
+        # 执行FFmpeg命令并捕获输出
+        process = subprocess.Popen(ffmpeg_command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        stdout, stderr = process.communicate(timeout=20)
+
+        # 从FFmpeg输出中提取下载速度
+        output_str = stderr.decode("utf-8")
+        match = re.findall(r'speed=(.*?)x', output_str)
+
+        if match:
+            # 计算速度数组的平均值
+            speeds = [float(speed) for speed in match]
+            avg_speed_mbps = sum(speeds) / len(speeds)
+            speed_mbps = float('{:.2f}'.format(avg_speed_mbps))
+            speed_mbps = 0.00 if speed_mbps < 0.50 else speed_mbps
+        else:
+            speed_mbps = 0.00
+
+        return speed_mbps
+    except subprocess.CalledProcessError as e:
+        return None
+    except re.error as e:
+        return None
+    except Exception as e:
+        return None
+
 
 # 检测链接可用性
 def test_m3u(url):
@@ -42,8 +79,10 @@ if response.status_code == 200:
         b_tag = channel.find('b')
         if b_tag:
             channel_address = b_tag.get_text().strip()
-            if test_m3u(channel_address):
-                channel_addresses.append(channel_address)
+            speed = get_ffmpeg_speed(channel_address)
+            if speed and speed > 0:
+                if test_m3u(channel_address):
+                    channel_addresses.append(channel_address)
 
     if not channel_addresses:
         print("没有可用的频道地址")
@@ -69,7 +108,7 @@ if response.status_code == 200:
         # 处理 GDIPTV.m3u 文件
         replace_m3u_file('GDIPTV.m3u')
         # 处理 GDIPTV-SP.m3u 文件
-        replace_m3u_file('GDIPTV-SP.m3u')
+        #replace_m3u_file('GDIPTV-SP.m3u')
 
 else:
     print(f"请求失败，状态码: {response.status_code}")
