@@ -107,7 +107,7 @@ if response.status_code == 200:
         # 处理 GDIPTV.m3u 文件
         replace_m3u_file('GDIPTV.m3u')
         # 处理 GDIPTV-SP.m3u 文件
-        #replace_m3u_file('GDIPTV-SP.m3u')
+        replace_m3u_file('GDIPTV-SP.m3u')
 
 else:
     print(f"请求失败，状态码: {response.status_code}")
