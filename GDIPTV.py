@@ -6,7 +6,6 @@ import subprocess
 # 获取IPTV播放速度信息（酒店源m3u等和组播源皆可用）
 def get_ffmpeg_speed(url):
     try:
-        # 为输入的URL添加前缀和后缀
         modified_url = f"http://{url}/udp/239.77.1.19:5146"
 
         # 测试或超时时长/秒
