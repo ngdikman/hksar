@@ -38,7 +38,6 @@ def get_ffmpeg_speed(url):
     except Exception as e:
         return None
 
-
 # 检测链接可用性
 def test_m3u(url):
     try:
