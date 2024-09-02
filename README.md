@@ -2,8 +2,8 @@
 国内直连
 
 ```
-https://gh.idayer.com/https://raw.githubusercontent.com/ngdikman/hksar/main/GDIPTV.m3u
+https://git.backin.us.kg/https://raw.githubusercontent.com/ngdikman/hksar/main/GDIPTV.m3u
 ```
 ```
-https://gh.idayer.com/https://raw.githubusercontent.com/ngdikman/hksar/main/GDIPTV-SP.m3u
+https://git.backin.us.kg/https://raw.githubusercontent.com/ngdikman/hksar/main/GDIPTV-SP.m3u
 ```
