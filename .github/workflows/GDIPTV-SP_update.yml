@@ -8,6 +8,7 @@ on:
       - main  # 在推送到main分支时也运行
   watch:
     types: [ started ]
+  workflow_dispatch:  
 
 jobs:
   run-script:
