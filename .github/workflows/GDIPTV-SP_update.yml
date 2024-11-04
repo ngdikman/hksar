@@ -2,7 +2,7 @@ name: GDIPTV-SP_update
 
 on:
   schedule:
-    - cron: '0 9 * * *' 
+    - cron: '0 9 */2 * *' 
   push:
     branches:
       - main  # 在推送到main分支时也运行
