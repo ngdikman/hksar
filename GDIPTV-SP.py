@@ -2,7 +2,6 @@ import requests
 import random
 import re
 import base64
-import os
 
 # 检测链接可用性
 def test_m3u(url):
@@ -19,13 +18,11 @@ def test_m3u(url):
         return None
 
 # 爬链接
-cookie = os.getenv("FOFA_COOKIE")
+# cookie = os.getenv("FOFA_COOKIE")
 headers={
-    'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
-    'Accept': 'application/json, text/plain, */*',
-    'Authorization':cookie
+    'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36'
 }
-urls = ["guangzhou","jiangmen","shantou","shenzhen","dongguan","qingyuan"]
+urls = ["Guangzhou", "Shenzhen", "Zhuhai", "Shantou", "Shaoguan", "Foshan", "Jiangmen", "Zhanjiang", "Maoming", "Zhaoqing", "Huizhou", "Meizhou", "Shanwei", "Heyuan", "Yangjiang", "Qingyuan", "Dongguan", "Zhongshan", "Chaozhou", "Jieyang", "Yunfu"]
 urls_all = []
 for url in urls:
     url_0 = str(base64.b64encode((f'"Server: udpxy" && city="{url}" && org="Chinanet"').encode("utf-8")), "utf-8")
