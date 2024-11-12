@@ -20,7 +20,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
-          fetch-depth: 0
+          fetch-depth: 0  # 获取完整的历史记录，避免冲突
 
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -41,7 +41,13 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          
+          # 添加并提交更改
           git add ip-port.txt GDIPTV.m3u GDIPTV-SP.m3u
           git commit -m "Update files" || echo "No changes to commit"
-          git pull --rebase origin main
-          git push origin main
+          
+          # 拉取远程仓库的最新提交并合并
+          git pull origin main || { echo "Pull failed, aborting"; exit 1; }
+
+          # 推送更改到远程仓库
+          git push origin main || { echo "Push failed, aborting"; exit 1; }
