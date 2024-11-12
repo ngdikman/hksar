@@ -35,7 +35,6 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add .
-          git commit -m "Update GDIPTV.m3u and GDIPTV-SP.m3u files" || echo "No changes to commit"
-          git pull --rebase origin main
-          git push
+          git add ip-port.txt GDIPTV.m3u GDIPTV-SP.m3u
+          git commit -m "Update files" || echo "No changes to commit"
+          git push origin main
