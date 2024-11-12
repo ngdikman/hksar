@@ -9,7 +9,7 @@ on:
     paths: 
       - '**.js'
   watch:
-    types: [ started ]
+    types: [started]
   workflow_dispatch:  
 
 jobs:
@@ -19,6 +19,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -38,6 +40,6 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add ip-port.txt GDIPTV.m3u GDIPTV-SP.m3u
-          git commit -m "Update files" || echo "No changes to commit"  
-          git pull --rebase origin main
+          git commit -m "Update files" || echo "No changes to commit"
+          git pull --rebase origin main        
           git push origin main
