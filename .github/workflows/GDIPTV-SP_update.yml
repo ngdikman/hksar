@@ -36,10 +36,12 @@ jobs:
         run: python $GITHUB_WORKSPACE/GDIPTV-SP.py
 
       - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add ip-port.txt GDIPTV.m3u GDIPTV-SP.m3u
           git commit -m "Update files" || echo "No changes to commit"
-          git pull --rebase origin main        
+          git pull --rebase origin main
           git push origin main
