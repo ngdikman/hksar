@@ -32,17 +32,8 @@ def replace_m3u_file(filename, replacement_url):
 
 # 爬取链接
 def fetch_channels(base_url, search_term):
-    html_content=requests.post(base_url).content
-    soup = BeautifulSoup(html_content, 'html.parser')
-    name_input = soup.find('input', {'id': 'search'})
-    name = name_input.get('name')
-    town_input = soup.find('input', {'id': 'town'})
-    town = town_input.get('value')
-    ave_input = soup.find('input', {'id': 'ave'})
-    ave = ave_input.get('value')
-
     session = requests.Session()
-    response = session.post(base_url, data={name: search_term, 'town': '947c635c', 'ave': ave})
+    response = session.post(base_url, data={saerch: search_term})
 
     if response.status_code != 200:
         print(f"请求失败，状态码: {response.status_code}")
