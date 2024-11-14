@@ -31,9 +31,9 @@ user_agent = [
 cookie = os.getenv("FOFA_COOKIE")
 User_Agent = user_agent[random.randint(0, len(user_agent) - 1)]
 headers = {
-    'User-Agent': User_Agent,
-    'Accept': 'application/json, text/plain, */*',
-    'Authorization':cookie
+    'User-Agent': User_Agent
+    # 'Accept': 'application/json, text/plain, */*',
+    # 'Authorization':cookie
 }
 
 # 定义需要爬取的城市
