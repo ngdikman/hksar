@@ -37,6 +37,8 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          git status
+          git pull --rebase origin main
           git add -A
           if ! git diff --staged --quiet; then
             git commit -m "Update files" || echo "No changes to commit"
