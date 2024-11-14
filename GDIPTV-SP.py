@@ -6,9 +6,9 @@ import os
 
 cookie = os.getenv("FOFA_COOKIE")
 headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36'
-    # 'Accept': 'application/json, text/plain, */*',
-    # 'Authorization':cookie
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+    'Accept': 'application/json, text/plain, */*',
+    'Authorization':cookie
 }
 
 # 定义需要爬取的城市
