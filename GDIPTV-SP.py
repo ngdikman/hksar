@@ -143,9 +143,8 @@ def main():
 
     # 随机选择一个频道地址更新文件
     if valid_addresses:
-        selected_address = random.choice(valid_addresses)
-        replace_m3u_file('GDIPTV.m3u', selected_address)
-        replace_m3u_file('GDIPTV-SP.m3u', selected_address)
+        replace_m3u_file('GDIPTV.m3u', random.choice(valid_addresses))
+        replace_m3u_file('GDIPTV-SP.m3u', random.choice(valid_addresses))
     else:
         print("没有可用的频道地址")
 
