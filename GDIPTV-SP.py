@@ -43,7 +43,7 @@ urls_all = []
 # 通过 Fofa 获取 IP 地址
 for url in urls:
     url_0 = str(base64.b64encode((f'"Server: udpxy" && city="{url}" && org="Chinanet"').encode("utf-8")), "utf-8")
-    url_64 = f'https://fofa.so/result?&qbase64={url_0}'
+    url_64 = f'https://fofa.info/result?&qbase64={url_0}'
 
     try:
         response = requests.get(url_64, headers=headers, timeout=15)
