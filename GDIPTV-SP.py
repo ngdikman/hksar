@@ -1,8 +1,16 @@
 import requests
 import re
 import random
-import base64
-import os
+
+def get_public_ip():
+    try:
+        response = requests.get("https://httpbin.org/ip")
+        response.raise_for_status()
+        ip = response.json().get("origin")
+        return ip
+    except requests.RequestException as e:
+        print(f"Error fetching IP: {e}")
+        return None
 
 user_agent = [
         'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:86.0) Gecko/20100101 Firefox/86.0',
@@ -33,6 +41,7 @@ headers = {
     'User-Agent': User_Agent
 }
 
+# 定义需要爬取的城市
 urls = {"guangzhou":"https://fofa.info/result?qbase64=IlNlcnZlcjogdWRweHkiICYmIGNpdHk9Imd1YW5nemhvdSIgJiYgb3JnPSJDaGluYW5ldCI%3D",
         "jiangmen":"https://fofa.info/result?qbase64=IlNlcnZlcjogdWRweHkiICYmIGNpdHk9IkppYW5nbWVuIiAmJiBvcmc9IkNoaW5hbmV0Ig%3D%3D",
         "shantou":"https://fofa.info/result?qbase64=IlNlcnZlcjogdWRweHkiICYmIGNpdHk9InNoYW50b3UiICYmIG9yZz0iQ2hpbmFuZXQi",
@@ -41,22 +50,24 @@ urls = {"guangzhou":"https://fofa.info/result?qbase64=IlNlcnZlcjogdWRweHkiICYmIG
         "qingyuan":"https://fofa.info/result?qbase64=IlNlcnZlcjogdWRweHkiICYmIGNpdHk9InFpbmd5dWFuIiAmJiBvcmc9IkNoaW5hbmV0Ig%3D%3D"
         }
 urls_all = []
+print("当前IP为:", get_public_ip())
 
-for city, url_64 in urls.items():
+# 通过 Fofa 获取 IP 地址
+for city, url in urls.items():
     try:
-        response = requests.get(url_64, headers=headers, timeout=15)
+        response = requests.get(url, headers=headers, timeout=10)
         page_content = response.text
         print(f" {city} 访问成功")
 
         # 使用正则提取 IP 地址
-        pattern = r'href="(http://\d+\.\d+\.\d+\.\d+:\d+)"'
+        pattern = r'href="(http:\/\/\d+\.\d+\.\d+\.\d+:\d+)"'
         page_urls = re.findall(pattern, page_content)
 
         for urlx in page_urls:
             try:
                 # 检测链接是否可用
-                response = requests.get(url=f'{urlx}/status', timeout=1)
-                response.raise_for_status()  # 如果状态码不是 200 会引发异常
+                response = requests.get(url=f'{urlx}/status', timeout=10)
+                response.raise_for_status() 
                 page_content = response.text
 
                 # 判断页面是否包含有效的内容
@@ -71,12 +82,9 @@ for city, url_64 in urls.items():
     except requests.RequestException:
         pass
 
-# 去重获取到的 IP 地址
-channel_addresses = list(set(urls_all))
-if not channel_addresses:
-    print("没有可用的频道地址")
+channel_addresses = urls_all
+print(channel_addresses)
 
-# M3U 文件 URL 替换逻辑
 url_pattern = re.compile(r'http://[\w.]+:[\d]+')
 
 # 检测链接可用性
@@ -106,16 +114,16 @@ def replace_m3u_file(filename, replacement_url):
 
 # 从文件中读取频道地址
 def read_addresses_from_file(filename='ip-port.txt'):
-    addresses = set()  # 使用集合去重
+    existing_addresses = []  # 使用列表存储所有地址
     try:
         with open(filename, 'r', encoding='utf-8') as file:
             for line in file:
                 address = line.strip()
                 if address:
-                    addresses.add(address)
+                    existing_addresses.append(address)  # 添加到列表
     except IOError:
         print(f"无法读取文件 {filename}")
-    return addresses
+    return existing_addresses
 
 # 保存频道地址到文件
 def save_addresses_to_file(channel_addresses, filename='ip-port.txt'):
@@ -131,7 +139,7 @@ def save_addresses_to_file(channel_addresses, filename='ip-port.txt'):
 def main():
     # 合并新的和已有的频道地址并去重
     existing_addresses = read_addresses_from_file('ip-port.txt')
-    all_addresses = set(channel_addresses) | existing_addresses
+    all_addresses = channel_addresses | existing_addresses
 
     # 检测合并后的频道地址可用性
     valid_addresses = [addr for addr in all_addresses if test_m3u(addr)]
@@ -143,7 +151,7 @@ def main():
     if valid_addresses:
         selected_address = random.choice(valid_addresses)
         replace_m3u_file('GDIPTV.m3u', selected_address)
-        replace_m3u_file('GDIPTV-SP.m3u', selected_address)
+        # replace_m3u_file('GDIPTV-SP.m3u', selected_address)
     else:
         print("没有可用的频道地址")
 
