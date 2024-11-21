@@ -2,16 +2,6 @@ import requests
 import re
 import random
 
-def get_public_ip():
-    try:
-        response = requests.get("https://httpbin.org/ip")
-        response.raise_for_status()
-        ip = response.json().get("origin")
-        return ip
-    except requests.RequestException as e:
-        print(f"Error fetching IP: {e}")
-        return None
-
 user_agent = [
         'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:86.0) Gecko/20100101 Firefox/86.0',
         'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3100.0 Safari/537.36',
@@ -50,7 +40,6 @@ urls = {"guangzhou":"https://fofa.info/result?qbase64=IlNlcnZlcjogdWRweHkiICYmIG
         "qingyuan":"https://fofa.info/result?qbase64=IlNlcnZlcjogdWRweHkiICYmIGNpdHk9InFpbmd5dWFuIiAmJiBvcmc9IkNoaW5hbmV0Ig%3D%3D"
         }
 urls_all = []
-print("当前IP为:", get_public_ip())
 
 # 通过 Fofa 获取 IP 地址
 for city, url in urls.items():
