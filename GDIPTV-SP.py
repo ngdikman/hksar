@@ -28,27 +28,25 @@ user_agent = [
         'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)'
     ]
 
-cookie = os.getenv("FOFA_COOKIE")
 User_Agent = user_agent[random.randint(0, len(user_agent) - 1)]
 headers = {
     'User-Agent': User_Agent
-    # 'Accept': 'application/json, text/plain, */*',
-    # 'Authorization':cookie
 }
 
-# 定义需要爬取的城市
-urls = ["guangzhou", "jiangmen", "shantou", "shenzhen", "dongguan", "qingyuan"]
+urls = {"guangzhou":"https://fofa.info/result?qbase64=IlNlcnZlcjogdWRweHkiICYmIGNpdHk9Imd1YW5nemhvdSIgJiYgb3JnPSJDaGluYW5ldCI%3D",
+        "jiangmen":"https://fofa.info/result?qbase64=IlNlcnZlcjogdWRweHkiICYmIGNpdHk9IkppYW5nbWVuIiAmJiBvcmc9IkNoaW5hbmV0Ig%3D%3D",
+        "shantou":"https://fofa.info/result?qbase64=IlNlcnZlcjogdWRweHkiICYmIGNpdHk9InNoYW50b3UiICYmIG9yZz0iQ2hpbmFuZXQi",
+        "shenzhen":"https://fofa.info/result?qbase64=IlNlcnZlcjogdWRweHkiICYmIGNpdHk9InNoZW56aGVuIiAmJiBvcmc9IkNoaW5hbmV0Ig%3D%3D",
+        "dongguan":"https://fofa.info/result?qbase64=IlNlcnZlcjogdWRweHkiICYmIGNpdHk9ImRvbmdndWFuIiAmJiBvcmc9IkNoaW5hbmV0Ig%3D%3D",
+        "qingyuan":"https://fofa.info/result?qbase64=IlNlcnZlcjogdWRweHkiICYmIGNpdHk9InFpbmd5dWFuIiAmJiBvcmc9IkNoaW5hbmV0Ig%3D%3D"
+        }
 urls_all = []
 
-# 通过 Fofa 获取 IP 地址
-for url in urls:
-    url_0 = str(base64.b64encode((f'"Server: udpxy" && city="{url}" && org="Chinanet"').encode("utf-8")), "utf-8")
-    url_64 = f'https://fofa.info/result?&qbase64={url_0}'
-
+for city, url_64 in urls.items():
     try:
         response = requests.get(url_64, headers=headers, timeout=15)
         page_content = response.text
-        print(f" {url} 访问成功")
+        print(f" {city} 访问成功")
 
         # 使用正则提取 IP 地址
         pattern = r'href="(http://\d+\.\d+\.\d+\.\d+:\d+)"'
@@ -143,8 +141,9 @@ def main():
 
     # 随机选择一个频道地址更新文件
     if valid_addresses:
-        replace_m3u_file('GDIPTV.m3u', random.choice(valid_addresses))
-        replace_m3u_file('GDIPTV-SP.m3u', random.choice(valid_addresses))
+        selected_address = random.choice(valid_addresses)
+        replace_m3u_file('GDIPTV.m3u', selected_address)
+        replace_m3u_file('GDIPTV-SP.m3u', selected_address)
     else:
         print("没有可用的频道地址")
 
