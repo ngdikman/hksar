@@ -147,11 +147,21 @@ def main():
     # 保存有效的频道地址到文件
     save_addresses_to_file(valid_addresses, 'ip-port.txt')
 
-    # 随机选择一个频道地址更新文件
-    if valid_addresses:
-        selected_address = random.choice(valid_addresses)
-        replace_m3u_file('GDIPTV.m3u', selected_address)
-        replace_m3u_file('GDIPTV-SP.m3u', selected_address)
+    # 检查有效地址数量
+    if valid_addresses:        
+        if len(valid_addresses) >= 2:
+            selected_address_1 = random.choice(valid_addresses)
+            valid_addresses.remove(selected_address_1) 
+            selected_address_2 = random.choice(valid_addresses) 
+
+            replace_m3u_file('GDIPTV.m3u', selected_address_1)
+            replace_m3u_file('GDIPTV-SP.m3u', selected_address_2)
+
+        else:
+            selected_address = random.choice(valid_addresses)  
+            replace_m3u_file('GDIPTV.m3u', selected_address)
+            replace_m3u_file('GDIPTV-SP.m3u', selected_address)
+
     else:
         print("没有可用的频道地址")
 
