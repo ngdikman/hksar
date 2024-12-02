@@ -90,7 +90,7 @@ url_pattern = re.compile(r'http://[\w.]+:[\d]+')
 # 检测链接可用性
 def test_m3u(url):
     try:
-        response = requests.get(url=f'http://{url}/status', timeout=1)
+        response = requests.get(url=f'http://{url}/status', timeout=10)
         if response.status_code == 200:
             print(f"{url} 访问成功")
             return url
