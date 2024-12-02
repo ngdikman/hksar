@@ -139,6 +139,7 @@ def save_addresses_to_file(channel_addresses, filename='ip-port.txt'):
 def main():
     # 合并新的和已有的频道地址并去重
     existing_addresses = read_addresses_from_file('ip-port.txt')
+    print(f"已有频道为：{existing_addresses}")
     all_addresses = list(set(channel_addresses + existing_addresses))
 
     # 检测合并后的频道地址可用性
