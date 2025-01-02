@@ -67,13 +67,13 @@ http://120.197.18.252:2901/udp/224.1.100.142:11111
 http://120.197.18.252:2901/udp/224.1.100.131:11111
 #EXTINF:-1,tvg-id="安徽卫视" tvg-name="安徽卫视" tvg-logo="https://epg.v1.mk/logo/安徽卫视.png" group-title="卫视",安徽卫视
 http://120.197.18.252:2901/udp/224.1.100.66:11111
-#EXTINF:-1,tvg-id="北京纪实" tvg-name="北京纪实" tvg-logo="https://epg.v1.mk/logo/北京纪实.png" group-title="北京",北京纪实科教
+#EXTINF:-1,tvg-id="北京纪实" tvg-name="北京纪实" tvg-logo="https://epg.v1.mk/logo/北京纪实.png" group-title="其他",北京纪实科教
 http://120.197.18.252:2901/udp/224.1.100.115:11111
-#EXTINF:-1,tvg-id="北京纪实" tvg-name="北京纪实" tvg-logo="https://epg.v1.mk/logo/北京纪实.png" group-title="北京",北京纪实科教
+#EXTINF:-1,tvg-id="北京纪实" tvg-name="北京纪实" tvg-logo="https://epg.v1.mk/logo/北京纪实.png" group-title="其他",北京纪实科教
 http://120.197.18.252:2901/udp/224.1.100.31:11111
-#EXTINF:-1,tvg-id="卡酷少儿" tvg-name="卡酷少儿" tvg-logo="https://epg.v1.mk/logo/卡酷少儿.png" group-title="北京",北京卡酷少儿
+#EXTINF:-1,tvg-id="卡酷少儿" tvg-name="卡酷少儿" tvg-logo="https://epg.v1.mk/logo/卡酷少儿.png" group-title="其他",北京卡酷少儿
 http://120.197.18.252:2901/udp/224.1.100.146:11111
-#EXTINF:-1,tvg-id="北京卫视" tvg-name="北京卫视" tvg-logo="https://epg.v1.mk/logo/北京卫视.png" group-title="卫视",北京卫视
+#EXTINF:-1,tvg-id="北京卫视" tvg-name="北京卫视" tvg-logo="https://epg.v1.mk/logo/北京卫视.png" group-title="其他",北京卫视
 http://120.197.18.252:2901/udp/224.1.100.100:11111
 #EXTINF:-1,tvg-id="茶" tvg-name="茶" tvg-logo="https://epg.v1.mk/logo/茶.png" group-title="其他",茶频道
 http://120.197.18.252:2901/udp/224.1.100.117:11111
