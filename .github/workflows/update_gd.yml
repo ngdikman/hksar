@@ -1,8 +1,8 @@
-name: update_tv
+name: update_gd
 
 on:
   schedule:
-    - cron: '0 9,23 * * *' 
+    - cron: '10 9,23 * * *' 
   push:
     branches:
       - main
@@ -28,7 +28,7 @@ jobs:
     - name: Run Multitest Script
       #working-directory: zubo/speedtest
       run: |
-       bash $GITHUB_WORKSPACE/dx.sh
+       bash $GITHUB_WORKSPACE/gd.sh
         
     - name: Update Results
       run: |
@@ -36,5 +36,5 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add .
-        git commit -m "Update results"
+        git commit -m "Update files"
         git push

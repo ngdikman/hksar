@@ -1,5 +1,5 @@
-rm -rf ip/dianxin.onlygood.ip
-city="dianxin"
+rm -rf ip/guangdian.onlygood.ip
+city="guangdian"
 # 使用城市名作为默认文件名，格式为 CityName.ip
 ipfile="ip/${city}.ip"
 only_good_ip="ip/${city}.onlygood.ip"
@@ -33,7 +33,7 @@ time=$(date +%Y%m%d%H%M%S) # 定义 time 变量
 while IFS= read -r line; do
     i=$((i + 1))
     ip="$line"
-    url="http://$ip/udp/239.77.0.114:5146"
+    url="http://$ip/udp/224.1.100.90:11111"
     echo "$url"
     curl "$url" --connect-timeout 3 --max-time 10 -o /dev/null >zubo.tmp 2>&1
     a=$(head -n 3 zubo.tmp | awk '{print $NF}' | tail -n 1)
@@ -46,16 +46,16 @@ rm -f zubo.tmp
 awk '/M|k/{print $2"  "$1}' "speedtest_${city}_$time.log" | sort -n -r >"result/result_fofa_${city}.txt"
 cat "result/result_fofa_${city}.txt"
 ip1=$(awk 'NR==1{print $2}' result/result_fofa_${city}.txt)
-ip2=$(awk 'NR==2{print $2}' result/result_fofa_${city}.txt)
+#ip2=$(awk 'NR==2{print $2}' result/result_fofa_${city}.txt)
 #ip3=$(awk 'NR==3{print $2}' result/result_fofa_${city}.txt)
 rm -f "speedtest_${city}_$time.log"
 
 # 用 3 个最快 ip 生成对应城市的 txt 文件
-program="template/template_dx.m3u"
+program="template/template_gd.m3u"
 
 sed "s/ipipip/$ip1/g" "$program" > tmp1.txt
-sed "s/ipipip/$ip2/g" "$program" > tmp2.txt
+#sed "s/ipipip/$ip2/g" "$program" > tmp2.txt
 #sed "s/ipipip/$ip3/g" "$program" > tmp3.txt
-cat tmp1.txt > "GDIPTV.m3u"
-cat tmp2.txt > "GDIPTV-SP.m3u"
+cat tmp1.txt > "guangdian.m3u"
+#cat tmp2.txt > "GDIPTV-SP.m3u"
 rm -rf tmp1.txt tmp2.txt tmp3.txt
