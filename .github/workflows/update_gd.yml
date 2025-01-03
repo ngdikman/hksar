@@ -2,15 +2,13 @@ name: update_gd
 
 on:
   schedule:
-    - cron: '15 9,23 * * *' 
+    - cron: '15 9,23 * * *'
   push:
     branches:
       - main
     paths: 
       - '**.js'
-  watch:
-    types: [started]
-  workflow_dispatch: 
+  workflow_dispatch:
 
 jobs:
   run-script:
