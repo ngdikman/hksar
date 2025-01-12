@@ -67,9 +67,9 @@ http://113.64.197.168:6633/udp/239.77.1.244:5146
 http://113.64.197.168:6633/udp/239.77.1.178:5146
 #EXTINF:-1,tvg-id="深圳公共" tvg-name="深圳公共" tvg-logo="https://epg.v1.mk/logo/深圳公共.png" group-title="广东",深圳公共
 http://113.64.197.168:6633/udp/239.77.1.126:5146
-#EXTINF:-1,tvg-id="深圳宝安频道" tvg-name="深圳宝安频道" tvg-logo="https://epg.v1.mk/logo/深圳宝安.png" group-title="广东",深圳宝安
+#EXTINF:-1,tvg-id="宝安频道" tvg-name="宝安频道" tvg-logo="https://epg.v1.mk/logo/深圳宝安.png" group-title="广东",深圳宝安
 http://113.64.197.168:6633/udp/239.77.1.67:5146
-#EXTINF:-1,tvg-id="深圳龙岗频道" tvg-name="深圳龙岗频道" tvg-logo="https://epg.v1.mk/logo/深圳龙岗频道.png" group-title="广东",深圳龙岗
+#EXTINF:-1,tvg-id="龙岗频道" tvg-name="龙岗频道" tvg-logo="https://epg.v1.mk/logo/深圳龙岗频道.png" group-title="广东",深圳龙岗
 http://113.64.197.168:6633/udp/239.77.1.223:5146
 #EXTINF:-1,tvg-id="深圳众创TV" tvg-name="深圳众创TV" tvg-logo="https://epg.v1.mk/logo/深圳众创TV.png" group-title="广东",深圳众创TV
 http://113.64.197.168:6633/udp/239.77.1.247:5146
@@ -93,9 +93,9 @@ http://113.64.197.168:6633/udp/239.77.0.187:5146
 http://113.64.197.168:6633/udp/239.77.0.201:5146
 #EXTINF:-1,tvg-id="江门侨乡生活" tvg-name="江门侨乡生活" tvg-logo="https://epg.v1.mk/logo/江门侨乡生活.png" group-title="广东",江门侨乡生活
 http://113.64.197.168:6633/udp/239.77.0.202:5146
-#EXTINF:-1,tvg-id="HZTV-1" tvg-name="HZTV-1" tvg-logo="https://epg.v1.mk/logo/GD-HZTV1.png" group-title="其他",惠州1套
+#EXTINF:-1,tvg-id="HZTV-1" tvg-name="HZTV-1" tvg-logo="https://epg.v1.mk/logo/GD-HZTV1.png" group-title="广东",惠州1套
 http://113.64.197.168:6633/udp/239.77.1.232:5146
-#EXTINF:-1,tvg-id="HZTV-2" tvg-name="HZTV-2" tvg-logo="https://epg.v1.mk/logo/GD-HZTV2.png" group-title="其他",惠州2套
+#EXTINF:-1,tvg-id="HZTV-2" tvg-name="HZTV-2" tvg-logo="https://epg.v1.mk/logo/GD-HZTV2.png" group-title="广东",惠州2套
 http://113.64.197.168:6633/udp/239.77.1.233:5146
 #EXTINF:-1,tvg-id="珠海新闻" tvg-name="珠海新闻" tvg-logo="https://epg.v1.mk/logo/GD-ZHTV1.png" group-title="广东",珠海-1
 http://113.64.197.168:6633/udp/239.77.0.155:5146
