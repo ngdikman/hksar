@@ -13,9 +13,13 @@ https://backin.wang/GDIPTV
 ```
 https://backin.wang/GDIPTV-SP
 ```
-> 电信txt
+> 杂七杂八txt 【适配影视 影视仓】
 ```
 https://backin.wang/dianxin
+```
+> 杂七杂八m3u 【适配GOTV CloudStream】
+```
+https://backin.wang/gotv
 ```
 <!-- 
 > 电信国内直连
