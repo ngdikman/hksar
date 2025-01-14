@@ -50,21 +50,15 @@ ip2=$(awk 'NR==2{print $2}' result/result_fofa_${city}.txt)
 #ip3=$(awk 'NR==3{print $2}' result/result_fofa_${city}.txt)
 rm -f "speedtest_${city}_$time.log"
 
-# 用 3 个最快 ip 生成对应城市的 txt 文件
+# 用 3 个最快 ip 生成对应城市的 m3u或txt
 program="template/template_dx.m3u"
 txtprogram="template/template_dx.txt"
 
-sed "s/ipipip/$ip1/g" "$program" > tmp1.txt
-sed "s/ipipip/$ip2/g" "$program" > tmp2.txt
-cat tmp1.txt > "GDIPTV.m3u"
-cat tmp2.txt > "GDIPTV-SP.m3u"
+sed "s/ipipip/$ip1/g" "$program" > GDIPTV.m3u
+sed "s/ipipip/$ip2/g" "$program" > GDIPTV-SP.m3u
+sed -e "s/ipipip/$ip1/g" -e "s/urlurlurl/$ip2/g" "$txtprogram" > "txt/fofa_${city}.txt"
 
-sed "s/ipipip/$ip1/g" "$txtprogram" > tmp3.txt
-sed "s/ipipip/$ip2/g" "$txtprogram" > tmp4.txt
-cat tmp3.txt tmp4.txt > "txt/fofa_${city}.txt"
-
-rm -rf tmp1.txt tmp2.txt tmp3.txt tmp4.txt
+# 汇总生成txt
 rm -rf dianxin.txt
-
 curl -s https://aktv.top/live.txt >>dianxin.txt
 cat txt/fofa_dianxin.txt >>dianxin.txt
