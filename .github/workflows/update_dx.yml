@@ -2,7 +2,7 @@ name: update_dx
 
 on:
   schedule:
-    - cron: '50 23 * * *' 
+    - cron: '30 23 * * *' 
   push:
     branches:
       - main
