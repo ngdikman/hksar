@@ -5,53 +5,53 @@ http://ipipip/udp/224.1.100.121:11111
 http://ipipip/udp/224.1.100.123:11111
 #EXTINF:-1,tvg-id="大湾区卫视" tvg-name="大湾区卫视" tvg-logo="https://epg.v1.mk/logo/大湾区卫视.png" group-title="广东",大湾区卫视
 http://ipipip/udp/224.1.100.153:11111
-#EXTINF:-1,tvg-id="CCTV1" tvg-name="CCTV1" tvg-logo="https://epg.v1.mk/logo/CCTV1.png" group-title="央视",CCTV1
+#EXTINF:-1,tvg-id="CCTV-1" tvg-name="CCTV-1" tvg-logo="https://epg.v1.mk/logo/CCTV-1.png" group-title="央视",CCTV-1
 http://ipipip/udp/224.1.100.90:11111
-#EXTINF:-1,tvg-id="CCTV2" tvg-name="CCTV2" tvg-logo="https://epg.v1.mk/logo/CCTV2.png" group-title="央视",CCTV2
+#EXTINF:-1,tvg-id="CCTV-2" tvg-name="CCTV-2" tvg-logo="https://epg.v1.mk/logo/CCTV-2.png" group-title="央视",CCTV-2
 http://ipipip/udp/224.1.100.192:11111
-#EXTINF:-1,tvg-id="CCTV2" tvg-name="CCTV2" tvg-logo="https://epg.v1.mk/logo/CCTV2.png" group-title="央视",CCTV2
+#EXTINF:-1,tvg-id="CCTV-2" tvg-name="CCTV-2" tvg-logo="https://epg.v1.mk/logo/CCTV-2.png" group-title="央视",CCTV-2
 http://ipipip/udp/224.1.100.94:11111
-#EXTINF:-1,tvg-id="CCTV3" tvg-name="CCTV3" tvg-logo="https://epg.v1.mk/logo/CCTV3.png" group-title="央视",CCTV3
+#EXTINF:-1,tvg-id="CCTV-3" tvg-name="CCTV-3" tvg-logo="https://epg.v1.mk/logo/CCTV-3.png" group-title="央视",CCTV-3
 http://ipipip/udp/224.1.100.64:11111
-#EXTINF:-1,tvg-id="CCTV4" tvg-name="CCTV4" tvg-logo="https://epg.v1.mk/logo/CCTV4.png" group-title="央视",CCTV4
+#EXTINF:-1,tvg-id="CCTV-4" tvg-name="CCTV-4" tvg-logo="https://epg.v1.mk/logo/CCTV-4.png" group-title="央视",CCTV-4
 http://ipipip/udp/224.1.100.104:11111
-#EXTINF:-1,tvg-id="CCTV5" tvg-name="CCTV5" tvg-logo="https://epg.v1.mk/logo/CCTV5.png" group-title="央视",CCTV5
+#EXTINF:-1,tvg-id="CCTV-5" tvg-name="CCTV-5" tvg-logo="https://epg.v1.mk/logo/CCTV-5.png" group-title="央视",CCTV-5
 http://ipipip/udp/224.1.100.193:11111
-#EXTINF:-1,tvg-id="CCTV5" tvg-name="CCTV5" tvg-logo="https://epg.v1.mk/logo/CCTV5.png" group-title="央视",CCTV5
+#EXTINF:-1,tvg-id="CCTV-5" tvg-name="CCTV-5" tvg-logo="https://epg.v1.mk/logo/CCTV-5.png" group-title="央视",CCTV-5
 http://ipipip/udp/224.1.100.82:11111
-#EXTINF:-1,tvg-id="CCTV5+" tvg-name="CCTV5+" tvg-logo="https://epg.v1.mk/logo/CCTV5+.png" group-title="央视",CCTV5+
+#EXTINF:-1,tvg-id="CCTV-5+" tvg-name="CCTV-5+" tvg-logo="https://epg.v1.mk/logo/CCTV-5+.png" group-title="央视",CCTV-5+
 http://ipipip/udp/224.1.100.196:11111
-#EXTINF:-1,tvg-id="CCTV5+" tvg-name="CCTV5+" tvg-logo="https://epg.v1.mk/logo/CCTV5+.png" group-title="央视",CCTV5+
+#EXTINF:-1,tvg-id="CCTV-5+" tvg-name="CCTV-5+" tvg-logo="https://epg.v1.mk/logo/CCTV-5+.png" group-title="央视",CCTV-5+
 http://ipipip/udp/224.1.100.25:11111
-#EXTINF:-1,tvg-id="CCTV6" tvg-name="CCTV6" tvg-logo="https://epg.v1.mk/logo/CCTV6.png" group-title="央视",CCTV6
+#EXTINF:-1,tvg-id="CCTV-6" tvg-name="CCTV-6" tvg-logo="https://epg.v1.mk/logo/CCTV-6.png" group-title="央视",CCTV-6
 http://ipipip/udp/224.1.100.194:11111
-#EXTINF:-1,tvg-id="CCTV6" tvg-name="CCTV6" tvg-logo="https://epg.v1.mk/logo/CCTV6.png" group-title="央视",CCTV6
+#EXTINF:-1,tvg-id="CCTV-6" tvg-name="CCTV-6" tvg-logo="https://epg.v1.mk/logo/CCTV-6.png" group-title="央视",CCTV-6
 http://ipipip/udp/224.1.100.84:11111
-#EXTINF:-1,tvg-id="CCTV7" tvg-name="CCTV7" tvg-logo="https://epg.v1.mk/logo/CCTV7.png" group-title="央视",CCTV7
+#EXTINF:-1,tvg-id="CCTV-7" tvg-name="CCTV-7" tvg-logo="https://epg.v1.mk/logo/CCTV-7.png" group-title="央视",CCTV-7
 http://ipipip/udp/224.1.100.27:11111
-#EXTINF:-1,tvg-id="CCTV8" tvg-name="CCTV8" tvg-logo="https://epg.v1.mk/logo/CCTV8.png" group-title="央视",CCTV8
+#EXTINF:-1,tvg-id="CCTV-8" tvg-name="CCTV-8" tvg-logo="https://epg.v1.mk/logo/CCTV-8.png" group-title="央视",CCTV-8
 http://ipipip/udp/224.1.100.86:11111
-#EXTINF:-1,tvg-id="CCTV9" tvg-name="CCTV9" tvg-logo="https://epg.v1.mk/logo/CCTV9.png" group-title="央视",CCTV9
+#EXTINF:-1,tvg-id="CCTV-9" tvg-name="CCTV-9" tvg-logo="https://epg.v1.mk/logo/CCTV-9.png" group-title="央视",CCTV-9
 http://ipipip/udp/224.1.100.29:11111
-#EXTINF:-1,tvg-id="CCTV10" tvg-name="CCTV10" tvg-logo="https://epg.v1.mk/logo/CCTV10.png" group-title="央视",CCTV10
+#EXTINF:-1,tvg-id="CCTV-10" tvg-name="CCTV-10" tvg-logo="https://epg.v1.mk/logo/CCTV-10.png" group-title="央视",CCTV-10
 http://ipipip/udp/224.1.100.76:11111
-#EXTINF:-1,tvg-id="CCTV11" tvg-name="CCTV11" tvg-logo="https://epg.v1.mk/logo/CCTV11.png" group-title="央视",CCTV11
+#EXTINF:-1,tvg-id="CCTV-11" tvg-name="CCTV-11" tvg-logo="https://epg.v1.mk/logo/CCTV-11.png" group-title="央视",CCTV-11
 http://ipipip/udp/224.1.100.44:11111
-#EXTINF:-1,tvg-id="CCTV12" tvg-name="CCTV12" tvg-logo="https://epg.v1.mk/logo/CCTV12.png" group-title="央视",CCTV12
+#EXTINF:-1,tvg-id="CCTV-12" tvg-name="CCTV-12" tvg-logo="https://epg.v1.mk/logo/CCTV-12.png" group-title="央视",CCTV-12
 http://ipipip/udp/224.1.100.78:11111
-#EXTINF:-1,tvg-id="CCTV13" tvg-name="CCTV13" tvg-logo="https://epg.v1.mk/logo/CCTV13.png" group-title="央视",CCTV13
+#EXTINF:-1,tvg-id="CCTV-13" tvg-name="CCTV-13" tvg-logo="https://epg.v1.mk/logo/CCTV-13.png" group-title="央视",CCTV-13
 http://ipipip/udp/224.1.100.69:11111
-#EXTINF:-1,tvg-id="CCTV14" tvg-name="CCTV14" tvg-logo="https://epg.v1.mk/logo/CCTV14.png" group-title="央视",CCTV14
+#EXTINF:-1,tvg-id="CCTV-14" tvg-name="CCTV-14" tvg-logo="https://epg.v1.mk/logo/CCTV-14.png" group-title="央视",CCTV-14
 http://ipipip/udp/224.1.100.80:11111
-#EXTINF:-1,tvg-id="CCTV15" tvg-name="CCTV15" tvg-logo="https://epg.v1.mk/logo/CCTV15.png" group-title="央视",CCTV15
+#EXTINF:-1,tvg-id="CCTV-15" tvg-name="CCTV-15" tvg-logo="https://epg.v1.mk/logo/CCTV-15.png" group-title="央视",CCTV-15
 http://ipipip/udp/224.1.100.42:11111
-#EXTINF:-1,tvg-id="CCTV17" tvg-name="CCTV17" tvg-logo="https://epg.v1.mk/logo/CCTV17.png" group-title="央视",CCTV17
+#EXTINF:-1,tvg-id="CCTV-17" tvg-name="CCTV-17" tvg-logo="https://epg.v1.mk/logo/CCTV-17.png" group-title="央视",CCTV-17
 http://ipipip/udp/224.1.100.135:11111
 #EXTINF:-1,tvg-id="CETV1" tvg-name="CETV1" tvg-logo="https://epg.v1.mk/logo/CETV1.png" group-title="其他",CETV1
 http://ipipip/udp/224.1.100.107:11111
 #EXTINF:-1,tvg-id="CETV4" tvg-name="CETV4" tvg-logo="https://epg.v1.mk/logo/CETV4.png" group-title="其他",CETV4
 http://ipipip/udp/224.1.100.109:11111
-#EXTINF:-1,tvg-id="CGTN阿拉伯" tvg-name="CGTN阿拉伯" tvg-logo="https://epg.v1.mk/logo/CGTN阿拉伯.png" group-title="央视",CGTN阿拉伯
+#EXTINF:-1,tvg-id="CGTN阿拉伯语" tvg-name="CGTN阿拉伯语" tvg-logo="https://epg.v1.mk/logo/CGTN阿拉伯语.png" group-title="央视",CGTN阿拉伯语
 http://ipipip/udp/224.1.100.145:11111
 #EXTINF:-1,tvg-id="CGTN俄语" tvg-name="CGTN俄语" tvg-logo="https://epg.v1.mk/logo/CGTN俄语.png" group-title="央视",CGTN俄语
 http://ipipip/udp/224.1.100.137:11111
