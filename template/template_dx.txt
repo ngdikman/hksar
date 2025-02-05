@@ -291,7 +291,7 @@ CCTV-15,http://ipipip/udp/239.77.1.239:5146
 CCTV-16,http://ipipip/udp/239.77.0.165:5146
 CCTV-16,http://ipipip/udp/239.77.1.76:5146
 CCTV-17,http://ipipip/udp/239.77.1.121:5146
-CCTV-17农业,http://ipipip/udp/239.77.0.198:5146
+CCTV-17,http://ipipip/udp/239.77.0.198:5146
 CGTN英语,http://ipipip/udp/239.77.0.199:5146
 CGTN Documentary,http://ipipip/udp/239.253.43.122:5146
 CGTN西班牙语,http://ipipip/udp/239.77.0.221:5146
@@ -352,7 +352,7 @@ CCTV-15,http://urlurlurl/udp/239.77.1.239:5146
 CCTV-16,http://urlurlurl/udp/239.77.0.165:5146
 CCTV-16,http://urlurlurl/udp/239.77.1.76:5146
 CCTV-17,http://urlurlurl/udp/239.77.1.121:5146
-CCTV-17农业,http://urlurlurl/udp/239.77.0.198:5146
+CCTV-17,http://urlurlurl/udp/239.77.0.198:5146
 CGTN英语,http://urlurlurl/udp/239.77.0.199:5146
 CGTN Documentary,http://urlurlurl/udp/239.253.43.122:5146
 CGTN西班牙语,http://urlurlurl/udp/239.77.0.221:5146
