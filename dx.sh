@@ -58,7 +58,7 @@ sed "s/ipipip/$ip1/g" "$program" > GDIPTV.m3u
 sed "s/ipipip/$ip2/g" "$program" > GDIPTV-SP.m3u
 sed -e "s/ipipip/$ip1/g" -e "s/urlurlurl/$ip2/g" "$txtprogram" > "txt/fofa_${city}.txt"
 
-# 汇总生成txt
+# 生成杂七杂八txt
 rm -rf dianxin.txt
-curl -s https://aktv.top/live.txt >>dianxin.txt
+curl -s https://aktv.top/live.txt | sed '1s/^/📡 /' >> dianxin.txt
 cat txt/fofa_dianxin.txt >>dianxin.txt
