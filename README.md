@@ -17,10 +17,6 @@ https://backin.wang/GDIPTV-SP
 ```
 https://backin.wang/dianxin
 ```
-> 杂七杂八m3u 【适配GOTV CloudStream】
-```
-https://backin.wang/gotv
-```
 <!-- 
 > 电信国内直连
 ```
