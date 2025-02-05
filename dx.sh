@@ -53,40 +53,12 @@ rm -f "speedtest_${city}_$time.log"
 # 用 3 个最快 ip 生成对应城市的 m3u或txt
 program="template/template_dx.m3u"
 txtprogram="template/template_dx.txt"
-gotv="template/template_gotv.m3u"
 
 sed "s/ipipip/$ip1/g" "$program" > GDIPTV.m3u
 sed "s/ipipip/$ip2/g" "$program" > GDIPTV-SP.m3u
 sed -e "s/ipipip/$ip1/g" -e "s/urlurlurl/$ip2/g" "$txtprogram" > "txt/fofa_${city}.txt"
-sed "s/ipipip/$ip2/g" "$gotv" > "txt/fofa_gotv.m3u"
 
 # 汇总生成txt
 rm -rf dianxin.txt
 curl -s https://aktv.top/live.txt >>dianxin.txt
 cat txt/fofa_dianxin.txt >>dianxin.txt
-
-# 生成适配gotv的m3u
-curl -s -o "aktv.m3u" "https://aktv.top/live.m3u"
-
-awk '
-    # 删除第一行
-    NR <= 2 { next }
-
-    # 处理 #EXTINF:-1 行
-    /^#EXTINF:-1/ {
-        # 提取第一个字段和最后一个字段
-        match($0, /#EXTINF:-1.*,(.*)/, arr)
-        print "#EXTINF:-1," arr[1]
-        next
-    }
-
-    # 保留其他行
-    { print }
-' "aktv.m3u" > "processed_aktv.m3u"
-
-rm -f gotv.m3u
-cat "processed_aktv.m3u" >>gotv.m3u
-cat "txt/fofa_gotv.m3u" >>gotv.m3u
-
-rm -f "aktv.m3u"
-rm -f "processed_aktv.m3u"
