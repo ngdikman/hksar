@@ -54,7 +54,7 @@ rm -f "speedtest_${city}_$time.log"
 program="template/template_dx.m3u"
 txtprogram="template/template_dx.txt"
 
-sed "s/ipipip/$ip1/g" "$program" > GDIPTV.m3u
+sed "s/ipipip/$ip3/g" "$program" > GDIPTV.m3u
 sed "s/ipipip/$ip2/g" "$program" > GDIPTV-SP.m3u
 sed -e "s/ipipip/$ip1/g" -e "s/urlurlurl/$ip2/g" "$txtprogram" > "txt/fofa_${city}.txt"
 
