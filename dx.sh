@@ -60,5 +60,5 @@ sed -e "s/ipipip/$ip1/g" -e "s/urlurlurl/$ip2/g" "$txtprogram" > "txt/fofa_${cit
 
 # 生成杂七杂八txt
 rm -rf dianxin.txt
-(echo "📡 AKTV,#genre#"; curl -s http://duboy.free.coms.su/txt/?url=http://aktv.space/live.m3u) >> dianxin.txt
+(echo "📡 AKTV,#genre#"; curl -s "http://204bae1.123nat.com:66/test/m3u2txt.php?f=http://aktv.space/live.m3u" | sed 's/<br>/\n/g') >> dianxin.txt
 cat txt/fofa_dianxin.txt >>dianxin.txt
