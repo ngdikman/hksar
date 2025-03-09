@@ -74,6 +74,8 @@ TVBS精采台,http://aktv_stream1.m16tv.cfd/stream/taiwan/tvbs/AKTV.m3u8
 龍華偶像台,http://aktv_stream1.m16tv.cfd/stream/taiwan/null-9/AKTV.m3u8
 龍華日韓台,http://aktv_stream1.m16tv.cfd/stream/taiwan/null-7/AKTV.m3u8
 龍華電影台,http://aktv_stream1.m16tv.cfd/stream/taiwan/null-8/AKTV.m3u8
+FashionTV 4K,http://aktv_stream1.m16tv.cfd/stream/tuntun/fashiontv4k/AKTV.m3u8
+Love Nature 4K,http://aktv_stream1.m16tv.cfd/stream/tuntun/lovenature4k/AKTV.m3u8
 Red Bull Sports,http://aktv_stream1.m16tv.cfd/stream/tuntun/redbullsports/AKTV.m3u8
 緯來體育,http://aktv_stream1.m16tv.cfd/stream/tuntun/null/AKTV.m3u8
 NTV NEWS 24,http://aktv_stream1.m16tv.cfd/stream/useradd1/ntvnews24/AKTV.m3u8
