@@ -26,7 +26,6 @@ tvN,http://aktv_stream1.m16tv.cfd/stream/aktv/tvn/AKTV.m3u8
 黃金翡翠台,http://aktv_stream1.m16tv.cfd/stream/aktv/null-21/AKTV.m3u8
 AXN,http://aktv_stream1.m16tv.cfd/stream/aktv2/axn/AKTV.m3u8
 Love Nature HD,http://aktv_stream1.m16tv.cfd/stream/aktv2/lovenaturehd/AKTV.m3u8
-Love_The_Planet,http://aktv_stream1.m16tv.cfd/stream/aktv2/lovetheplanet/AKTV.m3u8
 无线新闻台(北美),http://aktv_stream1.m16tv.cfd/stream/aktv2/null-1/AKTV.m3u8
 東森新聞,http://aktv_stream1.m16tv.cfd/stream/aktv2/null/AKTV.m3u8
 Animax(HK),http://aktv_stream1.m16tv.cfd/stream/aktv3/animaxhk/AKTV.m3u8
@@ -38,15 +37,12 @@ NHK東京総合,http://aktv_stream1.m16tv.cfd/stream/aktv3/nhk/AKTV.m3u8
 Nick Jr,http://aktv_stream1.m16tv.cfd/stream/aktv3/nickjr/AKTV.m3u8
 Nickelodeon,http://aktv_stream1.m16tv.cfd/stream/aktv3/nickelodeon/AKTV.m3u8
 Thrill,http://aktv_stream1.m16tv.cfd/stream/aktv3/thrill/AKTV.m3u8
+Xite Hits,http://aktv_stream1.m16tv.cfd/stream/aktv3/xitehits/AKTV.m3u8
 Xite Rock,http://aktv_stream1.m16tv.cfd/stream/aktv3/xiterock/AKTV.m3u8
-Xite_Hits,http://aktv_stream1.m16tv.cfd/stream/aktv3/xitehits/AKTV.m3u8
 ZooMoo,http://aktv_stream1.m16tv.cfd/stream/aktv3/zoomoo/AKTV.m3u8
 亞洲新聞台,http://aktv_stream1.m16tv.cfd/stream/aktv3/null-3/AKTV.m3u8
 東方衛視國際頻道,http://aktv_stream1.m16tv.cfd/stream/aktv3/null/AKTV.m3u8
 無線衛星新聞台,http://aktv_stream1.m16tv.cfd/stream/aktv3/null-2/AKTV.m3u8
-Channel 5,http://aktv_stream1.m16tv.cfd/stream/astro_a1/ch1/AKTV.m3u8
-Channel 8,http://aktv_stream1.m16tv.cfd/stream/astro_a1/ch2/AKTV.m3u8
-Channel U,http://aktv_stream1.m16tv.cfd/stream/astro_a1/ch3/AKTV.m3u8
 CINEMAWORLD,http://aktv_stream1.m16tv.cfd/stream/astro_a1/ch31/AKTV.m3u8
 FIGHT SPORTS,http://aktv_stream1.m16tv.cfd/stream/astro_a1/ch85/AKTV.m3u8
 KIX,http://aktv_stream1.m16tv.cfd/stream/astro_a1/ch38/AKTV.m3u8
@@ -79,8 +75,6 @@ TVBS精采台,http://aktv_stream1.m16tv.cfd/stream/taiwan/tvbs/AKTV.m3u8
 台,http://aktv_stream1.m16tv.cfd/stream/test/null/AKTV.m3u8
 Astro Football,http://aktv_stream1.m16tv.cfd/stream/tuntun/astrofootball/AKTV.m3u8
 Astro IQIYI,http://aktv_stream1.m16tv.cfd/stream/tuntun/fashiontv4k/AKTV.m3u8
-Disney Channel,http://aktv_stream1.m16tv.cfd/stream/tuntun/disneychannel/AKTV.m3u8
-Disney XD,http://aktv_stream1.m16tv.cfd/stream/tuntun/disneyxd/AKTV.m3u8
 Love Nature 4K,http://aktv_stream1.m16tv.cfd/stream/tuntun/lovenature4k/AKTV.m3u8
 Red Bull Sports,http://aktv_stream1.m16tv.cfd/stream/tuntun/redbullsports/AKTV.m3u8
 NTV NEWS 24,http://aktv_stream1.m16tv.cfd/stream/useradd1/ntvnews24/AKTV.m3u8
