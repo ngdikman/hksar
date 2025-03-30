@@ -66,6 +66,10 @@ ELTV生活英語台,http://aktv-stream.m16tv.cfd/stream/taiwan/eltv/AKTV.m3u8
 龍華日韓台,http://aktv-stream.m16tv.cfd/stream/taiwan/null-7/AKTV.m3u8
 龍華經典台,http://aktv-stream.m16tv.cfd/stream/taiwan/null/AKTV.m3u8
 龍華電影台,http://aktv-stream.m16tv.cfd/stream/taiwan/null-8/AKTV.m3u8
+beIN SPORTS XTRA,http://aktv-stream.m16tv.cfd/stream/test/beinsportsxtra/AKTV.m3u8
+PAC12,http://aktv-stream.m16tv.cfd/stream/test/pac12/AKTV.m3u8
+Tennis Channel,http://aktv-stream.m16tv.cfd/stream/test/tennischannel/AKTV.m3u8
+台,http://aktv-stream.m16tv.cfd/stream/test/null/AKTV.m3u8
 Astro Football,http://aktv-stream.m16tv.cfd/stream/tuntun/astrofootball/AKTV.m3u8
 Astro IQIYI,http://aktv-stream.m16tv.cfd/stream/tuntun/fashiontv4k/AKTV.m3u8
 Astro QJ,http://aktv-stream.m16tv.cfd/stream/tuntun/astroqj/AKTV.m3u8
