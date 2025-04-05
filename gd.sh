@@ -3,19 +3,23 @@ city="guangdian"
 # 使用城市名作为默认文件名，格式为 CityName.ip
 ipfile="ip/${city}.ip"
 only_good_ip="ip/${city}.onlygood.ip"
-# 遍历文件 A 中的每个 IP 地址
+
+# 遍历 IP 并处理整个 IP 段（并发加速）
 while IFS= read -r ip; do
-    # 尝试连接 IP 地址和端口号，并将输出保存到变量中
-    tmp_ip=$(echo -n "$ip" | sed 's/:/ /')
-    echo "nc -w 1 -v -z $tmp_ip 2>&1"
-    output=$(nc -w 1 -v -z $tmp_ip 2>&1)
-    echo $output    
-    # 如果连接成功，且输出包含 "succeeded"，则将结果保存到输出文件中
-    if [[ $output == *"succeeded"* ]]; then
-        # 使用 awk 提取 IP 地址和端口号对应的字符串，并保存到输出文件中
-        echo "$output" | grep "succeeded" | awk -v ip="$ip" '{print ip}' >> "ip/${city}.onlygood.ip"
-    fi
+    base_ip=$(echo "$ip" | awk -F: '{print $1}')
+    port=$(echo "$ip" | awk -F: '{print $2}')
+    
+    seq 1 255 | xargs -P 10 -I {} bash -c '
+        full_ip="'${base_ip%.*}'.{}:'$port'"
+        tmp_ip=$(echo -n "$full_ip" | sed "s/:/ /")
+        output=$(nc -w 1 -v -z $tmp_ip 2>&1)
+        echo "$output"
+        if [[ "$output" == *"succeeded"* ]]; then
+            echo "$full_ip" >> "'$only_good_ip'"
+        fi
+    '
 done < "$ipfile"
+
 echo "===============检索完成================="
 
 # 检查文件是否存在
