@@ -9,7 +9,7 @@ while IFS= read -r ip; do
     base_ip=$(echo "$ip" | awk -F: '{print $1}')
     port=$(echo "$ip" | awk -F: '{print $2}')
     
-    seq 1 255 | xargs -P 20 -I {} bash -c '
+    seq 1 255 | xargs -P 50 -I {} bash -c '
         full_ip="'${base_ip%.*}'.{}:'$port'"
         tmp_ip=$(echo -n "$full_ip" | sed "s/:/ /")
         output=$(nc -w 1 -v -z $tmp_ip 2>&1)
