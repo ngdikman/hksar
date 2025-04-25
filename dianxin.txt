@@ -4,8 +4,6 @@ AXN,http://aktv_stream.m16tv.cfd/stream/aktv2/axn/AKTV.m3u8
 PopC,http://aktv_stream.m16tv.cfd/stream/aktv2/popc/AKTV.m3u8
 ROCK Action,http://aktv_stream.m16tv.cfd/stream/aktv2/rockaction/AKTV.m3u8
 tvN,http://aktv_stream.m16tv.cfd/stream/aktv2/tvn/AKTV.m3u8
-千禧經典台(HK),http://aktv_stream.m16tv.cfd/stream/aktv2/hk-2/AKTV.m3u8
-娛樂新聞台(HK),http://aktv_stream.m16tv.cfd/stream/aktv2/hk-1/AKTV.m3u8
 明珠台,http://aktv_stream.m16tv.cfd/stream/aktv2/null-3/AKTV.m3u8
 無線新聞台,http://aktv_stream.m16tv.cfd/stream/aktv2/null-4/AKTV.m3u8
 美亞電影台(HK),http://aktv_stream.m16tv.cfd/stream/aktv2/hk/AKTV.m3u8
@@ -16,8 +14,6 @@ tvN,http://aktv_stream.m16tv.cfd/stream/aktv2/tvn/AKTV.m3u8
 TVBS新聞,http://aktv_stream.m16tv.cfd/stream/aktv3/tvbs/AKTV.m3u8
 緯來體育,http://aktv_stream.m16tv.cfd/stream/aktv5/null/AKTV.m3u8
 中天新闻台,http://aktv_stream.m16tv.cfd/stream/yt/null/AKTV.m3u8
-寰宇新聞台,http://aktv_stream.m16tv.cfd/stream/yt/null-1/AKTV.m3u8
-東森新聞,http://aktv_stream.m16tv.cfd/stream/yt/null-2/AKTV.m3u8
 📡 卫视,#genre#
 广东卫视,http://113.90.244.16:4000/udp/239.77.1.19:5146
 广东卫视,http://113.90.244.16:4000/udp/239.77.1.152:5146
