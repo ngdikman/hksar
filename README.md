@@ -1,10 +1,4 @@
 # hksar
-> 广电测试m3u
-```
-https://backin.wang/guangdian
-```
-
----
 
 > 电信m3u
 ```
@@ -13,9 +7,14 @@ https://backin.wang/GDIPTV
 ```
 https://backin.wang/GDIPTV-SP
 ```
-> 杂七杂八txt 【适配影视 影视仓】
+> 大江南北 【适配影视、影视仓】
 ```
 https://backin.wang/dianxin
+```
+---
+> 广电测试m3u
+```
+https://backin.wang/guangdian
 ```
 <!-- 
 > 电信国内直连
@@ -28,3 +27,13 @@ https://git.backin.us.kg/https://raw.githubusercontent.com/ngdikman/hksar/main/G
 ```
 -->
 
+---
+# 工具
+> M3U转TXT接口
+```
+https://backin.pp.ua/txt?url=https://backin.wang/GDIPTV
+```
+> TXT和M3U互转工具
+```
+https://tv.backin.pp.ua
+```
