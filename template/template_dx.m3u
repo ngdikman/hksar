@@ -363,8 +363,6 @@ http://ipipip/udp/239.253.43.15:5146
 http://ipipip/udp/239.253.43.29:5146
 #EXTINF:-1,tvg-id="风云音乐" tvg-name="风云音乐" tvg-logo="https://epg.v1.mk/logo/风云音乐.png" group-title="央视",风云音乐
 http://ipipip/udp/239.253.43.6:5146
-#EXTINF:-1,tvg-id="CHC影迷电影" tvg-name="CHC影迷电影" tvg-logo="https://epg.v1.mk/logo/CHC影迷电影.png" group-title="其他",CHC电影
-http://ipipip/udp/239.77.0.27:5146
 #EXTINF:-1,tvg-id="金鹰卡通" tvg-name="金鹰卡通" tvg-logo="https://epg.v1.mk/logo/金鹰卡通.png" group-title="其他",金鹰卡通
 http://ipipip/udp/239.77.0.164:5146
 #EXTINF:-1,tvg-id="CETV1" tvg-name="CETV1" tvg-logo="https://epg.v1.mk/logo/CETV1.png" group-title="其他",CETV-1
