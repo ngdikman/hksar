@@ -1,4 +1,4 @@
-#EXTM3U url-tvg="http://epg.backin.us.kg/t.xml.gz"
+#EXTM3U url-tvg="http://epg.backin.us.kg/t.xml"
 #EXTINF:-1,tvg-id="翡翠台" tvg-name="翡翠台" tvg-logo="https://epg.v1.mk/logo/翡翠台.png" group-title="广东",翡翠台
 http://ipipip/udp/224.1.100.121:11111
 #EXTINF:-1,tvg-id="明珠台" tvg-name="明珠台" tvg-logo="https://epg.v1.mk/logo/明珠台.png" group-title="广东",明珠台
