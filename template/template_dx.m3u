@@ -393,11 +393,3 @@ http://ipipip/udp/239.77.1.120:5146
 http://ipipip/udp/239.77.1.208:5146
 #EXTINF:-1,tvg-id="天元围棋" tvg-name="天元围棋" tvg-logo="https://epg.v1.mk/logo/天元围棋.png" group-title="其他",天元围棋
 http://ipipip/udp/239.253.43.98:5146
-#EXTINF:-1,tvg-id="爱体育" tvg-name="爱体育" tvg-logo="https://epg.v1.mk/logo/爱体育.png" group-title="其他",爱体育
-http://ipipip/udp/239.77.0.176:5146
-#EXTINF:-1,tvg-id="爱体育" tvg-name="爱体育" tvg-logo="https://epg.v1.mk/logo/爱体育.png" group-title="其他",爱体育
-http://ipipip/udp/239.77.1.116:5146
-#EXTINF:-1,tvg-id="百事通" tvg-name="百事通" tvg-logo="https://epg.v1.mk/logo/百事通.png" group-title="其他",百事通
-http://ipipip/udp/239.253.43.119:5146
-#EXTINF:-1,tvg-id="百事通" tvg-name="百事通" tvg-logo="https://epg.v1.mk/logo/百事通.png" group-title="其他",百事通
-http://ipipip/udp/239.253.43.118:5146
