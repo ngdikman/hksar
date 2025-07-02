@@ -1,4 +1,4 @@
-#EXTM3U url-tvg="http://epg.backin.us.kg/t.xml.gz"
+#EXTM3U url-tvg="http://epg.backin.us.kg/t.xml"
 #EXTINF:-1,tvg-id="广东卫视" tvg-name="广东卫视" tvg-logo="https://epg.v1.mk/logo/广东卫视.png" group-title="卫视",广东卫视
 http://ipipip/udp/239.77.1.19:5146
 #EXTINF:-1,tvg-id="广东卫视" tvg-name="广东卫视" tvg-logo="https://epg.v1.mk/logo/广东卫视.png" group-title="卫视",广东卫视
