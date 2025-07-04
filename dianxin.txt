@@ -9,6 +9,7 @@ PopC,https://s1.tvm4a1.cfd/aktv/popc/AKTV.m3u8
 ROCK Action,https://s1.tvm4a1.cfd/aktv/rockaction/AKTV.m3u8
 TVB Plus,https://s1.tvm4a1.cfd/aktv/tvbplus/AKTV.m3u8
 tvN,https://s1.tvm4a1.cfd/aktv/tvn/AKTV.m3u8
+天映經典(1080),https://s1.tvm4a1.cfd/aktv/1080/AKTV.m3u8
 明珠剧集台(北美),https://s1.tvm4a1.cfd/aktv/CH-19/AKTV.m3u8
 明珠台,https://s1.tvm4a1.cfd/aktv/CH-2/AKTV.m3u8
 無線新聞台,https://s1.tvm4a1.cfd/aktv/CH-1/AKTV.m3u8
@@ -31,6 +32,7 @@ Japan News 24H LIVE,https://s1.tvm4a1.cfd/aktvjp/japannews24hlive/AKTV.m3u8
 8TV,https://s1.tvm4a1.cfd/astro/8tv/AKTV.m3u8
 Astro Football,https://s1.tvm4a1.cfd/astro/CH-0/AKTV.m3u8
 Astro Sport UHD,https://s1.tvm4a1.cfd/astro/astrosportuhd/AKTV.m3u8
+中天亚洲台,https://s1.tvm4a1.cfd/astro/CH-1/AKTV.m3u8
 KLT-靖天國際台,https://s1.tvm4a1.cfd/taiwan/CH-3/AKTV.m3u8
 TVBS,https://s1.tvm4a1.cfd/taiwan/tvbs/AKTV.m3u8
 民視,https://s1.tvm4a1.cfd/taiwan/CH-1/AKTV.m3u8
