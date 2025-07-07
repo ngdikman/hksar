@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html version="4" lang="zh-CN"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TXT和M3U在线互转格式</title>
+  <meta name="description" content="一个简单的在线TXT转M3U格式工具，纯前端处理，无需上传txt文件粘贴即转换，安全不偷源。">
+  <meta name="keywords" content="txt转m3u,txt转换,m3u生成,LIVE">
+<style>
+    :root {
+      --primary-color: #4a6fa5;
+      --secondary-color: #6b8cae;
+      --accent-color: #ff7e5f;
+      --light-color: #f8f9fa;
+      --dark-color: #343a40;
+      --success-color: #28a745;
+      --info-color: #17a2b8;
+      --warning-color: #ffc107;
+      --danger-color: #dc3545;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+      margin: 0;
+      padding: 0;
+      color: var(--dark-color);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    
+    .container {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    h2 {
+      color: var(--primary-color);
+      margin: 10px 0;
+      text-align: center;
+      font-weight: 600;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    }
+    
+    h3 {
+      color: var(--secondary-color);
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-weight: 500;
+    }
+    
+    .content-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .panel-container {
+      display: flex;
+      gap: 30px;
+    }
+    
+    .panel {
+      flex: 1;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      position: relative; /* 允许在面板内定位内容 */
+    }
+    
+    .panel:hover {
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    }
+    
+    .panel-description {
+      color: #6c757d;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+    
+    textarea {
+      width: 96%;
+      height: 250px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 13px;
+      resize: none;
+      transition: border 0.3s;
+      background-color: #fafafa;
+    }
+    
+    textarea:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 2px rgba(74, 111, 165, 0.2);
+    }
+    
+    .button-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 25px 0;
+    }
+    
+    button {
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 500;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+    
+    button:active {
+      transform: translateY(0);
+    }
+    
+    button:nth-child(1) { background-color: var(--success-color); color: white; }
+    button:nth-child(2) { background-color: var(--info-color); color: white; }
+    button:nth-child(3) { background-color: var(--primary-color); color: white; }
+    button:nth-child(4) { background-color: var(--secondary-color); color: white; }
+    button:nth-child(5) { background-color: var(--warning-color); color: var(--dark-color); }
+    button:nth-child(6) { background-color: var(--accent-color); color: white; }
+    button:nth-child(7) { background-color: var(--danger-color); color: white; }
+    
+    #outputContainer {
+      position: relative;
+    }
+
+    #result {
+      position: absolute;
+      top: -10px;
+      right: 20px;
+      padding: 12px;
+      font-size: 12px;
+      white-space: pre-wrap;
+      max-width: 300px;
+      min-width: 200px;
+      color: #6c757d;
+    }
+    
+    .footer {
+      text-align: center;
+      margin-top: 0px;
+      color: #6c757d;
+      font-size: 12px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    
+    /* 响应式设计 */
+    @media (max-width: 1200px) {
+      .panel-container {
+        flex-direction: column;
+        gap: 20px;
+      }
+      
+      textarea {
+        height: 300px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .button-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      button {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+      }
+    }
+
+    /* 轻提示框美化样式 */
+    #notification {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #4a6fa5 0%, #6b8cae 100%);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 500;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      max-width: 80%;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* 显示状态 */
+    #notification.show {
+      opacity: 1;
+      visibility: visible;
+      top: 30px;
+    }
+
+    /* 成功提示 */
+    #notification.success {
+      background: linear-gradient(135deg, #28a745 0%, #5cb85c 100%);
+    }
+
+    /* 错误提示 */
+    #notification.error {
+      background: linear-gradient(135deg, #dc3545 0%, #d9534f 100%);
+    }
+
+    /* 警告提示 */
+    #notification.warning {
+      background: linear-gradient(135deg, #ffc107 0%, #f0ad4e 100%);
+      color: #343a40;
+    }
+
+    /* 信息提示 */
+    #notification.info {
+      background: linear-gradient(135deg, #17a2b8 0%, #5bc0de 100%);
+    }
+
+    /* 添加小图标 */
+    #notification::before {
+      content: "";
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    #notification.success::before {
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'><path d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z'/></svg>");
+    }
+
+    #notification.error::before {
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'><path d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/></svg>");
+    }
+
+    #notification.warning::before {
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23343a40'><path d='M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z'/></svg>");
+    }
+
+    #notification.info::before {
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z'/></svg>");
+    }
+
+</style>
+
+<script>
+window.onload = function() {
+  var textarea = document.getElementById('inputText');
+  textarea.setAttribute('placeholder', '1、支持TXT列表和M3U列表互转\n\n2、复制通用txt列表或者M3U列表粘贴至此进行TXT和M3U互转\n\n3、可Ctrl+A全选tonkiang.us搜索结果,Ctrl+C复制结果粘贴至此提取播放列表和组播ID');
+}
+</script>
+
+<body>
+   <div id="notification"></div>
+  <div class="container">
+    <div class="content-wrapper">
+      <h2>TXT和M3U互转工具</h2>
+      <h2 style="color: var(--accent-color); margin-top: -30px; font-size: 18px;">支持合并相同节目 | 生成播放列表 | 提取组播ID</h2>
+
+      <div class="panel-container">
+        <div class="panel" id="inputContainer">
+          <h3>输入内容</h3>
+          <p class="panel-description">可复制tonkiang.us搜索结果或者TXT、M3U播放列表进行转换</p>
+          <textarea id="inputText" rows="20"></textarea>
+        </div>
+
+        <div class="panel" id="outputContainer">
+          <h3>转换结果</h3>
+          <p class="panel-description">转换后的内容将显示在这里</p>
+          <textarea id="outputText" rows="20"></textarea>
+          <pre id="result"></pre>
+        </div>
+      </div>
+
+      <div class="button-container">
+        <button onclick="convertText()">📋 M3U转换TXT</button>
+        <button onclick="getMulticast()">🔍 获取组播ID</button>
+        <button onclick="convertToM3U()">🔄 TXT转换M3U</button>
+        <button onclick="convertToM3U2()">✨ TXT转换M3U(合并节目)</button>   
+        <button onclick="copyText()">📎 复制结果</button>
+        <button onclick="saveAsM3U()">💾 保存结果</button>
+        <button onclick="clearScreen()">🧹 清除屏幕</button>
+      </div>
+      
+      <div class="footer">
+        <div>© 2023 TXT/M3U转换工具 | 设计优化版</div>
+        <div id="busuanzi_container_page_pv">
+          本页面总访问量 <span id="vercount_value_site_uv" style="font-weight: bold; color: var(--primary-color);"></span> 次
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+
+
+<script>
+
+const gtChannels = ['天映', '美亚', '澳视', 'VIUTV', '无线新闻', 'HOY', 'NOW', '台湾', '香港', '凤凰', '翡翠', '明珠', 'TVB', 'ANIMAX', 'AXN', 'Arirang', 'BBC', 'Bloomberg', 'CARTOONITO', 'CBeebies',
+    'CINEMAX', 'CNBC', 'CNN', 'CN卡通', 'CatchPlay', 'CinemaWorld', 'DAZN', 'DMAX', 'DWTV', 'Discovery', 'DreamWorks',
+    'ETtoday', 'EVE', 'FRANCE', 'FashionTV', 'Food', 'Global', 'HBO', 'HITS', 'INULTRA', 'JET', 'LOVE_NATURE', 'LUXE',
+    'Lifetime', 'MOMO', 'MTV', 'NHK', 'Nick', 'Pet_Club_TV', 'ROCK', 'TLC', 'TV5', 'TVBS', 'TaiwanPlus', 'TechStorm',
+    'Travel', 'Warner_TV', 'Z频道', 'amc', 'rollor', 'tvN', '三圣电视', '三立', '东森', '东风卫视', '中天', '中视',
+    '乐视台', '亚洲', '人间', '佛卫', '八大', '公共电视', '公视', '冠军', '动物星球', '十方法界', '半岛', '华艺',
+    '华藏', '华视', '博斯', '历史', '原住民', '双子卫视', '古典音乐', '台湾', '台视', '国兴', '壹电视', '大爱',
+    '天美丽电视', '天良综合', '好消息', '好莱坞', '客家电视', '富立', '尼克儿童', '居家', '年代', '幸福空间', '新天地民俗',
+    '智林体育', '梅迪奇艺术', '欧洲', '正德', '民视', '法国TV5', '爱尔达', '狼谷育乐', '环宇', '生命', '番薯', '纬来',
+    '罪案', '诚心电视', '超视', '达文西', '运通财经', '镜电视', '霹雳', '靖天', '靖洋卡', '非凡', '韩国娱乐', '高点',
+    '龙祥'
+];
+
+  function convertText() { //整理TXT列表
+    outputText = checkText(document.getElementById('inputText').value);    
+        if (outputText === '') {
+        showNotification("输入框为空，请将搜索结果或者 txt 列表粘贴到输入框", 'warning');
+        // alert("输入框为空，请将搜索结果或者 txt 列表粘贴到输入框");
+        return;
+        }
+    let channels = outputText.split('\n');
+    let groupedChannels = countGroups(channels);
+    let resultText = "";
+    groupedChannels.forEach(group => {
+      resultText += ` ${group[0]}, 节目数： ${group[2]}, 数量： ${group[1]} \n`;
+    });    
+    document.getElementById('result').textContent = resultText;
+    updateResultDisplay();
+    document.getElementById('outputText').value = outputText;
+    showNotification("转换成功！", 'success');
+  }
+
+  function getMulticast() { // 获取组播ID
+        if (document.getElementById('inputText').value === '') {
+        showNotification("输入框为空，请将搜索结果或者 txt 列表粘贴到输入框", 'warning');
+        // alert("输入框为空，请将搜索结果或者 txt 列表粘贴到输入框");
+    return;
+        }    
+    let lines = checkText(document.getElementById('inputText').value).split('\n');
+    let result = [];
+    for (let line of lines) {
+      let parts = line.split(',');
+      if (parts.length > 1) {
+        let url = parts[1];
+        let multicastAddr = getMulticastAddr(url);
+        if (multicastAddr) {
+          result.push(parts[0] + ',' + 'rtp://' + multicastAddr);
+        }else {
+                result.push("invalidID");
+        }
+      }
+    }
+    let newLines = result.filter(line =>!line.includes('invalidID'));
+      if (newLines.length === 0) {
+        output = '无组播ID';
+      } else {
+        output = groupToText(newLines.join("\n"));
+      }
+    let channels = output.split('\n');
+    let groupedChannels = countGroups(channels);
+    let resultText = "";
+    groupedChannels.forEach(group => {
+      resultText += `${group[0]}, 节目数： ${group[2]}, 数量： ${group[1]} \n`;
+    });    
+    document.getElementById('result').textContent = resultText;
+    updateResultDisplay(); 
+    document.getElementById('outputText').value = output;
+    showNotification("获取成功！", 'success');
+  }
+
+  function convertToM3U() {  //转换M3U
+    let inputText = document.getElementById('inputText').value;
+        if (inputText === '') {
+        showNotification("输入框为空，请将搜索结果或者 txt 列表粘贴到输入框", 'warning');
+        // alert("输入框为空，请将搜索结果或者 txt 列表粘贴到输入框");
+        return;
+        }
+    let channels = checkText(inputText).split('\n');
+    let groupedChannels = countGroups(channels);
+    let resultText = "";
+    groupedChannels.forEach(group => {
+      resultText += ` ${group[0]}, 节目数： ${group[2]}, 数量： ${group[1]} \n`;
+    });    
+    document.getElementById('result').textContent = resultText;
+    updateResultDisplay();
+    document.getElementById('outputText').value = textToM3U(checkText(inputText));
+    showNotification("转换成功！", 'success');
+  }
+
+  function convertToM3U2() { //转换M3U合并节目
+    let inputText = document.getElementById('inputText').value;
+        if (inputText === '') {
+        showNotification("输入框为空，请将搜索结果或者 txt 列表粘贴到输入框", 'warning');
+        // alert("输入框为空，请将搜索结果或者 txt 列表粘贴到输入框");
+        return;
+        }
+    let channels = checkText(inputText).split('\n');
+    let groupedChannels = countGroups(channels);
+    let resultText = "";
+    groupedChannels.forEach(group => {
+      resultText += ` ${group[0]}, 节目数： ${group[2]}, 数量： ${group[1]} \n`;
+    });    
+    document.getElementById('result').textContent = resultText;
+    updateResultDisplay();
+    document.getElementById('outputText').value = textToM3U(mergeUrls(checkText(inputText)));
+    showNotification("转换成功！", 'success');
+  }
+
+  function textToM3U(text) {
+    const epg = "https://live.fanmingming.cn/e.xml";
+    const logoPath = "https://epg.v1.mk/logo/";
+    let textlist = text.split('\n');
+    let lines = textlist.filter(line => line.trim() !== '').map(line => line.trim());
+    let listOutput = ['#EXTM3U x-tvg-url="' + epg + '"'];
+    lines.forEach(line => {
+      if (line.includes('#genre#')) {
+        group = line.split(',')[0];
+        return;
+      }
+      if (line.split(',').length === 2) {
+        let [name, url] = line.split(',');
+        listOutput.push('#EXTINF:-1 tvg-name="' + name + '" tvg-logo="' + logoPath + name + '.png" group-title="' + group + '",' + name + '\n' + url);
+      }
+    });
+        return listOutput.join('\n');
+  }
+
+  function m3uToTxt(text) {
+    let txtChs = [];
+    let name = "";
+    let url = "";
+    let channels = text.split("\n");
+    for (let channel of channels) {
+      channel = channel.trim();
+      // 检查是否以 #EXTINF 开头
+      if (channel.toUpperCase().startsWith("#EXTINF")) {
+        // 如果有逗号，将逗号后的部分赋值给 name
+        if (channel.includes(",")) {
+          name = channel.substring(channel.lastIndexOf(",") + 1).trim();
+        }
+      } else {
+        // 检查是否包含 #
+        if (channel.includes("#")) {
+          // 将 channel 按 # 分隔，将每个部分赋值给 url
+          let urlParts = channel.split("#");
+          for (let item of urlParts) {
+            txtChs.push(`${name},${item.trim()}`);
+          }
+        } else {
+          // 没有 #，直接将 channel 赋值给 url
+          url = channel;
+          txtChs.push(`${name},${url}`);
+        }
+      }
+    }
+    let outTextChs = [];
+    for (let item of txtChs) {
+      if (item.split(",").length === 2 && item.includes(",") && item.split(",")[0]!= "" && item.split(",")[1]!= "") {
+        outTextChs.push(item);
+      }
+    }
+    let outText = outTextChs.join("\n");
+    let outputText = groupToText(outText)
+    return outputText;
+  }
+
+  function processText(text) {
+    let inputText = text.replace(/\[copy to clip\]/g, 'copy to clip').replace(/[\t ]/g, '').replace(/(\n)copytoclip(\n)/g, ',');
+    let outText = groupToText(inputText);
+    return outText;
+  }
+
+  function checkText(text) {
+    if (text.includes("copy to clip")) {
+      return processText(text);
+    } else if (text.toUpperCase().includes("#EXTINF")){
+      return m3uToTxt(text);
+    } else {
+      return originalText(text);
+    }
+  }
+
+  function originalText(text) {
+        let channels = text.split('\n').filter(function (line) {
+            return line.trim()!== '' &&!line.includes('#genre#');
+        });
+    let inputText = channels.join("\n");
+    return groupToText(inputText);
+  }
+
+  function countGroups(channels) {
+    let result = [];
+    let currentGroup = null;
+    let uniqueItems = new Set();
+    let count = 0;
+    let programCount = 0;
+
+    channels.forEach(item => {
+      if (item.includes('#genre#')) {
+        if (currentGroup !== null) {          
+        result.push([currentGroup, count, programCount]);
+        }
+        currentGroup = item.split(',')[0];
+        count = 0;
+        programCount = 0;
+      } else {
+        count += 1;
+        let itemKey = item.split(',')[0];
+        if (!uniqueItems.has(itemKey)) {
+          uniqueItems.add(itemKey);
+          programCount += 1;
+        }
+      }
+    });
+    if (currentGroup !== null) {
+      result.push([currentGroup, count-1, programCount-1]);
+    }
+
+    return result;
+  }
+
+  function mergeUrls(text) {
+    const lines = text.split('\n');
+    const channelMap = new Map();
+    lines.forEach(line => {
+      const parts = line.split(',');
+      if (parts.length !== 2) {
+        return;
+      }
+      const [channel, url] = parts;
+      if (channelMap.has(channel)) {
+            channelMap.get(channel).push(url);
+      } else {
+        channelMap.set(channel, [url]);
+      }
+    });
+    const chresults = Array.from(channelMap, ([channel, urls]) => {
+      return `${channel},${urls.join('#')}`;
+    });
+    const resultText = chresults.join('\n');
+    return resultText;
+  }
+
+  function groupToText(inputText) {
+    let ys = [];
+    let ws = [];
+    let df = [];
+    let gt = [];
+    let channels = inputText.split('\n').filter(line => line.includes(',') && line.split(',').length === 2 && !line.includes('#genre#'));
+    channels = channels.map(channel => {
+    let parts = channel.split(',');
+    let newName = parts[0].toUpperCase().replace(/\s+/g, '').replace('高清电影', '影迷电影').replace('中央', 'CCTV').replace('超高清', '').replace('高清', '').replace('HD', '').replace('-CM-IPTV', '').replace('标清', '').replace('超清', '').replace('画中画', '').replace('单音轨', '').replace('-Tel', '').replace('-', '');
+    return `${newName},${parts[1]}`;
+    });
+
+        for (let info of channels) {
+            info = info.trim();
+            if (['CCTV', 'CETV'].some(part => info.toUpperCase().includes(part))) {
+                if (!info.toUpperCase().includes('5+')) {
+                    try {
+                        let [name, url] = info.split(',');
+                        let match = name.match(/\w\w\w\w\d{1,2}|\w\w\w\w-\d{1,2}|\w\w\w\w-\w{1,4}|\w\w\w\w\w{1,8}|中央\d{1,2}/i)[0];
+                        name = match.replace(/-|高清|HD|-CM-IPTV|-Tel|\s|标清|中央|超清|画中画|单音轨/gi, '');
+                        name = name.replace('中央', 'CCTV').toUpperCase();
+                        ys.push(`${name},${url}`);
+                    } catch (e) {}
+                } else {
+                    let [name, url] = info.split(',');
+                    ys.push(`CCTV5+,${url}`);
+                }
+            }else if (containsAnyChannel(info, gtChannels)) {
+        let line = info.replace('+', '');
+        gt.push(line);
+      }else if (info.includes('卫视')) {
+                let line = info.replace('+', '');
+                ws.push(line);
+            } else if (!info.includes('<br>') && info.trim()!== '' && info[0]!== ',' && info[0]!== '1') {
+                let line = info.replace('+', '').replace('YD', '');
+                df.push(line);
+            }
+        }
+        var reschannels = "";
+        if (ys.length > 0) {
+            ys = [...new Set(ys)];
+            reschannels += "\n央视频道,#genre#\n";
+            ys.sort((a, b) => {
+                let aPrefix = a.match(/[a-zA-Z]+/)[0];
+                let bPrefix = b.match(/[a-zA-Z]+/)[0];
+                if (aPrefix === bPrefix) {
+                    let aNumber = parseInt(a.match(/\d+/)[0]);
+                    let bNumber = parseInt(b.match(/\d+/)[0]);
+                    return aNumber - bNumber;
+                }
+                return aPrefix.localeCompare(bPrefix);
+            });
+            for (var i = 0; i < ys.length; i++) {
+                reschannels += ys[i] + "\n";
+            }
+        }
+        if (gt.length > 0) {
+            gt = [...new Set(gt)];
+            reschannels += "\n港台频道,#genre#\n"
+            for (var i = 0; i < gt.length; i++) {
+                reschannels += gt[i] + "\n";
+            }
+        }
+        if (ws.length > 0) {
+            ws = [...new Set(ws)];
+            reschannels += "\n卫视频道,#genre#\n"
+            for (var i = 0; i < ws.length; i++) {
+                reschannels += ws[i] + "\n";
+            }
+        }
+        if (df.length > 0) {
+            df = [...new Set(df)];
+            reschannels += "\n地方频道,#genre#\n";
+            for (var i = 0; i < df.length; i++) {
+                reschannels += df[i] + "\n";
+            }
+        } 
+        reschannels = reschannels.replace(/^\s*\n/, '');   
+        return reschannels;
+  }
+
+  function containsAnyChannel(info, channels) {
+        let parts = info.split(',');
+        let name = parts[0].trim();
+    for (let channel of channels) {
+      if (name.toUpperCase().includes(channel.toUpperCase())) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  function getMulticastAddr(url) {
+    const regex = /(rtp\/|rtp:\/\/|udp\/|udp:\/\/)(.*)/;
+    const match = url.match(regex);
+    if (match) {
+      return match[2];
+    } else {
+      return null;
+    }
+  }
+
+  // 展示提示框
+  function showNotification(message, type = '') {
+    const notification = document.getElementById('notification');
+    notification.textContent = message;
+    notification.className = ''; 
+    notification.classList.add(type, 'show');
+    
+    setTimeout(() => {
+      notification.classList.remove('show');
+    }, 3000);
+  }
+
+  function copyText() {
+    let outputText = document.getElementById("outputText");
+    if (outputText && (outputText.value !== '' || outputText.innerText !== '')) {
+        outputText.select();
+        document.execCommand("copy");
+        showNotification("转换结果已复制到剪贴板!", 'success');
+    } else {
+        showNotification("请转换数据后，再拷贝转换结果", 'warning');
+    }
+  }
+  
+  function clearScreen() {
+    document.getElementById('inputText').value = '';
+    document.getElementById('outputText').value = '';
+    document.getElementById('result').style.display = 'none';
+    showNotification("清除成功！", 'success');
+
+  }
+
+    function saveAsM3U() {
+        const m3uContent = document.getElementById('outputText').value;
+        if (m3uContent === '') {
+        showNotification("转换结果为空，请转换数据后再运行保存结果", 'warning');
+        return;
+        }
+        const blob = new Blob([m3uContent], { type: 'text/plain' });
+        const a = document.createElement('a');
+        const isM3U = m3uContent.includes('EXTM3U');
+        a.download = isM3U ? 'playlist.m3u' : 'playlist.txt';
+        a.href = URL.createObjectURL(blob);
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        const fileName = a.download;
+        showNotification("保存成功！", 'success');
+        //alert(`文件${fileName}已保存到默认下载文件夹`);
+    }
+
+  function updateResultDisplay() {
+  var resultElement = document.getElementById('result');
+  if (resultElement.innerHTML.trim() === '') {
+    resultElement.style.display = 'none';
+  } else {
+    resultElement.style.display = 'block';
+  }
+}  
+
+</script>
+<script async src="https://vercount.one/js">
+</script>  
+
+</body>
+</html>
