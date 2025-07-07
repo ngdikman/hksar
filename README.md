@@ -35,5 +35,5 @@ https://backin.pp.ua/txt?url=https://backin.wang/GDIPTV
 ```
 > TXT和M3U互转工具
 ```
-https://tv.backin.pp.ua
+https://haha.backin.wang
 ```
