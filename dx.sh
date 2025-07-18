@@ -79,4 +79,9 @@ rm -rf dianxin.txt
     }
   '
 } > dianxin.txt
-cat txt/fofa_dianxin.txt >>dianxin.txt
+{
+  echo "📡 BXTV,#genre#"
+  curl -s "http://bx.757888.xyz/bxtv.txt" | grep -v '^#'
+} >> dianxin.txt
+
+cat txt/fofa_dianxin.txt >> dianxin.txt
