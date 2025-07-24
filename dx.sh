@@ -83,15 +83,15 @@ rm -rf dianxin.txt
   echo "📡 BXTV,#genre#"
   curl -s "http://bx.757888.xyz/bxtv.txt" | grep -v '^#'
 } >> dianxin.txt
-{
-  echo "📡 HKTV,#genre#"
-  curl -s "http://kkk.888.3116598.xyz/user/HKTV.txt" | \
-  awk '/港台,#genre#/ { p=1; next } /,#genre#/ && !/港台/ { p=0 } p'
-} >> dianxin.txt
-{
-  echo "📡 HKTV备,#genre#"
-  curl -s "http://kkk.888.3116598.xyz/user/HKTV.txt" | \
-  awk '/港澳,#genre#/ { p=1; next } /,#genre#/ && !/港澳/ { p=0 } p'
-} >> dianxin.txt
+# {
+#   echo "📡 HKTV,#genre#"
+#   curl -s "http://kkk.888.3116598.xyz/user/HKTV.txt" | \
+#   awk '/港台,#genre#/ { p=1; next } /,#genre#/ && !/港台/ { p=0 } p'
+# } >> dianxin.txt
+# {
+#   echo "📡 HKTV备,#genre#"
+#   curl -s "http://kkk.888.3116598.xyz/user/HKTV.txt" | \
+#   awk '/港澳,#genre#/ { p=1; next } /,#genre#/ && !/港澳/ { p=0 } p'
+# } >> dianxin.txt
 
 cat txt/fofa_dianxin.txt >> dianxin.txt
