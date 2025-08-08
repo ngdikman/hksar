@@ -81,7 +81,7 @@ rm -rf dianxin.txt
 } > dianxin.txt
 {
   echo "📡 BXTV,#genre#"
-  curl -s "http://bxtv.3a.ink/live.txt" | grep -v '^#'
+  curl -s "https://bxtv.3a.ink/live.txt" | grep -v '^#'
 } >> dianxin.txt
 # {
 #   echo "📡 HKTV,#genre#"
