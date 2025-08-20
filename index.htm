@@ -6,135 +6,190 @@
     <title>在线 TXT ⇄ M3U 转换工具</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <style>
-        :root{
-            --primary:#007bff;
-            --radius:4px;
-            --max-width:1200px;
-            --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-        }
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{
-            font-family:var(--font);
-            background:#f8f9fa;
-            color:#333;
-            line-height:1.6;
-        }
-        .header{
-            background:var(--primary);
-            color:#fff;
-            padding:15px 20px;
-            font-weight:600;
-            font-size:18px;
-        }
-        .container{max-width:var(--max-width);margin:0 auto;padding:25px;background:#fff}
-        .blue-title{
-            border-left:4px solid var(--primary);
-            padding-left:12px;
-            margin:20px 0 15px;
-            font-size:16px;
-            font-weight:600;
-            color:#495057;
-        }
-        textarea{
-            width:100%;
-            min-height:180px;
-            padding:10px 12px;
-            border:1px solid #ced4da;
-            border-radius:var(--radius);
-            font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
-            font-size:14px;
-            resize:vertical;
-            transition:border-color .15s,box-shadow .15s;
-        }
-        textarea:focus{
-            border-color:#80bdff;
-            outline:0;
-            box-shadow:0 0 0 .2rem rgba(0,123,255,.25);
-        }
-        .button-group{margin:15px 0}
-        .btn{
-            padding:8px 16px;
-            margin:0 8px 8px 0;
-            border:1px solid #ced4da;
-            border-radius:var(--radius);
-            background:#f8f9fa;
-            color:#212529;
-            font-size:14px;
-            cursor:pointer;
-            transition:all .2s;
-            text-decoration:none;
-        }
-        .btn:hover{background:#e9ecef}
-        .btn-primary{background:var(--primary);color:#fff;border-color:var(--primary)}
-        .btn-primary:hover{background:#0069d9;border-color:#0062cc}
-        .card{
-            background:#fff;
-            margin-top:25px;
-        }
-        .hidden{display:none}
-        .note{color:#6c757d;font-size:14px;margin-bottom:16px}
-
-        #toast{
-            position:fixed;
-            top:40px;left:50%;
-            transform:translateX(-50%);
-            padding:8px 18px;
-            background:#333;
-            color:#fff;
-            border-radius:var(--radius);
-            font-size:14px;
-            opacity:0;
-            transition:opacity .3s;
-            z-index:9999;
+        :root {
+            --primary: #007bff;
+            --radius: 4px;
+            --max-width: 1200px;
+            --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif
         }
 
-        .footer{
-            text-align:center;
-            padding:20px;
-            color:#6c757d;
-            font-size:14px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
         }
 
-        .switch-wrap{
-            display:flex;
-            align-items:center;
-            gap:8px;
-            margin-bottom:10px;
-            font-size:14px;
-            color:#495057;
+        body {
+            font-family: var(--font);
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.6
         }
-        .switch{
-            position:relative;
-            display:inline-block;
-            width:44px;
-            height:22px;
+
+        .header {
+            background: var(--primary);
+            color: #fff;
+            padding: 15px 20px;
+            font-weight: 600;
+            font-size: 18px
         }
-        .switch input{
-            opacity:0;
-            width:0;
-            height:0;
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 25px;
+            background: #fff
         }
-        .slider{
-            position:absolute;
-            cursor:pointer;
-            top:0;left:0;right:0;bottom:0;
-            background:#ccc;
-            transition:.4s;
-            border-radius:22px;
+
+        .blue-title {
+            border-left: 4px solid var(--primary);
+            padding-left: 12px;
+            margin: 20px 0 15px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #495057
         }
-        .slider:before{
-            position:absolute;
-            content:"";
-            height:18px;
-            width:18px;
-            left:2px;
-            bottom:2px;
-            background:#fff;
-            transition:.4s;
-            border-radius:50%;
+
+        textarea {
+            width: 100%;
+            min-height: 180px;
+            padding: 10px 12px;
+            border: 1px solid #ced4da;
+            border-radius: var(--radius);
+            font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 14px;
+            resize: vertical;
+            transition: border-color .15s, box-shadow .15s
         }
-        input:checked + .slider{background:var(--primary)}
-        input:checked + .slider:before{transform:translateX(22px)}
+
+        textarea:focus {
+            border-color: #80bdff;
+            outline: 0;
+            box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25)
+        }
+
+        .button-group {
+            margin: 15px 0
+        }
+
+        .btn {
+            padding: 8px 16px;
+            margin: 0 8px 8px 0;
+            border: 1px solid #ced4da;
+            border-radius: var(--radius);
+            background: #f8f9fa;
+            color: #212529;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all .2s;
+            text-decoration: none
+        }
+
+        .btn:hover {
+            background: #e9ecef
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary)
+        }
+
+        .btn-primary:hover {
+            background: #0069d9;
+            border-color: #0062cc
+        }
+
+        .card {
+            background: #fff;
+            margin-top: 25px
+        }
+
+        .hidden {
+            display: none
+        }
+
+        .note {
+            color: #6c757d;
+            font-size: 14px;
+            margin-bottom: 16px
+        }
+
+        #toast {
+            position: fixed;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 8px 18px;
+            background: #333;
+            color: #fff;
+            border-radius: var(--radius);
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity .3s;
+            z-index: 9999
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #6c757d;
+            font-size: 14px
+        }
+
+        .switch-wrap {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #495057
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 44px;
+            height: 22px
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #ccc;
+            transition: .4s;
+            border-radius: 22px
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 2px;
+            bottom: 2px;
+            background: #fff;
+            transition: .4s;
+            border-radius: 50%
+        }
+
+        input:checked+.slider {
+            background: var(--primary)
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(22px)
+        }
     </style>
 </head>
 
@@ -145,10 +200,7 @@
         <textarea id="inputArea" placeholder="请粘贴或拖拽文件内容…"></textarea>
         <div class="note">支持拖放文件，输入内容不会被清空</div>
         <div class="switch-wrap">
-            <label class="switch">
-                <input type="checkbox" id="autoGroup">
-                <span class="slider"></span>
-            </label>
+            <label class="switch"><input type="checkbox" id="autoGroup"><span class="slider"></span></label>
             <span>自动分组</span>
         </div>
         <div class="button-group">
@@ -168,215 +220,345 @@
     <div class="footer">© 2025 Catvod.com - 所有权利保留</div>
     <div id="toast"></div>
     <script>
-    /* ========== Toast 提示 ========== */
-    const toast = document.getElementById('toast');
+        /* ---------- Toast ---------- */
+        const toast = document.getElementById('toast');
 
-    function showToast(msg) {
-        toast.textContent = msg;
-        toast.style.opacity = 1;
-        setTimeout(() => toast.style.opacity = 0, 3000);
-    }
+        function showToast(msg) {
+            toast.textContent = msg;
+            toast.style.opacity = 1;
+            setTimeout(() => toast.style.opacity = 0, 3000);
+        }
 
-    /* ========== 自动分组核心 ========== */
-    const hkTwKw = [
-        '天映', '美亚', '澳视', 'VIUTV', '无线新闻', 'HOY', 'NOW', '台湾', '香港', '凤凰', '翡翠', '明珠', 'TVB', 'ANIMAX', 'AXN', 'Arirang',
-        'BBC', 'Bloomberg', 'CARTOONITO', 'CBeebies', 'CINEMAX', 'CNBC', 'CNN', 'CN卡通', 'CatchPlay', 'CinemaWorld', 'DAZN', 'DMAX', 'DWTV',
-        'Discovery', 'DreamWorks', 'ETtoday', 'EVE', 'FRANCE', 'FashionTV', 'Food', 'Global', 'HBO', 'HITS', 'INULTRA', 'JET', 'LOVE_NATURE',
-        'LUXE', 'Lifetime', 'MOMO', 'MTV', 'NHK', 'Nick', 'Pet_Club_TV', 'ROCK', 'TLC', 'TV5', 'TVBS', 'TaiwanPlus', 'TechStorm', 'Travel',
-        'Warner_TV', 'Z频道', 'amc', 'rollor', 'tvN', '三圣电视', '三立', '东森', '东风卫视', '中天', '中视', '乐视台', '亚洲', '人间',
-        '佛卫', '八大', '公共电视', '公视', '冠军', '动物星球', '十方法界', '半岛', '华艺', '华藏', '华视', '博斯', '历史', '原住民',
-        '双子卫视', '古典音乐', '台湾', '台视', '国兴', '壹电视', '大爱', '天美丽电视', '天良综合', '好消息', '好莱坞', '客家电视',
-        '富立', '尼克儿童', '居家', '年代', '幸福空间', '新天地民俗', '智林体育', '梅迪奇艺术', '欧洲', '正德', '民视', '法国TV5',
-        '爱尔达', '狼谷育乐', '环宇', '生命', '番薯', '纬来', '罪案', '诚心电视', '超视', '达文西', '运通财经', '镜电视', '霹雳',
-        '靖天', '靖洋卡', '非凡', '韩国娱乐', '高点', '龙祥', '港台电视', 'RTHK'
-    ];
+        /* ---------- 自动分组 ---------- */
+        const hkTwKw = ['天映', '美亚', '澳视', 'VIUTV', '无线新闻', 'HOY', 'NOW', '台湾', '香港', '凤凰', '翡翠', '明珠', 'TVB', 'ANIMAX', 'AXN', 'Arirang', 'BBC', 'Bloomberg', 'CARTOONITO', 'CBeebies', 'CINEMAX', 'CNBC', 'CNN', 'CN卡通', 'CatchPlay', 'CinemaWorld', 'DAZN', 'DMAX', 'DWTV', 'Discovery', 'DreamWorks', 'ETtoday', 'EVE', 'FRANCE', 'FashionTV', 'Food', 'Global', 'HBO', 'HITS', 'INULTRA', 'JET', 'LOVE_NATURE', 'LUXE', 'Lifetime', 'MOMO', 'MTV', 'NHK', 'Nick', 'Pet_Club_TV', 'ROCK', 'TLC', 'TV5', 'TVBS', 'TaiwanPlus', 'TechStorm', 'Travel', 'Warner_TV', 'Z频道', 'amc', 'rollor', 'tvN', '三圣电视', '三立', '东森', '东风卫视', '中天', '中视', '乐视台', '亚洲', '人间', '佛卫', '八大', '公共电视', '公视', '冠军', '动物星球', '十方法界', '半岛', '华艺', '华藏', '华视', '博斯', '历史', '原住民', '双子卫视', '古典音乐', '台湾', '台视', '国兴', '壹电视', '大爱', '天美丽电视', '天良综合', '好消息', '好莱坞', '客家电视', '富立', '尼克儿童', '居家', '年代', '幸福空间', '新天地民俗', '智林体育', '梅迪奇艺术', '欧洲', '正德', '民视', '法国TV5', '爱尔达', '狼谷育乐', '环宇', '生命', '番薯', '纬来', '罪案', '诚心电视', '超视', '达文西', '运通财经', '镜电视', '霹雳', '靖天', '靖洋卡', '非凡', '韩国娱乐', '高点', '龙祥', '港台电视', 'RTHK'];
 
-    function getGroup(name) {
-        const n = name.toUpperCase();
-        if (/CCTV|CETV|中央/i.test(n)) return '央视频道';
-        if (/卫视/.test(name) && !/凤凰卫视/i.test(name)) return '卫视频道';
-        for (const kw of hkTwKw)
-            if (n.includes(kw.toUpperCase())) return '港台频道';
-        return '地方频道';
-    }
+        function getGroup(name) {
+            const n = name.toUpperCase();
+            if (/CCTV|CETV|中央/i.test(n)) return '央视频道';
+            if (/卫视/.test(name) && !/凤凰卫视/i.test(name)) return '卫视频道';
+            for (const kw of hkTwKw)
+                if (n.includes(kw.toUpperCase())) return '港台频道';
+            return '地方频道';
+        }
 
-    function cctvSort(a, b) {
-        const clean = s => s.toUpperCase()
-            .replace(/CETV/i, 'CCTV')
-            .replace(/中央/i, 'CCTV')
-            .replace(/[^0-9+]/g, '')
-            .replace(/^CCTV/, '');
-        const na = clean(a.name),
-            nb = clean(b.name);
-        if (na === '') return 1;
-        if (nb === '') return -1;
-        const ia = parseFloat(na.replace('+', '.5'));
-        const ib = parseFloat(nb.replace('+', '.5'));
-        return ia - ib || a.name.localeCompare(b.name, 'zh-CN');
-    }
+        function cctvSort(a, b) {
+            const clean = s => s.toUpperCase().replace(/CETV|中央/gi, 'CCTV').replace(/[^0-9+]/g, '').replace(/^CCTV/, '');
+            const na = clean(a.name),
+                nb = clean(b.name);
+            if (na === '') return 1;
+            if (nb === '') return -1;
+            return parseFloat(na.replace('+', '.5')) - parseFloat(nb.replace('+', '.5')) || a.name.localeCompare(b.name, 'zh-CN');
+        }
 
-    function normalizeCCTV(name) {
-        return name
-            .replace(/(CETV|中央)/gi, 'CCTV')
-            .replace(/台/g, '') // 关键：去掉“台”
-            .replace(/\s*[-–—]\s*/g, '')
-            .replace(/\s+/g, '')
-            .replace(/高清|标清|超清|HDR|HD|画中画|单音轨|-CM-IPTV|-Tel/gi, '')
-            .replace(/高清电影/gi, '影迷电影')
-            .replace(/CCTV5\+/gi, 'CCTV5+');
-    }
+        function normalizeCCTV(name) {
+            return name.replace(/(CETV|中央)/gi, 'CCTV').replace(/台/g, '').replace(/\s*[-–—]\s*/g, '').replace(/\s+/g, '').replace(/高清|标清|超清|HDR|HD|画中画|单音轨|-CM-IPTV|-Tel/gi, '').replace(/高清电影/gi, '影迷电影').replace(/CCTV5\+/gi, 'CCTV5+');
+        }
 
-    /* ---------- 主转换 ---------- */
-    function convert(type) {
-        const src = document.getElementById('inputArea').value.trim();
-        if (!src) { showToast('请输入内容'); return; }
+        /* ---------- 自动匹配台标 ---------- */
+        const stdMap = [
+            [/^(?!.*华丽).*翡翠台/i, '翡翠台'],
+            [/翡翠台.*4k?/i, '翡翠台'],
+            [/无线新闻台/i, '无线新闻'],
+            [/ViuTVSix/i, 'viutvsix'],
+            [/^(?!.*Six).*ViuTV/i, 'viutv'],
+            [/华丽翡翠台/i, '华丽翡翠台'],
+            [/TVB Plus/i, 'TVBPLUS'],
+            [/美亚电影台/i, '美亚电影台'],
+            [/天映频道/i, '天映频道'],
+            [/凤凰(?:卫视)?资讯/i, '凤凰卫视资讯台'],
+            [/凤凰(?:卫视)?中文/i, '凤凰卫视中文台'],
+            [/凤凰(?:卫视)?香港/i, '凤凰卫视香港台'],
+            // 可按需继续添加
+        ];
 
-        const autoGroup = document.getElementById('autoGroup').checked;
-        let result = '',
-            filename = '';
+        function unifyTvgName(raw) {
+            for (const [re, fixed] of stdMap)
+                if (re.test(raw)) return fixed;
+            return raw;
+        }
 
-        /* ---------- TXT → TXT ---------- */
-        if (type === 'txt') {
-            const rawLines = src.split('\n');
-            const lines = rawLines.map(l => l.trim());
-            const isM3U = lines.some(l => l.startsWith('#EXTINF:'));
+        /* ---------- 主转换 ---------- */
+        function convert(type) {
+            const src = document.getElementById('inputArea').value.trim();
+            if (!src) {
+                showToast('请输入内容');
+                return;
+            }
+            const autoGroup = document.getElementById('autoGroup').checked;
+            let result = '',
+                filename = '';
+            const isM3U = src.split('\n').some(l => l.trim().startsWith('#EXTINF:'));
 
-            if (isM3U) {
-                /* M3U → TXT */
-                const chArr = [];
-                let curName = '',
-                    curUrl = '';
-                lines.forEach(line => {
-                    if (line.startsWith('#EXTINF:')) {
-                        const m = line.match(/,([^,]+)$/);
-                        curName = m ? m[1].trim() : '';
-                        curUrl = '';
-                    } else if (!line.startsWith('#') && line) {
-                        curUrl = line.trim();
-                        if (curName && curUrl) chArr.push({ name: curName, url: curUrl });
+            /* ---------- TXT ---------- */
+            if (type === 'txt') {
+                if (isM3U) {
+                    const channels = [];
+                    let curName = '',
+                        curUrl = '',
+                        curGrp = '';
+                    src.split('\n').forEach(line => {
+                        const t = line.trim();
+                        if (t.startsWith('#EXTINF:')) {
+                            const mName = t.match(/,([^,]+)$/);
+                            curName = mName ? mName[1].trim() : '';
+                            const mGrp = t.match(/group-title="([^"]*)"/i);
+                            curGrp = mGrp ? mGrp[1].trim() : (autoGroup ? '' : '未分组');
+                            curUrl = '';
+                        } else if (!t.startsWith('#') && t) {
+                            curUrl = t;
+                            if (curName && curUrl) channels.push({
+                                name: curName,
+                                url: curUrl,
+                                group: curGrp
+                            });
+                        }
+                    });
+                    if (autoGroup) {
+                        const groups = {
+                            '央视频道': [],
+                            '港台频道': [],
+                            '卫视频道': [],
+                            '地方频道': []
+                        };
+                        channels.forEach(({
+                            name,
+                            url
+                        }) => {
+                            const grp = getGroup(name);
+                            if (grp === '央视频道') name = normalizeCCTV(name);
+                            groups[grp].push({
+                                name,
+                                url
+                            });
+                        });
+                        if (groups['央视频道']) groups['央视频道'].sort(cctvSort);
+                        const ordered = [];
+                        ['央视频道', '港台频道', '卫视频道', '地方频道'].forEach(grp => {
+                            if (!groups[grp] || groups[grp].length === 0) return;
+                            if (ordered.length) ordered.push('');
+                            ordered.push(`${grp},#genre#`);
+                            groups[grp].forEach(({
+                                name,
+                                url
+                            }) => ordered.push(`${name},${url}`));
+                        });
+                        result = ordered.join('\n');
+                    } else {
+                        const map = new Map();
+                        channels.forEach(({
+                            group,
+                            name,
+                            url
+                        }) => {
+                            const g = group || '未分组';
+                            if (!map.has(g)) map.set(g, []);
+                            map.get(g).push({
+                                name,
+                                url
+                            });
+                        });
+                        const ordered = [];
+                        for (const [grp, arr] of map) {
+                            if (ordered.length) ordered.push('');
+                            ordered.push(`${grp},#genre#`);
+                            arr.forEach(({
+                                name,
+                                url
+                            }) => ordered.push(`${name},${url}`));
+                        }
+                        result = ordered.join('\n');
                     }
-                });
-
-                const groups = { '央视频道': [], '港台频道': [], '卫视频道': [], '地方频道': [] };
-                chArr.forEach(({ name, url }) => {
-                    let grp = autoGroup ? getGroup(name) : '未分组';
-                    if (autoGroup && grp === '央视频道') name = normalizeCCTV(name);
-                    groups[grp].push({ name, url });
-                });
-                if (groups['央视频道']) groups['央视频道'].sort(cctvSort);
-
-                const ordered = [];
-                for (const grp of ['央视频道', '港台频道', '卫视频道', '地方频道']) {
-                    if (!groups[grp] || groups[grp].length === 0) continue;
-                    if (ordered.length) ordered.push('');
-                    ordered.push(`${grp},#genre#`);
-                    groups[grp].forEach(({ name, url }) => ordered.push(`${name},${url}`));
-                }
-                result = ordered.join('\n');
-            } else {
-                if (!autoGroup) {
-                    result = src;
                 } else {
-                    const ordered = [];
-                    const groups = { '央视频道': [], '港台频道': [], '卫视频道': [], '地方频道': [] };
+                    if (!autoGroup) {
+                        result = src;
+                    } else {
+                        const groups = {
+                            '央视频道': [],
+                            '港台频道': [],
+                            '卫视频道': [],
+                            '地方频道': []
+                        };
+                        src.split('\n').forEach(line => {
+                            const l = line.trim();
+                            if (!l || l.includes('#genre#')) return;
+                            const idx = l.indexOf(',');
+                            if (idx === -1) return;
+                            let name = l.slice(0, idx).trim();
+                            const url = l.slice(idx + 1).trim();
+                            const grp = getGroup(name);
+                            if (grp === '央视频道') name = normalizeCCTV(name);
+                            groups[grp].push({
+                                name,
+                                url
+                            });
+                        });
+                        if (groups['央视频道']) groups['央视频道'].sort(cctvSort);
+                        const ordered = [];
+                        ['央视频道', '港台频道', '卫视频道', '地方频道'].forEach(grp => {
+                            if (!groups[grp] || groups[grp].length === 0) return;
+                            if (ordered.length) ordered.push('');
+                            ordered.push(`${grp},#genre#`);
+                            groups[grp].forEach(({
+                                name,
+                                url
+                            }) => ordered.push(`${name},${url}`));
+                        });
+                        result = ordered.join('\n');
+                    }
+                }
+                filename = 'playlist.txt';
+            }
+
+            /* ---------- M3U ---------- */
+            else {
+                if (isM3U) {
+                    if (!autoGroup) {
+                        result = src;
+                    } else {
+                        const channels = [];
+                        let curName = '',
+                            curUrl = '',
+                            curGrp = '',
+                            curLogo = '',
+                            curTvgName = '';
+                        src.split('\n').forEach(line => {
+                            const t = line.trim();
+                            if (t.startsWith('#EXTINF:')) {
+                                const mName = t.match(/,([^,]+)$/);
+                                curName = mName ? mName[1].trim() : '';
+                                const mGrp = t.match(/group-title="([^"]*)"/i);
+                                curGrp = mGrp ? mGrp[1].trim() : '';
+                                const mLogo = t.match(/tvg-logo="([^"]*)"/i);
+                                curLogo = mLogo ? mLogo[1].trim() : '';
+                                const mTvg = t.match(/tvg-name="([^"]*)"/i);
+                                curTvgName = mTvg ? mTvg[1].trim() : '';
+                                curUrl = '';
+                            } else if (!t.startsWith('#') && t) {
+                                curUrl = t;
+                                if (curName && curUrl) {
+                                    const grp = getGroup(curName);
+                                    channels.push({
+                                        name: curName,
+                                        url: curUrl,
+                                        group: grp,
+                                        logo: curLogo,
+                                        tvgName: curTvgName || curName
+                                    });
+                                }
+                            }
+                        });
+                        const groups = {
+                            '央视频道': [],
+                            '港台频道': [],
+                            '卫视频道': [],
+                            '地方频道': []
+                        };
+                        channels.forEach(ch => groups[ch.group].push(ch));
+                        if (groups['央视频道']) groups['央视频道'].sort((a, b) => cctvSort(a, b));
+                        result = '#EXTM3U url-tvg="https://live.fanmingming.cn/e.xml"\n';
+                        ['央视频道', '港台频道', '卫视频道', '地方频道'].forEach(grp => {
+                            groups[grp].forEach(({
+                                name,
+                                url,
+                                tvgName,
+                                logo
+                            }) => {
+                                const fixedName = unifyTvgName(name);
+                                result += `#EXTINF:-1 tvg-name="${fixedName}" tvg-logo="https://epg.v1.mk/logo/${fixedName}.png" group-title="${grp}",${name}\n${url}\n`;
+                            });
+                        });
+                    }
+                } else {
+                    const lines = src.split('\n').map(l => l.trim()).filter(l => l && !l.startsWith('//'));
+                    const chArr = [];
+                    let curGroup = '无分组';
                     lines.forEach(line => {
-                        if (!line || line.includes('#genre#')) return;
+                        if (line.includes('#genre#')) {
+                            curGroup = line.split(',')[0].trim();
+                            return;
+                        }
+                        if (line.startsWith('#') || !line) return;
                         const idx = line.indexOf(',');
                         if (idx === -1) return;
                         let name = line.slice(0, idx).trim();
                         const url = line.slice(idx + 1).trim();
-                        const grp = getGroup(name);
-                        if (grp === '央视频道') name = normalizeCCTV(name);
-                        groups[grp].push({ name, url });
+                        if (autoGroup) {
+                            const grp = getGroup(name);
+                            if (grp === '央视频道') name = normalizeCCTV(name);
+                            curGroup = grp;
+                        }
+                        chArr.push({
+                            name,
+                            url,
+                            group: curGroup
+                        });
                     });
-                    if (groups['央视频道']) groups['央视频道'].sort(cctvSort);
-
-                    for (const grp of ['央视频道', '港台频道', '卫视频道', '地方频道']) {
-                        if (!groups[grp] || groups[grp].length === 0) continue;
-                        if (ordered.length) ordered.push('');
-                        ordered.push(`${grp},#genre#`);
-                        groups[grp].forEach(({ name, url }) => ordered.push(`${name},${url}`));
-                    }
-                    result = ordered.join('\n');
+                    const groups = new Map();
+                    chArr.forEach(({
+                        name,
+                        url,
+                        group
+                    }) => {
+                        if (!groups.has(group)) groups.set(group, []);
+                        groups.get(group).push({
+                            name,
+                            url
+                        });
+                    });
+                    result = '#EXTM3U url-tvg="https://live.fanmingming.cn/e.xml"\n';
+                    groups.forEach((channels, grp) => {
+                        if (grp === '央视频道') channels.sort(cctvSort);
+                        channels.forEach(({
+                            name,
+                            url
+                        }) => {
+                            const fixedName = unifyTvgName(name);
+                            result += `#EXTINF:-1 tvg-name="${fixedName}" tvg-logo="https://epg.v1.mk/logo/${fixedName}.png" group-title="${grp}",${name}\n${url}\n`;
+                        });
+                    });
                 }
+                filename = 'playlist.m3u';
             }
-            filename = 'playlist.txt';
+
+            /* ---------- 输出 ---------- */
+            document.getElementById('resultArea').value = result;
+            document.getElementById('resultCard').classList.remove('hidden');
+            const blob = new Blob([result], {
+                type: 'text/plain'
+            });
+            const dl = document.getElementById('downloadBtn');
+            dl.href = URL.createObjectURL(blob);
+            dl.download = filename;
+            showToast('转换完成');
         }
 
-        /* ---------- TXT → M3U ---------- */
-        else {
-            const lines = src.split('\n').map(l => l.trim()).filter(l => l && !l.startsWith('//'));
-            const chArr = [];
-            let curGroup = '无分组';
-            lines.forEach(line => {
-                if (line.includes('#genre#')) { curGroup = line.split(',')[0].trim(); return; }
-                if (line.startsWith('#') || !line) return;
-                const idx = line.indexOf(',');
-                if (idx === -1) return;
-                let name = line.slice(0, idx).trim();
-                const url = line.slice(idx + 1).trim();
-                if (autoGroup) {
-                    const grp = getGroup(name);
-                    if (grp === '央视频道') name = normalizeCCTV(name);
-                    curGroup = grp;
-                }
-                chArr.push({ name, url, group: curGroup });
-            });
-
-            const groups = new Map();
-            chArr.forEach(({ name, url, group }) => {
-                if (!groups.has(group)) groups.set(group, []);
-                groups.get(group).push({ name, url });
-            });
-
-            result = '#EXTM3U url-tvg="https://live.fanmingming.cn/e.xml"\n';
-            groups.forEach((channels, grp) => {
-                if (grp === '央视频道') channels.sort(cctvSort);
-                channels.forEach(({ name, url }) => {
-                    result += `#EXTINF:-1 tvg-name="${name}" tvg-logo="https://epg.v1.mk/logo/${name}.png" group-title="${grp}",${name}\n${url}\n`;
-                });
-            });
-            filename = 'playlist.m3u';
+        /* ---------- 其余辅助 ---------- */
+        function clearInput() {
+            document.getElementById('inputArea').value = '';
+            document.getElementById('resultCard').classList.add('hidden');
+            showToast('已清空');
         }
 
-        /* ---------- 输出 ---------- */
-        document.getElementById('resultArea').value = result;
-        document.getElementById('resultCard').classList.remove('hidden');
-        const blob = new Blob([result], { type: 'text/plain' });
-        const dl = document.getElementById('downloadBtn');
-        dl.href = URL.createObjectURL(blob);
-        dl.download = filename;
-        showToast('转换完成');
-    }
-
-    /* ---------- 其余辅助函数 ---------- */
-    function clearInput() {
-        document.getElementById('inputArea').value = '';
-        document.getElementById('resultCard').classList.add('hidden');
-        showToast('已清空');
-    }
-
-    function copyResult() {
-        const area = document.getElementById('resultArea');
-        area.select();
-        document.execCommand('copy');
-        showToast('已复制到剪贴板');
-    }
-
-    const inputArea = document.getElementById('inputArea');
-    inputArea.addEventListener('dragover', e => e.preventDefault());
-    inputArea.addEventListener('drop', e => {
-        e.preventDefault();
-        const file = e.dataTransfer.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = ev => {
-                inputArea.value = inputArea.value + (inputArea.value.endsWith('\n') ? '' : '\n') + ev.target.result;
-                showToast('文件已加载');
-            };
-            reader.readAsText(file);
+        function copyResult() {
+            const area = document.getElementById('resultArea');
+            area.select();
+            document.execCommand('copy');
+            showToast('已复制到剪贴板');
         }
-    });
+        const inputArea = document.getElementById('inputArea');
+        inputArea.addEventListener('dragover', e => e.preventDefault());
+        inputArea.addEventListener('drop', e => {
+            e.preventDefault();
+            const file = e.dataTransfer.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = ev => {
+                    inputArea.value = inputArea.value + (inputArea.value.endsWith('\n') ? '' : '\n') + ev.target.result;
+                    showToast('文件已加载');
+                };
+                reader.readAsText(file);
+            }
+        });
     </script>
 </body>
 
