@@ -83,12 +83,11 @@ rm -rf dianxin.txt
   echo "📡 FYTV,#genre#"
   curl -s "http://iptv.4666888.xyz/FYTV.txt" | \
   awk '/港澳频道-,#genre#/ { p=1; next } /,#genre#/ && !/香港/ { p=0 } p'
-} >> dianxin.tx
+} >> dianxin.txt
 {
   echo "📡 BXTV,#genre#"
   curl -s "https://bxtv.3a.ink/live.txt" | grep -v '^#'
 } >> dianxin.txt
-t
 # {
 #   echo "📡 HKTV备,#genre#"
 #   curl -s "http://kkk.888.3116598.xyz/user/HKTV.txt" | \
