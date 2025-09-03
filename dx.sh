@@ -63,22 +63,22 @@ sed -e "s/ipipip/$ip1/g" -e "s/urlurlurl/$ip2/g" "$txtprogram" > "txt/fofa_${cit
 
 # 生成杂七杂八txt
 rm -rf dianxin.txt
-{
-  echo "📡 AKTV,#genre#"
-  curl -s "http://aktv.space/live.m3u" | awk '
-    BEGIN { name = "" }
-    /^#EXTINF/ {
-      match($0, /,(.*)/, arr)
-      name = arr[1]
-    }
-    /^http/ {
-      if (name != "") {
-        print name "," $0
-        name = ""
-      }
-    }
-  '
-} > dianxin.txt
+# {
+#   echo "📡 AKTV,#genre#"
+#   curl -s "http://aktv.space/live.m3u" | awk '
+#     BEGIN { name = "" }
+#     /^#EXTINF/ {
+#       match($0, /,(.*)/, arr)
+#       name = arr[1]
+#     }
+#     /^http/ {
+#       if (name != "") {
+#         print name "," $0
+#         name = ""
+#       }
+#     }
+#   '
+# } > dianxin.txt
 {
   echo "📡 FYTV,#genre#"
   curl -s "http://iptv.4666888.xyz/FYTV.txt" | \
