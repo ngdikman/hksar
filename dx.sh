@@ -79,19 +79,22 @@ rm -rf dianxin.txt
 #     }
 #   '
 # } > dianxin.txt
+
+{
+  echo "📡 jackTV,#genre#"
+  curl -s "https://www.backin.pp.ua/txt?url=https://php.946985.xyz/jackTV.m3u" | \
+  awk '/📡 JULI,#genre#/ { p=1; next } /,#genre#/ && !/港澳/ { p=0 } p'
+} >> dianxin.txt
+
 {
   echo "📡 FYTV,#genre#"
   curl -s "http://iptv.4666888.xyz/FYTV.txt" | \
   awk '/港澳频道-,#genre#/ { p=1; next } /,#genre#/ && !/香港/ { p=0 } p'
 } >> dianxin.txt
+
 {
   echo "📡 BXTV,#genre#"
   curl -s "https://bxtv.3a.ink/live.txt" | grep -v '^#'
 } >> dianxin.txt
-# {
-#   echo "📡 HKTV备,#genre#"
-#   curl -s "http://kkk.888.3116598.xyz/user/HKTV.txt" | \
-#   awk '/港澳,#genre#/ { p=1; next } /,#genre#/ && !/港澳/ { p=0 } p'
-# } >> dianxin.txt
 
 cat txt/fofa_dianxin.txt >> dianxin.txt
