@@ -1,4 +1,3 @@
-📡 jackTV,#genre#
 📡 FYTV,#genre#
 📡 BXTV,#genre#
 myTV SUPER 18台,http://bxtv.3a.ink/api.php?id=18
