@@ -1,6 +1,6 @@
 # hksar
 
-> 电信m3u
+> 电信组播m3u
 ```
 https://backin.wang/GDIPTV
 ```
@@ -12,7 +12,7 @@ https://backin.wang/GDIPTV-SP
 https://backin.wang/dianxin
 ```
 ---
-> 广电测试m3u
+> 广电组播测试m3u
 ```
 https://backin.wang/guangdian
 ```
