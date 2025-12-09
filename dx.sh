@@ -61,34 +61,15 @@ sed "s/ipipip/$ip1/g" "$program" > GDIPTV.m3u
 sed "s/ipipip/$ip2/g" "$program" > GDIPTV-SP.m3u
 sed -e "s/ipipip/$ip1/g" -e "s/urlurlurl/$ip2/g" "$txtprogram" > "txt/fofa_${city}.txt"
 
-# 生成杂七杂八txt
 rm -rf dianxin.txt
-# {
-#   echo "📡 AKTV,#genre#"
-#   curl -s "http://aktv.space/live.m3u" | awk '
-#     BEGIN { name = "" }
-#     /^#EXTINF/ {
-#       match($0, /,(.*)/, arr)
-#       name = arr[1]
-#     }
-#     /^http/ {
-#       if (name != "") {
-#         print name "," $0
-#         name = ""
-#       }
-#     }
-#   '
-# } > dianxin.txt
+cat txt/fofa_dianxin.txt >> dianxin.txt
 
-{
-  echo "📡 FYTV,#genre#"
-  curl -s "http://iptv.4666888.xyz/FYTV.txt" | \
-  awk '/港澳频道-,#genre#/ { p=1; next } /,#genre#/ && !/香港/ { p=0 } p'
-} >> dianxin.txt
-
+# 生成杂七杂八txt
 {
   echo "📡 BXTV,#genre#"
-  curl -s "https://bxtv.3a.ink/live.txt" | grep -v '^#'
+  curl -s "https://bxtv.3a.ink/live.txt" | grep -v '#genre#'
 } >> dianxin.txt
 
-cat txt/fofa_dianxin.txt >> dianxin.txt
+{
+  curl -s "http://iptv.4666888.xyz/FYTV.txt" | sed 's/^.*#genre#/📡 &/'
+} >> dianxin.txt
