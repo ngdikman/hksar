@@ -116,6 +116,8 @@
 甘肃卫视,http://urlurlurl/udp/239.77.0.189:5146
 三沙卫视,http://urlurlurl/udp/239.253.43.113:5146
 📡 广东,#genre#
+翡翠台,http://ipipip/udp/239.77.1.107:5146
+明珠台,http://ipipip/udp/239.77.1.189:5146
 广东综艺(4k),http://ipipip/udp/239.77.0.244:5146
 广东综艺(4k),http://ipipip/udp/239.77.0.245:5146
 广东珠江,http://ipipip/udp/239.77.0.1:5146
@@ -188,6 +190,8 @@
 徐闻综合,http://ipipip/udp/239.253.43.112:5146
 梅州1套,http://ipipip/udp/239.253.43.123:5146
 客家生活,http://ipipip/udp/239.253.43.124:5146
+翡翠台,http://urlurlurl/udp/239.77.1.107:5146
+明珠台,http://urlurlurl/udp/239.77.1.189:5146
 广东综艺(4k),http://urlurlurl/udp/239.77.0.244:5146
 广东综艺(4k),http://urlurlurl/udp/239.77.0.245:5146
 广东珠江,http://urlurlurl/udp/239.77.0.1:5146
@@ -294,10 +298,6 @@ CCTV-17,http://ipipip/udp/239.77.1.121:5146
 CCTV-17,http://ipipip/udp/239.77.0.198:5146
 CGTN英语,http://ipipip/udp/239.77.0.199:5146
 CGTN Documentary,http://ipipip/udp/239.253.43.122:5146
-CGTN西班牙语,http://ipipip/udp/239.77.0.221:5146
-CGTN法语,http://ipipip/udp/239.77.0.228:5146
-CGTN阿拉伯语,http://ipipip/udp/239.253.43.200:5146
-CGTN俄语,http://ipipip/udp/239.253.43.201:5146
 兵器科技,http://ipipip/udp/239.253.43.18:5146
 兵器科技,http://ipipip/udp/239.253.43.9:5146
 电视指南,http://ipipip/udp/239.253.43.19:5146
@@ -355,10 +355,6 @@ CCTV-17,http://urlurlurl/udp/239.77.1.121:5146
 CCTV-17,http://urlurlurl/udp/239.77.0.198:5146
 CGTN英语,http://urlurlurl/udp/239.77.0.199:5146
 CGTN Documentary,http://urlurlurl/udp/239.253.43.122:5146
-CGTN西班牙语,http://urlurlurl/udp/239.77.0.221:5146
-CGTN法语,http://urlurlurl/udp/239.77.0.228:5146
-CGTN阿拉伯语,http://urlurlurl/udp/239.253.43.200:5146
-CGTN俄语,http://urlurlurl/udp/239.253.43.201:5146
 兵器科技,http://urlurlurl/udp/239.253.43.18:5146
 兵器科技,http://urlurlurl/udp/239.253.43.9:5146
 电视指南,http://urlurlurl/udp/239.253.43.19:5146
