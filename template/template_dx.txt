@@ -52,6 +52,8 @@
 广西卫视,http://ipipip/udp/239.77.0.139:5146
 吉林卫视,http://ipipip/udp/239.77.1.111:5146
 吉林卫视,http://ipipip/udp/239.77.0.150:5146
+新疆卫视,http://ipipip/udp/239.253.43.202:5146
+新疆卫视,http://ipipip/udp/239.77.1.25:5146
 青海卫视,http://ipipip/udp/239.253.43.125:5146
 海南卫视,http://ipipip/udp/239.253.43.35:5146
 海南卫视,http://ipipip/udp/239.253.43.101:5146
@@ -110,6 +112,8 @@
 广西卫视,http://urlurlurl/udp/239.77.0.139:5146
 吉林卫视,http://urlurlurl/udp/239.77.1.111:5146
 吉林卫视,http://urlurlurl/udp/239.77.0.150:5146
+新疆卫视,http://urlurlurl/udp/239.253.43.202:5146
+新疆卫视,http://urlurlurl/udp/239.77.1.25:5146
 青海卫视,http://urlurlurl/udp/239.253.43.125:5146
 海南卫视,http://urlurlurl/udp/239.253.43.35:5146
 海南卫视,http://urlurlurl/udp/239.253.43.101:5146
