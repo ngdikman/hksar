@@ -79,9 +79,9 @@ http://ipipip/udp/239.77.0.187:5146
 http://ipipip/udp/239.77.0.201:5146
 #EXTINF:-1 tvg-name="江门侨乡生活" tvg-logo="https://11.112114.xyz/logo/江门侨乡生活.png" group-title="广东",江门侨乡生活
 http://ipipip/udp/239.77.0.202:5146
-#EXTINF:-1 tvg-name="HZTV1" tvg-logo="https://11.112114.xyz/logo/GD-HZTV1.png" group-title="其他",HZTV1
+#EXTINF:-1 tvg-name="HZTV1" tvg-logo="https://11.112114.xyz/logo/GD-HZTV1.png" group-title="广东",惠州新闻综合
 http://ipipip/udp/239.77.1.232:5146
-#EXTINF:-1 tvg-name="HZTV2" tvg-logo="https://11.112114.xyz/logo/GD-HZTV2.png" group-title="其他",HZTV2
+#EXTINF:-1 tvg-name="HZTV2" tvg-logo="https://11.112114.xyz/logo/GD-HZTV2.png" group-title="广东",惠州公共生活
 http://ipipip/udp/239.77.1.233:5146
 #EXTINF:-1 tvg-name="珠海新闻" tvg-logo="https://11.112114.xyz/logo/GD-ZHTV1.png" group-title="广东",珠海-1
 http://ipipip/udp/239.77.0.155:5146
