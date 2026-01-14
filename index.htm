@@ -7,10 +7,16 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <style>
         :root {
-            --primary: #007bff;
-            --radius: 4px;
-            --max-width: 1200px;
-            --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif
+            --primary: #4361ee;
+            --primary-hover: #3a56d4;
+            --bg: #f8f9fd;
+            --card-bg: #ffffff;
+            --text-main: #2b2d42;
+            --text-muted: #6c757d;
+            --border: #e0e4e8;
+            --radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
 
         * {
@@ -21,215 +27,306 @@
 
         body {
             font-family: var(--font);
-            background: #f8f9fa;
-            color: #333;
-            line-height: 1.6
+            background: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 20px 10px;
         }
 
-        .header {
-            background: var(--primary);
-            color: #fff;
-            padding: 15px 20px;
-            font-weight: 600;
-            font-size: 18px
+        .header-banner {
+            max-width: 900px;
+            margin: 0 auto 30px;
+            text-align: center;
+        }
+
+        .header-banner h1 {
+            font-size: 24px;
+            color: var(--primary);
+            font-weight: 800;
+            letter-spacing: -0.5px;
         }
 
         .container {
-            max-width: var(--max-width);
+            max-width: 900px;
             margin: 0 auto;
-            padding: 25px;
-            background: #fff
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
         }
 
-        .blue-title {
-            border-left: 4px solid var(--primary);
-            padding-left: 12px;
-            margin: 20px 0 15px;
-            font-size: 16px;
-            font-weight: 600;
-            color: #495057
+        .section-title {
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .section-title::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 16px;
+            background: var(--primary);
+            margin-right: 8px;
+            border-radius: 2px;
         }
 
         textarea {
             width: 100%;
-            min-height: 180px;
-            padding: 10px 12px;
-            border: 1px solid #ced4da;
+            min-height: 220px;
+            padding: 15px;
+            border: 2px solid var(--border);
             border-radius: var(--radius);
-            font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-            font-size: 14px;
+            font-family: 'Fira Code', 'Cascadia Code', Consolas, monospace;
+            font-size: 13px;
+            line-height: 1.5;
             resize: vertical;
-            transition: border-color .15s, box-shadow .15s
+            transition: all 0.2s;
+            background: #fafafa;
+            color: #444;
         }
 
         textarea:focus {
-            border-color: #80bdff;
-            outline: 0;
-            box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25)
+            outline: none;
+            border-color: var(--primary);
+            background: #fff;
+            box-shadow: 0 0 0 4px rgba(67, 97, 238, 0.1);
+        }
+
+        .note {
+            color: var(--text-muted);
+            font-size: 13px;
+            margin: 8px 0 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .note::before {
+            content: "💡";
+            margin-right: 5px;
+        }
+
+        .controls-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding: 15px;
+            background: #f1f3f9;
+            border-radius: var(--radius);
         }
 
         .button-group {
-            margin: 15px 0
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         .btn {
-            padding: 8px 16px;
-            margin: 0 8px 8px 0;
-            border: 1px solid #ced4da;
-            border-radius: var(--radius);
-            background: #f8f9fa;
-            color: #212529;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            border-radius: 8px;
             font-size: 14px;
+            font-weight: 600;
             cursor: pointer;
-            transition: all .2s;
-            text-decoration: none
+            transition: all 0.2s;
+            border: 1px solid var(--border);
+            background: white;
+            color: var(--text-main);
+            text-decoration: none;
         }
 
         .btn:hover {
-            background: #e9ecef
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-1px);
         }
 
         .btn-primary {
             background: var(--primary);
-            color: #fff;
-            border-color: var(--primary)
+            color: white;
+            border: none;
         }
 
         .btn-primary:hover {
-            background: #0069d9;
-            border-color: #0062cc
+            background: var(--primary-hover);
+            color: white;
+            box-shadow: 0 4px 12px rgba(67, 97, 238, 0.3);
         }
 
-        .card {
-            background: #fff;
-            margin-top: 25px
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
         }
 
-        .hidden {
-            display: none
-        }
-
-        .note {
-            color: #6c757d;
-            font-size: 14px;
-            margin-bottom: 16px
-        }
-
-        #toast {
-            position: fixed;
-            top: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 8px 18px;
-            background: #333;
-            color: #fff;
-            border-radius: var(--radius);
-            font-size: 14px;
-            opacity: 0;
-            transition: opacity .3s;
-            z-index: 9999
-        }
-
-        .footer {
-            text-align: center;
-            padding: 20px;
-            color: #6c757d;
-            font-size: 14px
-        }
-
+        /* Switch Styling */
         .switch-wrap {
             display: flex;
             align-items: center;
-            gap: 8px;
-            margin-bottom: 10px;
+            gap: 10px;
             font-size: 14px;
-            color: #495057
+            font-weight: 600;
+            cursor: pointer;
         }
 
         .switch {
             position: relative;
             display: inline-block;
-            width: 44px;
-            height: 22px
+            width: 40px;
+            height: 22px;
         }
 
         .switch input {
             opacity: 0;
             width: 0;
-            height: 0
+            height: 0;
         }
 
         .slider {
             position: absolute;
             cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: #ccc;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: #ccc;
             transition: .4s;
-            border-radius: 22px
+            border-radius: 34px;
         }
 
         .slider:before {
             position: absolute;
             content: "";
-            height: 18px;
-            width: 18px;
-            left: 2px;
-            bottom: 2px;
-            background: #fff;
+            height: 16px; width: 16px;
+            left: 3px; bottom: 3px;
+            background-color: white;
             transition: .4s;
-            border-radius: 50%
+            border-radius: 50%;
         }
 
-        input:checked+.slider {
-            background: var(--primary)
+        input:checked + .slider {
+            background-color: var(--primary);
         }
 
-        input:checked+.slider:before {
-            transform: translateX(22px)
+        input:checked + .slider:before {
+            transform: translateX(18px);
+        }
+
+        /* Result Card Animation */
+        #resultCard {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 2px dashed var(--border);
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hidden { display: none; }
+
+        #toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 12px 24px;
+            background: #333;
+            color: #fff;
+            border-radius: 50px;
+            font-size: 14px;
+            opacity: 0;
+            transition: all 0.3s;
+            z-index: 9999;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            .controls-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .button-group {
+                width: 100%;
+            }
+            .btn {
+                flex: 1;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="header">在线 TXT ⇄ M3U 转换工具</div>
+    <div class="header-banner">
+        <h1>在线 TXT ⇄ M3U 转换工具</h1>
+    </div>
+
     <div class="container">
-        <div class="blue-title">输入TXT/M3U内容</div>
-        <textarea id="inputArea" placeholder="请粘贴或拖拽文件内容…"></textarea>
-        <div class="note">支持拖放文件，输入内容不会被清空</div>
-        <div class="switch-wrap">
-            <label class="switch"><input type="checkbox" id="autoGroup"><span class="slider"></span></label>
-            <span>自动分组</span>
-        </div>
-        <div class="button-group">
-            <button class="btn btn-primary" onclick="convert('txt')">转换为 TXT</button>
-            <button class="btn btn-primary" onclick="convert('m3u')">转换为 M3U</button>
-            <button class="btn" onclick="clearInput()">清除</button>
-        </div>
-        <div id="resultCard" class="card hidden">
-            <div class="blue-title">转换结果</div>
-            <textarea id="resultArea" readonly></textarea>
+        <div class="section-title">输入 TXT / M3U 内容</div>
+        <textarea id="inputArea" placeholder="请在此处粘贴内容，或将文件拖拽至此处..."></textarea>
+        <div class="note">支持拖放文件，自动识别格式并转换</div>
+        
+        <div class="controls-row">
+            <label class="switch-wrap">
+                <span class="switch">
+                    <input type="checkbox" id="autoGroup">
+                    <span class="slider"></span>
+                </span>
+                <span>智能自动分组 (CCTV/卫视/港台)</span>
+            </label>
+            
             <div class="button-group">
-                <button class="btn btn-primary" onclick="copyResult()">复制结果</button>
-                <a id="downloadBtn" class="btn" download>下载结果</a>
+                <button class="btn btn-primary" onclick="convert('txt')">转为 TXT</button>
+                <button class="btn btn-primary" onclick="convert('m3u')">转为 M3U</button>
+                <button class="btn" onclick="clearInput()">清空</button>
+            </div>
+        </div>
+
+        <div id="resultCard" class="hidden">
+            <div class="section-title">转换结果</div>
+            <textarea id="resultArea" readonly></textarea>
+            <div class="button-group" style="margin-top: 15px;">
+                <button class="btn btn-outline" onclick="copyResult()">复制结果</button>
+                <a id="downloadBtn" class="btn btn-outline" download>保存到本地文件</a>
             </div>
         </div>
     </div>
-    <div class="footer">© 2025 Catvod.com - 所有权利保留</div>
-    <div id="toast"></div>
-    <script>
-        /* ---------- Toast ---------- */
-        const toast = document.getElementById('toast');
 
+    <div class="footer">
+        <p>© 2025 backin - 极简流媒体格式转换工具</p>
+    </div>
+
+    <div id="toast"></div>
+
+    <script>
+        /* ---------- 业务逻辑 (保持原样) ---------- */
+        const toast = document.getElementById('toast');
         function showToast(msg) {
             toast.textContent = msg;
             toast.style.opacity = 1;
-            setTimeout(() => toast.style.opacity = 0, 3000);
+            toast.style.bottom = '40px';
+            setTimeout(() => {
+                toast.style.opacity = 0;
+                toast.style.bottom = '30px';
+            }, 2500);
         }
 
-        /* ---------- 自动分组 ---------- */
         const hkTwKw = ['天映', '美亚', '澳视', 'VIUTV', '无线新闻', 'HOY', 'NOW', '台湾', '香港', '凤凰', '翡翠', '明珠', 'TVB', 'ANIMAX', 'AXN', 'Arirang', 'BBC', 'Bloomberg', 'CARTOONITO', 'CBeebies', 'CINEMAX', 'CNBC', 'CNN', 'CN卡通', 'CatchPlay', 'CinemaWorld', 'DAZN', 'DMAX', 'DWTV', 'Discovery', 'DreamWorks', 'ETtoday', 'EVE', 'FRANCE', 'FashionTV', 'Food', 'Global', 'HBO', 'HITS', 'INULTRA', 'JET', 'LOVE_NATURE', 'LUXE', 'Lifetime', 'MOMO', 'MTV', 'NHK', 'Nick', 'Pet_Club_TV', 'ROCK', 'TLC', 'TV5', 'TVBS', 'TaiwanPlus', 'TechStorm', 'Travel', 'Warner_TV', 'Z频道', 'amc', 'rollor', 'tvN', '三圣电视', '三立', '东森', '东风卫视', '中天', '中视', '乐视台', '亚洲', '人间', '佛卫', '八大', '公共电视', '公视', '冠军', '动物星球', '十方法界', '半岛', '华艺', '华藏', '华视', '博斯', '历史', '原住民', '双子卫视', '古典音乐', '台湾', '台视', '国兴', '壹电视', '大爱', '天美丽电视', '天良综合', '好消息', '好莱坞', '客家电视', '富立', '尼克儿童', '居家', '年代', '幸福空间', '新天地民俗', '智林体育', '梅迪奇艺术', '欧洲', '正德', '民视', '法国TV5', '爱尔达', '狼谷育乐', '环宇', '生命', '番薯', '纬来', '罪案', '诚心电视', '超视', '达文西', '运通财经', '镜电视', '霹雳', '靖天', '靖洋卡', '非凡', '韩国娱乐', '高点', '龙祥', '港台电视', 'RTHK'];
 
         function getGroup(name) {
@@ -243,8 +340,7 @@
 
         function cctvSort(a, b) {
             const clean = s => s.toUpperCase().replace(/CETV|中央/gi, 'CCTV').replace(/[^0-9+]/g, '').replace(/^CCTV/, '');
-            const na = clean(a.name),
-                nb = clean(b.name);
+            const na = clean(a.name), nb = clean(b.name);
             if (na === '') return 1;
             if (nb === '') return -1;
             return parseFloat(na.replace('+', '.5')) - parseFloat(nb.replace('+', '.5')) || a.name.localeCompare(b.name, 'zh-CN');
@@ -254,7 +350,6 @@
             return name.replace(/(CETV|中央)/gi, 'CCTV').replace(/台/g, '').replace(/\s*[-–—]\s*/g, '').replace(/\s+/g, '').replace(/高清|标清|超清|HDR|HD|画中画|单音轨|-CM-IPTV|-Tel/gi, '').replace(/高清电影/gi, '影迷电影').replace(/CCTV5\+/gi, 'CCTV5+');
         }
 
-        /* ---------- 自动匹配台标 ---------- */
         const stdMap = [
             [/^(?!.*华丽).*翡翠台/i, '翡翠台'],
             [/翡翠台.*4k?/i, '翡翠台'],
@@ -268,7 +363,6 @@
             [/凤凰(?:卫视)?资讯/i, '凤凰卫视资讯台'],
             [/凤凰(?:卫视)?中文/i, '凤凰卫视中文台'],
             [/凤凰(?:卫视)?香港/i, '凤凰卫视香港台'],
-            // 可按需继续添加
         ];
 
         function unifyTvgName(raw) {
@@ -277,25 +371,17 @@
             return raw;
         }
 
-        /* ---------- 主转换 ---------- */
         function convert(type) {
             const src = document.getElementById('inputArea').value.trim();
-            if (!src) {
-                showToast('请输入内容');
-                return;
-            }
+            if (!src) { showToast('请输入内容'); return; }
             const autoGroup = document.getElementById('autoGroup').checked;
-            let result = '',
-                filename = '';
+            let result = '', filename = '';
             const isM3U = src.split('\n').some(l => l.trim().startsWith('#EXTINF:'));
 
-            /* ---------- TXT ---------- */
             if (type === 'txt') {
                 if (isM3U) {
                     const channels = [];
-                    let curName = '',
-                        curUrl = '',
-                        curGrp = '';
+                    let curName = '', curUrl = '', curGrp = '';
                     src.split('\n').forEach(line => {
                         const t = line.trim();
                         if (t.startsWith('#EXTINF:')) {
@@ -306,30 +392,15 @@
                             curUrl = '';
                         } else if (!t.startsWith('#') && t) {
                             curUrl = t;
-                            if (curName && curUrl) channels.push({
-                                name: curName,
-                                url: curUrl,
-                                group: curGrp
-                            });
+                            if (curName && curUrl) channels.push({ name: curName, url: curUrl, group: curGrp });
                         }
                     });
                     if (autoGroup) {
-                        const groups = {
-                            '央视频道': [],
-                            '港台频道': [],
-                            '卫视频道': [],
-                            '地方频道': []
-                        };
-                        channels.forEach(({
-                            name,
-                            url
-                        }) => {
+                        const groups = { '央视频道': [], '港台频道': [], '卫视频道': [], '地方频道': [] };
+                        channels.forEach(({ name, url }) => {
                             const grp = getGroup(name);
                             if (grp === '央视频道') name = normalizeCCTV(name);
-                            groups[grp].push({
-                                name,
-                                url
-                            });
+                            groups[grp].push({ name, url });
                         });
                         if (groups['央视频道']) groups['央视频道'].sort(cctvSort);
                         const ordered = [];
@@ -337,47 +408,27 @@
                             if (!groups[grp] || groups[grp].length === 0) return;
                             if (ordered.length) ordered.push('');
                             ordered.push(`${grp},#genre#`);
-                            groups[grp].forEach(({
-                                name,
-                                url
-                            }) => ordered.push(`${name},${url}`));
+                            groups[grp].forEach(({ name, url }) => ordered.push(`${name},${url}`));
                         });
                         result = ordered.join('\n');
                     } else {
                         const map = new Map();
-                        channels.forEach(({
-                            group,
-                            name,
-                            url
-                        }) => {
+                        channels.forEach(({ group, name, url }) => {
                             const g = group || '未分组';
                             if (!map.has(g)) map.set(g, []);
-                            map.get(g).push({
-                                name,
-                                url
-                            });
+                            map.get(g).push({ name, url });
                         });
                         const ordered = [];
                         for (const [grp, arr] of map) {
                             if (ordered.length) ordered.push('');
                             ordered.push(`${grp},#genre#`);
-                            arr.forEach(({
-                                name,
-                                url
-                            }) => ordered.push(`${name},${url}`));
+                            arr.forEach(({ name, url }) => ordered.push(`${name},${url}`));
                         }
                         result = ordered.join('\n');
                     }
                 } else {
-                    if (!autoGroup) {
-                        result = src;
-                    } else {
-                        const groups = {
-                            '央视频道': [],
-                            '港台频道': [],
-                            '卫视频道': [],
-                            '地方频道': []
-                        };
+                    if (!autoGroup) { result = src; } else {
+                        const groups = { '央视频道': [], '港台频道': [], '卫视频道': [], '地方频道': [] };
                         src.split('\n').forEach(line => {
                             const l = line.trim();
                             if (!l || l.includes('#genre#')) return;
@@ -387,10 +438,7 @@
                             const url = l.slice(idx + 1).trim();
                             const grp = getGroup(name);
                             if (grp === '央视频道') name = normalizeCCTV(name);
-                            groups[grp].push({
-                                name,
-                                url
-                            });
+                            groups[grp].push({ name, url });
                         });
                         if (groups['央视频道']) groups['央视频道'].sort(cctvSort);
                         const ordered = [];
@@ -398,29 +446,17 @@
                             if (!groups[grp] || groups[grp].length === 0) return;
                             if (ordered.length) ordered.push('');
                             ordered.push(`${grp},#genre#`);
-                            groups[grp].forEach(({
-                                name,
-                                url
-                            }) => ordered.push(`${name},${url}`));
+                            groups[grp].forEach(({ name, url }) => ordered.push(`${name},${url}`));
                         });
                         result = ordered.join('\n');
                     }
                 }
                 filename = 'playlist.txt';
-            }
-
-            /* ---------- M3U ---------- */
-            else {
+            } else {
                 if (isM3U) {
-                    if (!autoGroup) {
-                        result = src;
-                    } else {
+                    if (!autoGroup) { result = src; } else {
                         const channels = [];
-                        let curName = '',
-                            curUrl = '',
-                            curGrp = '',
-                            curLogo = '',
-                            curTvgName = '';
+                        let curName = '', curUrl = '', curGrp = '', curLogo = '', curTvgName = '';
                         src.split('\n').forEach(line => {
                             const t = line.trim();
                             if (t.startsWith('#EXTINF:')) {
@@ -437,32 +473,16 @@
                                 curUrl = t;
                                 if (curName && curUrl) {
                                     const grp = getGroup(curName);
-                                    channels.push({
-                                        name: curName,
-                                        url: curUrl,
-                                        group: grp,
-                                        logo: curLogo,
-                                        tvgName: curTvgName || curName
-                                    });
+                                    channels.push({ name: curName, url: curUrl, group: grp, logo: curLogo, tvgName: curTvgName || curName });
                                 }
                             }
                         });
-                        const groups = {
-                            '央视频道': [],
-                            '港台频道': [],
-                            '卫视频道': [],
-                            '地方频道': []
-                        };
+                        const groups = { '央视频道': [], '港台频道': [], '卫视频道': [], '地方频道': [] };
                         channels.forEach(ch => groups[ch.group].push(ch));
                         if (groups['央视频道']) groups['央视频道'].sort((a, b) => cctvSort(a, b));
-                        result = '#EXTM3U url-tvg="https://live.fanmingming.cn/e.xml"\n';
+                        result = '#EXTM3U url-tvg="https://gitee.com/taksssss/tv/raw/main/epg/112114.xml.gz"\n';
                         ['央视频道', '港台频道', '卫视频道', '地方频道'].forEach(grp => {
-                            groups[grp].forEach(({
-                                name,
-                                url,
-                                tvgName,
-                                logo
-                            }) => {
+                            groups[grp].forEach(({ name, url, tvgName, logo }) => {
                                 const fixedName = unifyTvgName(name);
                                 result += `#EXTINF:-1 tvg-name="${fixedName}" tvg-logo="https://11.112114.xyz/logo/${fixedName}.png" group-title="${grp}",${name}\n${url}\n`;
                             });
@@ -487,31 +507,17 @@
                             if (grp === '央视频道') name = normalizeCCTV(name);
                             curGroup = grp;
                         }
-                        chArr.push({
-                            name,
-                            url,
-                            group: curGroup
-                        });
+                        chArr.push({ name, url, group: curGroup });
                     });
                     const groups = new Map();
-                    chArr.forEach(({
-                        name,
-                        url,
-                        group
-                    }) => {
+                    chArr.forEach(({ name, url, group }) => {
                         if (!groups.has(group)) groups.set(group, []);
-                        groups.get(group).push({
-                            name,
-                            url
-                        });
+                        groups.get(group).push({ name, url });
                     });
                     result = '#EXTM3U url-tvg="https://live.fanmingming.cn/e.xml"\n';
                     groups.forEach((channels, grp) => {
                         if (grp === '央视频道') channels.sort(cctvSort);
-                        channels.forEach(({
-                            name,
-                            url
-                        }) => {
+                        channels.forEach(({ name, url }) => {
                             const fixedName = unifyTvgName(name);
                             result += `#EXTINF:-1 tvg-name="${fixedName}" tvg-logo="https://11.112114.xyz/logo/${fixedName}.png" group-title="${grp}",${name}\n${url}\n`;
                         });
@@ -520,19 +526,15 @@
                 filename = 'playlist.m3u';
             }
 
-            /* ---------- 输出 ---------- */
             document.getElementById('resultArea').value = result;
             document.getElementById('resultCard').classList.remove('hidden');
-            const blob = new Blob([result], {
-                type: 'text/plain'
-            });
+            const blob = new Blob([result], { type: 'text/plain' });
             const dl = document.getElementById('downloadBtn');
             dl.href = URL.createObjectURL(blob);
             dl.download = filename;
             showToast('转换完成');
         }
 
-        /* ---------- 其余辅助 ---------- */
         function clearInput() {
             document.getElementById('inputArea').value = '';
             document.getElementById('resultCard').classList.add('hidden');
@@ -545,15 +547,18 @@
             document.execCommand('copy');
             showToast('已复制到剪贴板');
         }
+
         const inputArea = document.getElementById('inputArea');
-        inputArea.addEventListener('dragover', e => e.preventDefault());
+        inputArea.addEventListener('dragover', e => { e.preventDefault(); inputArea.style.borderColor = 'var(--primary)'; });
+        inputArea.addEventListener('dragleave', e => { e.preventDefault(); inputArea.style.borderColor = 'var(--border)'; });
         inputArea.addEventListener('drop', e => {
             e.preventDefault();
+            inputArea.style.borderColor = 'var(--border)';
             const file = e.dataTransfer.files[0];
             if (file) {
                 const reader = new FileReader();
                 reader.onload = ev => {
-                    inputArea.value = inputArea.value + (inputArea.value.endsWith('\n') ? '' : '\n') + ev.target.result;
+                    inputArea.value = inputArea.value + (inputArea.value.endsWith('\n') || inputArea.value === '' ? '' : '\n') + ev.target.result;
                     showToast('文件已加载');
                 };
                 reader.readAsText(file);
@@ -561,7 +566,4 @@
         });
     </script>
 </body>
-
 </html>
-
-
