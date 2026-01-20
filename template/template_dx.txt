@@ -119,9 +119,30 @@
 海南卫视,http://urlurlurl/udp/239.253.43.101:5146
 甘肃卫视,http://urlurlurl/udp/239.77.0.189:5146
 三沙卫视,http://urlurlurl/udp/239.253.43.113:5146
+4K,#genre#
+广东综艺4K,http://ipipip/udp/239.77.0.244:5146
+CCTV4K,http://ipipip/udp/239.77.0.194:5146
+CCTV16 4K,http://ipipip/udp/239.77.0.165:5146
+北京卫视4K,http://ipipip/udp/239.77.0.2:5146
+广东卫视4K,http://ipipip/udp/239.77.0.27:5146
+深圳卫视4K,http://ipipip/udp/239.77.0.67:5146
+湖南卫视4K,http://ipipip/udp/239.77.0.56:5146
+山东卫视4K,http://ipipip/udp/239.77.0.61:5146
+四川卫视4K,http://ipipip/udp/239.77.0.60:5146
+浙江卫视4K,http://ipipip/udp/239.77.0.58:5146
+江苏卫视4K,http://ipipip/udp/239.77.0.57:5146
+广东综艺4K,http://urlurlurl/udp/239.77.0.244:5146
+CCTV4K,http://urlurlurl/udp/239.77.0.194:5146
+CCTV16 4K,http://urlurlurl/udp/239.77.0.165:5146
+北京卫视4K,http://urlurlurl/udp/239.77.0.2:5146
+广东卫视4K,http://urlurlurl/udp/239.77.0.27:5146
+深圳卫视4K,http://urlurlurl/udp/239.77.0.67:5146
+湖南卫视4K,http://urlurlurl/udp/239.77.0.56:5146
+山东卫视4K,http://urlurlurl/udp/239.77.0.61:5146
+四川卫视4K,http://urlurlurl/udp/239.77.0.60:5146
+浙江卫视4K,http://urlurlurl/udp/239.77.0.58:5146
+江苏卫视4K,http://urlurlurl/udp/239.77.0.57:5146
 广东,#genre#
-广东综艺(4k),http://ipipip/udp/239.77.0.244:5146
-广东综艺(4k),http://ipipip/udp/239.77.0.245:5146
 广东珠江,http://ipipip/udp/239.77.0.1:5146
 广东新闻,http://ipipip/udp/239.77.0.173:5146
 广东民生,http://ipipip/udp/239.77.0.225:5146
@@ -187,8 +208,6 @@
 徐闻综合,http://ipipip/udp/239.253.43.112:5146
 梅州-1,http://ipipip/udp/239.253.43.123:5146
 客家生活,http://ipipip/udp/239.253.43.124:5146
-广东综艺(4k),http://urlurlurl/udp/239.77.0.244:5146
-广东综艺(4k),http://urlurlurl/udp/239.77.0.245:5146
 广东珠江,http://urlurlurl/udp/239.77.0.1:5146
 广东新闻,http://urlurlurl/udp/239.77.0.173:5146
 广东民生,http://urlurlurl/udp/239.77.0.225:5146
