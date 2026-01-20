@@ -119,7 +119,7 @@ http://ipipip/udp/239.253.43.101:5146
 http://ipipip/udp/239.77.0.189:5146
 #EXTINF:-1 tvg-name="三沙卫视" tvg-logo="https://11.112114.xyz/logo/三沙卫视.png" group-title="卫视",三沙卫视
 http://ipipip/udp/239.253.43.113:5146
-#EXTINF:-1 tvg-name="广东综艺4K" tvg-logo="https://11.112114.xyz/logo/广东综艺4K.png" group-title="4K",广东综艺4K
+#EXTINF:-1 tvg-name="广东综艺" tvg-logo="https://11.112114.xyz/logo/广东综艺4K.png" group-title="4K",广东综艺4K
 http://ipipip/udp/239.77.0.244:5146
 #EXTINF:-1 tvg-name="CCTV4K" tvg-logo="https://11.112114.xyz/logo/CCTV4K.png" group-title="4K",CCTV4K
 http://ipipip/udp/239.77.0.194:5146
