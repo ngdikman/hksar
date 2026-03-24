@@ -367,8 +367,12 @@
 
         function unifyTvgName(raw) {
             for (const [re, fixed] of stdMap)
-                if (re.test(raw)) return fixed;
-            return raw;
+                if (re.test(raw)) {
+                    // 返回映射的名字，但保持原输入的简繁体形式
+                    // 如果 fixed 是纯英文或不含中文，则直接返回
+                    return fixed;
+                }
+            return raw; // 不改变原文的繁简体
         }
 
         function convert(type) {
@@ -406,7 +410,7 @@
                         const ordered = [];
                         ['央视频道', '港台频道', '卫视频道', '地方频道'].forEach(grp => {
                             if (!groups[grp] || groups[grp].length === 0) return;
-                            if (ordered.length) ordered.push('');
+                            // if (ordered.length) ordered.push('');
                             ordered.push(`${grp},#genre#`);
                             groups[grp].forEach(({ name, url }) => ordered.push(`${name},${url}`));
                         });
@@ -420,7 +424,7 @@
                         });
                         const ordered = [];
                         for (const [grp, arr] of map) {
-                            if (ordered.length) ordered.push('');
+                            // if (ordered.length) ordered.push('');
                             ordered.push(`${grp},#genre#`);
                             arr.forEach(({ name, url }) => ordered.push(`${name},${url}`));
                         }
@@ -444,7 +448,7 @@
                         const ordered = [];
                         ['央视频道', '港台频道', '卫视频道', '地方频道'].forEach(grp => {
                             if (!groups[grp] || groups[grp].length === 0) return;
-                            if (ordered.length) ordered.push('');
+                            // if (ordered.length) ordered.push('');
                             ordered.push(`${grp},#genre#`);
                             groups[grp].forEach(({ name, url }) => ordered.push(`${name},${url}`));
                         });
@@ -484,7 +488,7 @@
                         ['央视频道', '港台频道', '卫视频道', '地方频道'].forEach(grp => {
                             groups[grp].forEach(({ name, url, tvgName, logo }) => {
                                 const fixedName = unifyTvgName(name);
-                                result += `#EXTINF:-1 tvg-name="${fixedName}" tvg-logo="https://11.112114.xyz/logo/${fixedName}.png" group-title="${grp}",${name}\n${url}\n`;
+                                result += `#EXTINF:-1 tvg-name="${fixedName}" tvg-logo="https://epg-1.iill.top/logo/${fixedName}.png" group-title="${grp}",${name}\n${url}\n`;
                             });
                         });
                     }
@@ -514,12 +518,12 @@
                         if (!groups.has(group)) groups.set(group, []);
                         groups.get(group).push({ name, url });
                     });
-                    result = '#EXTM3U url-tvg="https://live.fanmingming.cn/e.xml"\n';
+                    result = '#EXTM3U url-tvg="https://epg-1.iill.top/epg.xml"\n';
                     groups.forEach((channels, grp) => {
                         if (grp === '央视频道') channels.sort(cctvSort);
                         channels.forEach(({ name, url }) => {
                             const fixedName = unifyTvgName(name);
-                            result += `#EXTINF:-1 tvg-name="${fixedName}" tvg-logo="https://11.112114.xyz/logo/${fixedName}.png" group-title="${grp}",${name}\n${url}\n`;
+                            result += `#EXTINF:-1 tvg-name="${fixedName}" tvg-logo="https://epg-1.iill.top/logo/${fixedName}.png" group-title="${grp}",${name}\n${url}\n`;
                         });
                     });
                 }
