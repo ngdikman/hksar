@@ -484,7 +484,7 @@
                         const groups = { '央视频道': [], '港台频道': [], '卫视频道': [], '地方频道': [] };
                         channels.forEach(ch => groups[ch.group].push(ch));
                         if (groups['央视频道']) groups['央视频道'].sort((a, b) => cctvSort(a, b));
-                        result = '#EXTM3U url-tvg="https://gitee.com/taksssss/tv/raw/main/epg/112114.xml.gz"\n';
+                        result = '#EXTM3U url-tvg="https://epg-1.iill.top/epg.xml"\n';
                         ['央视频道', '港台频道', '卫视频道', '地方频道'].forEach(grp => {
                             groups[grp].forEach(({ name, url, tvgName, logo }) => {
                                 const fixedName = unifyTvgName(name);
