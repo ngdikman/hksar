@@ -194,7 +194,12 @@
   "nowBusinessNewsChannel": ["Now Business News"],
   "nowSports1": ["Now體育1"],
   "HOY76": ["HOY 76"],
-  "HOY77": ["HOY 77"],
+  "HOY77": [
+    "HOY77",
+    "HOY 77",
+    "HOY TV",
+    "HOYTV"
+  ],
   "HOY78": ["HOY 78"],
   "nowJelli": ["now紫金國際"],
   "nowBaoguMovies": ["now爆谷電影台(原音)"],
