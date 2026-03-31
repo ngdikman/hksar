@@ -1,9 +1,6 @@
 {
-  "nowSports1": ["Now體育1","Now Sports 1"],
-  "HOY76": ["HOY 76","HOY 國際財經台"],
-  "HOY77": [
-    "HOY 77",
-    "HOY TV"
-  ],
-  "HOY78": ["HOY 78","HOY 資訊台"]
+  "Now Sports 1": ["Now體育1","NowSports1"],
+  "HOY 國際財經台": ["HOY 76","76國際財經"],
+  "HOY TV": ["HOY 77","77開電視"],
+  "HOY 資訊台": ["HOY 78","78資訊台"]
 }
