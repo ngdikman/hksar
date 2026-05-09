@@ -57,19 +57,38 @@ rm -f "speedtest_${city}_$time.log"
 program="template/template_dx.m3u"
 txtprogram="template/template_dx.txt"
 
-sed "s/ipipip/$ip1/g" "$program" > GDIPTV.m3u
-sed "s/ipipip/$ip2/g" "$program" > GDIPTV-SP.m3u
+# sed "s/ipipip/$ip1/g" "$program" > GDIPTV.m3u
+# sed "s/ipipip/$ip2/g" "$program" > GDIPTV-SP.m3u
+
+{
+    head -1 "$program"
+    prev_line=""
+    tail -n +2 "$program" | while IFS= read -r line; do
+        if [[ "$line" == \#EXTINF* ]]; then
+            prev_line="$line"
+        elif [[ "$line" == *ipipip* ]]; then
+            for ip in "$ip1" "$ip2" "$ip3"; do
+                [ -z "$ip" ] && continue
+                echo "$prev_line"
+                echo "$line" | sed "s/ipipip/$ip/g"
+            done
+        else
+            echo "$line"
+        fi
+    done
+} > GDIPTV.m3u
+
 sed -e "s/ipipip/$ip1/g" -e "s/urlurlurl/$ip2/g" "$txtprogram" > "txt/fofa_${city}.txt"
 
 rm -rf dianxin.txt
 cat txt/fofa_dianxin.txt >> dianxin.txt
 
 # 生成杂七杂八txt
-{
-  echo "📡 BXTV,#genre#"
-  curl -s "https://bxtv.3a.ink/live.txt" | grep -v '#genre#'
-} >> dianxin.txt
+# {
+#   echo "📡 BXTV,#genre#"
+#   curl -s "https://bxtv.3a.ink/live.txt" | grep -v '#genre#'
+# } >> dianxin.txt
 
-{
-  curl -s "http://iptv.4666888.xyz/FYTV.txt" | sed 's/^.*#genre#/📡 &/'
-} >> dianxin.txt
+# {
+#   curl -s "http://iptv.4666888.xyz/FYTV.txt" | sed 's/^.*#genre#/📡 &/'
+# } >> dianxin.txt
