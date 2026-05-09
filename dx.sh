@@ -58,7 +58,7 @@ program="template/template_dx.m3u"
 txtprogram="template/template_dx.txt"
 
 # sed "s/ipipip/$ip1/g" "$program" > GDIPTV.m3u
-# sed "s/ipipip/$ip2/g" "$program" > GDIPTV-SP.m3u
+sed "s/ipipip/$ip2/g" "$program" > GDIPTV-SP.m3u
 
 {
     head -1 "$program"
